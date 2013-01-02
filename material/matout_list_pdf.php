@@ -15,7 +15,7 @@ class MYPDF extends TCPDF {
 	//Page header
 	public function Header() {
 		// Logo
-		$image_file = K_PATH_IMAGES.'yanjin_logo.png';
+		$image_file = K_PATH_IMAGES.'logo.png';
 		$this->Image($image_file, 15, 5, 180, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
 		// Set font
 		$this->SetFont('helvetica', 'B', 20);
@@ -124,9 +124,8 @@ $pdf->AddPage();
 //Data loading
 $pilcari = $_REQUEST["pilcari"];
 $txtcari = $_REQUEST["txtcari"];
-$q = "SELECT *,DATE_FORMAT(matout_date,'%d/%m/%Y') AS matout_date, a.notes AS notes, a.wo_no
+$q = "SELECT *,DATE_FORMAT(matout_date,'%d/%m/%Y') AS matout_date, a.notes AS notes, a.ref_no
 	  FROM mat_outhdr a 
-	  LEFT JOIN ppic_wohdr b ON b.wo_id=a.wo_id
 	  INNER JOIN mst_out_type c ON c.matout_type=a.matout_type ";
 if ($pilcari != ""){		  
 	if ($pilcari == "matout_date"){		  
@@ -160,7 +159,7 @@ $html .= '<tr>'.
 		 '<td width="80">'.$r['matout_no'].'</td>'.
 		 '<td width="80">'.$r['matout_date'].'</td>'.
 		 '<td width="80">'.$r['matout_name'].'</td>'.
-		 '<td width="80">'.$r['wo_no'].'</td>'.
+		 '<td width="80">'.$r['ref_no'].'</td>'.
 		 '<td>'.$r['notes'].'</td>'.
 		 '</tr>';
 $no+=1;	

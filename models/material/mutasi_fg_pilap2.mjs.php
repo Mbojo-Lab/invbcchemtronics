@@ -10,8 +10,9 @@ function setdg(){
 		pagination:true,
 		pageList:[25,50,75,100],
 		frozenColumns:[[  
-			{field:'KdBarang',title:'Part Code',width:80}, 
-			{field:'NmBarang',title:'Part No',width:100},   
+			{field:'KdBarang',title:'Code',width:80}, 
+			{field:'NmBarang',title:'Name',width:100},   
+			{field:'Ket',title:'Specification',width:100},   
 			{field:'Sat',title:'Unit',width:50}, 
 		]],
 		columns:[[  					

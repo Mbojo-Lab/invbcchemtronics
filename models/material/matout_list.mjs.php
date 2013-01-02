@@ -13,7 +13,7 @@ function setdg(){
 			{field:'matout_no',title:'Outgoing No.',width:100},
 			{field:'matout_date',title:'Outgoing Date',width:100},	
 			{field:'matout_name',title:'Outgoing Type',width:100},
-			{field:'wo_no',title:'WO No.',width:100},
+			{field:'ref_no',title:'WO No.',width:100},
 			{field:'notes',title:'Notes',width:100},
 			{field:'action',title:'Action',width:60,
 				formatter:function(value,row,index){
