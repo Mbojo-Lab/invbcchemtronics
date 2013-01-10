@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50527
 File Encoding         : 65001
 
-Date: 2012-12-26 00:51:19
+Date: 2013-01-10 02:01:38
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -30,561 +30,6 @@ CREATE TABLE `api` (
 -- ----------------------------
 INSERT INTO `api` VALUES ('1', 'API');
 INSERT INTO `api` VALUES ('2', 'APIT');
-
--- ----------------------------
--- Table structure for `barang`
--- ----------------------------
-DROP TABLE IF EXISTS `barang`;
-CREATE TABLE `barang` (
-  `DokKdBc` tinyint(1) NOT NULL DEFAULT '0',
-  `CAR` varchar(6) NOT NULL DEFAULT '' COMMENT 'Nomor Pengajuan',
-  `no` int(2) NOT NULL COMMENT 'No. Urut',
-  `fgmat_id` int(11) DEFAULT NULL COMMENT 'Kode Dokumen',
-  `KdBarang` varchar(11) NOT NULL DEFAULT '',
-  `UrBarang` varchar(100) NOT NULL DEFAULT '' COMMENT 'Nomor Dokumen',
-  `KdGunaBarang` varchar(1) DEFAULT NULL,
-  `Negara` varchar(50) DEFAULT NULL,
-  `HE` decimal(12,2) DEFAULT NULL COMMENT 'Harga Ekspor Barang',
-  `Tarif` varchar(50) DEFAULT NULL,
-  `qty` int(11) DEFAULT NULL,
-  `unit` varchar(11) DEFAULT NULL,
-  `price` decimal(12,2) DEFAULT NULL,
-  `kurs` decimal(12,2) DEFAULT NULL,
-  `VOL` decimal(12,4) DEFAULT NULL COMMENT 'Tanggal Dokumen',
-  `NETTO` decimal(12,2) DEFAULT NULL,
-  `CIF` decimal(12,2) DEFAULT NULL COMMENT 'Nilai CIF',
-  `FOB` decimal(12,2) DEFAULT NULL,
-  `HrgSerah` decimal(12,2) DEFAULT NULL,
-  `Ket` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`DokKdBc`,`CAR`,`KdBarang`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of barang
--- ----------------------------
-INSERT INTO `barang` VALUES ('1', '000700', '1', null, 'MAT-0001', '1', '1', null, null, '2', '1', null, null, null, null, '2.00', '1.00', null, null, null);
-INSERT INTO `barang` VALUES ('1', '000701', '1', null, 'M001', 'Mesin A', 'u', null, null, 'undefined', '100', null, null, null, null, '0.00', '0.00', null, null, null);
-INSERT INTO `barang` VALUES ('1', '000701', '2', null, 'P001', 'PC', 'u', null, null, 'undefined', '200', null, null, null, null, '0.00', '0.00', null, null, null);
-INSERT INTO `barang` VALUES ('3', '000001', '1', null, 'FG-01', 'tes', '1', 'ID', null, '1', '2', null, null, null, '2.0000', '1.00', '1.00', null, '293512254.00', null);
-INSERT INTO `barang` VALUES ('3', '000002', '1', null, 'M001', 'Mesin A', 'u', 'undefined', null, 'undefined', '5', null, null, null, '0.0000', '0.00', '0.00', null, '0.00', null);
-INSERT INTO `barang` VALUES ('3', '201207', '1', null, 'FG-01', 'tes', '1', 'ID', null, '1', '2', null, null, null, '2.0000', '1.00', '1.00', null, '2.00', null);
-INSERT INTO `barang` VALUES ('4', '000001', '1', null, 'FG-01', 'tes', null, 'ID', null, '1', '2', null, null, null, '1.0000', '1.00', '1.00', null, null, null);
-INSERT INTO `barang` VALUES ('4', '000002', '1', null, 'M001', 'Mesin A', null, 'undefined', null, 'undefined', '5', null, null, null, '0.0000', '0.00', '0.00', null, null, null);
-INSERT INTO `barang` VALUES ('4', '000003', '1', null, 'RAC-0002', 'Aluminium Coil', null, 'ID', null, '', '200', null, null, null, '0.0000', '0.00', '0.00', null, null, null);
-INSERT INTO `barang` VALUES ('5', '000001', '1', null, 'MAT-0001', 'tes', null, 'ID', null, '2', '1', null, null, null, '2.0000', '2.00', '2.00', null, null, null);
-INSERT INTO `barang` VALUES ('5', '000002', '1', null, 'ALME0002', 'Extrusion+Ecotrio', null, null, null, null, '200', null, null, null, '0.0000', '0.00', '0.00', null, null, null);
-INSERT INTO `barang` VALUES ('6', '000001', '1', null, 'RAC-0001', 'Aluminium Coil', null, null, null, null, '10', null, null, null, '0.0000', '4.00', '0.00', null, '10.00', null);
-INSERT INTO `barang` VALUES ('7', '000001', '1', null, 'FG-01', 'tes', null, null, '1.00', '2', '1', null, null, null, null, '2.00', null, '2.00', null, null);
-INSERT INTO `barang` VALUES ('7', '000002', '1', null, '123', 'Heatsink', null, null, '0.00', 'undefined', '200', null, null, null, null, '0.00', null, '0.00', null, null);
-INSERT INTO `barang` VALUES ('8', '000001', '1', null, 'FG-01', 'tes', null, null, null, null, '1', null, null, null, '2.0000', '2.00', null, null, '1.00', null);
-INSERT INTO `barang` VALUES ('8', '000002', '1', null, 'M001', 'Mesin A', null, null, null, null, '100', null, null, null, '50.0000', '0.00', null, null, '200.00', null);
-INSERT INTO `barang` VALUES ('8', '000002', '2', null, 'P001', 'PC', null, null, null, null, '200', null, null, null, '0.0000', '120.00', null, null, '100.00', null);
-INSERT INTO `barang` VALUES ('8', '000003', '1', null, 'M001', 'Mesin A', null, null, null, null, '100', null, null, null, '0.0000', '0.00', null, null, '200.00', null);
-INSERT INTO `barang` VALUES ('8', '000003', '2', null, 'P001', 'PC', null, null, null, null, '200', null, null, null, '0.0000', '0.00', null, null, '100.00', null);
-INSERT INTO `barang` VALUES ('8', '000004', '1', null, 'RAC-0001', 'Aluminium Coil', null, null, null, null, '10', null, null, null, '0.0000', '0.00', null, null, '10.00', null);
-INSERT INTO `barang` VALUES ('8', '111111', '1', null, 'RAC-0002', 'Aluminium Coil', null, null, null, null, '200', null, null, null, '0.0000', '0.00', null, null, '1.00', null);
-INSERT INTO `barang` VALUES ('8', '111111', '2', null, 'RAC-0003', 'Aluminium Coil', null, null, null, null, '200', null, null, null, '0.0000', '0.00', null, null, '100.00', null);
-INSERT INTO `barang` VALUES ('8', '111111', '3', null, 'RAC-0004', 'Aluminium Coil', null, null, null, null, '100', null, null, null, '0.0000', '0.00', null, null, '200.00', null);
-INSERT INTO `barang` VALUES ('9', '000001', '1', null, 'FG-01', 'tes', null, null, null, null, '2', null, null, null, '1.0000', '1.00', null, null, '1.00', null);
-INSERT INTO `barang` VALUES ('9', '000002', '1', null, 'M001', 'Mesin A', null, null, null, null, '5', null, null, null, '0.0000', '0.00', null, null, '0.00', null);
-INSERT INTO `barang` VALUES ('9', '000003', '1', null, 'RAC-0001', 'Aluminium Coil', null, null, null, null, '200', null, null, null, '0.0000', '200.00', null, null, '1000.00', null);
-
--- ----------------------------
--- Table structure for `barangkembali`
--- ----------------------------
-DROP TABLE IF EXISTS `barangkembali`;
-CREATE TABLE `barangkembali` (
-  `DokKdBc` tinyint(1) NOT NULL DEFAULT '0',
-  `CAR` varchar(6) NOT NULL DEFAULT '' COMMENT 'Nomor Pengajuan',
-  `no` int(2) NOT NULL COMMENT 'No. Urut',
-  `fgmat_id` int(11) DEFAULT NULL COMMENT 'Kode Dokumen',
-  `KdBarang` varchar(11) DEFAULT NULL,
-  `UrBarang` varchar(100) DEFAULT NULL COMMENT 'Nomor Dokumen',
-  `Negara` varchar(50) DEFAULT NULL,
-  `Tarif` varchar(50) DEFAULT NULL,
-  `qty` int(11) DEFAULT NULL,
-  `unit` varchar(11) DEFAULT NULL,
-  `price` decimal(12,2) DEFAULT NULL,
-  `kurs` decimal(12,2) DEFAULT NULL,
-  `VOL` decimal(12,2) DEFAULT NULL COMMENT 'Tanggal Dokumen',
-  `NETTO` decimal(12,2) DEFAULT NULL,
-  `CIF` decimal(12,2) DEFAULT NULL COMMENT 'Nilai CIF',
-  `HrgSerah` decimal(12,2) DEFAULT NULL,
-  PRIMARY KEY (`DokKdBc`,`CAR`,`no`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of barangkembali
--- ----------------------------
-INSERT INTO `barangkembali` VALUES ('3', '000001', '75', '0', '', '', '', '', '0', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00');
-INSERT INTO `barangkembali` VALUES ('3', '000002', '425', '0', '', '', '', '', '0', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00');
-INSERT INTO `barangkembali` VALUES ('3', '000003', '75', '0', '', '', '', '', '0', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00');
-INSERT INTO `barangkembali` VALUES ('3', '000004', '75', '0', '', '', '', '', '0', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00');
-INSERT INTO `barangkembali` VALUES ('3', '000005', '75', '0', '', '', '', '', '0', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00');
-INSERT INTO `barangkembali` VALUES ('3', '000006', '75', '0', '', '', '', '', '0', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00');
-INSERT INTO `barangkembali` VALUES ('3', '000007', '267', '0', '', '', '', '', '0', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00');
-INSERT INTO `barangkembali` VALUES ('3', '000008', '328', '0', '', '', '', '', '0', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00');
-INSERT INTO `barangkembali` VALUES ('3', '000009', '75', '0', '', '', '', '', '0', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00');
-INSERT INTO `barangkembali` VALUES ('3', '000010', '75', '0', '', '', '', '', '0', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00');
-INSERT INTO `barangkembali` VALUES ('3', '000011', '75', '0', '', '', '', '', '0', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00');
-INSERT INTO `barangkembali` VALUES ('3', '000012', '2', '0', '', '', '', '', '0', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00');
-INSERT INTO `barangkembali` VALUES ('3', '000013', '2', '0', '', '', '', '', '0', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00');
-INSERT INTO `barangkembali` VALUES ('3', '000014', '75', '0', '', '', '', '', '0', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00');
-INSERT INTO `barangkembali` VALUES ('3', '000015', '7', '0', '', '', '', '', '0', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00');
-INSERT INTO `barangkembali` VALUES ('3', '000016', '75', '0', '', '', '', '', '0', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00');
-INSERT INTO `barangkembali` VALUES ('3', '000017', '75', '0', '', '', '', '', '0', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00');
-INSERT INTO `barangkembali` VALUES ('3', '000018', '75', '0', '', '', '', '', '0', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00');
-INSERT INTO `barangkembali` VALUES ('3', '000019', '75', '0', '', '', '', '', '0', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00');
-INSERT INTO `barangkembali` VALUES ('4', '000001', '1', null, 'MAT-0001', 'tes', null, null, '1', null, null, null, '1.00', '2.00', '2.00', null);
-INSERT INTO `barangkembali` VALUES ('5', '000001', '1', null, 'FG-01', 'tes', null, null, '2', null, null, null, '2.00', '1.00', '1.00', null);
-
--- ----------------------------
--- Table structure for `detail`
--- ----------------------------
-DROP TABLE IF EXISTS `detail`;
-CREATE TABLE `detail` (
-  `DokKd` varchar(1) NOT NULL DEFAULT '' COMMENT 'Kode Dokumen BC',
-  `CAR` varchar(6) NOT NULL DEFAULT '' COMMENT 'Nomor Pengajuan',
-  `NoDaf` varchar(6) NOT NULL DEFAULT '' COMMENT 'Nomor Pendaftaran',
-  `NoDet` tinyint(2) NOT NULL DEFAULT '0' COMMENT 'No Detail',
-  `BRUTO` decimal(12,2) DEFAULT NULL COMMENT 'Bruto',
-  `CIF` decimal(12,2) DEFAULT NULL COMMENT 'CIF',
-  `HargaSerah` decimal(12,2) DEFAULT NULL COMMENT 'Harga Penyerahan',
-  `NETTO` decimal(12,2) DEFAULT NULL COMMENT 'Netto',
-  `TujKirim` tinyint(1) DEFAULT NULL COMMENT 'Tujuan Pengiriman',
-  `NpwpTuj` varchar(15) DEFAULT NULL COMMENT 'Npwp Tujuan',
-  `UrBarang` varchar(100) DEFAULT NULL COMMENT 'Uraian Barang',
-  PRIMARY KEY (`DokKd`,`CAR`,`NoDaf`,`NoDet`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of detail
--- ----------------------------
-
--- ----------------------------
--- Table structure for `dokumen`
--- ----------------------------
-DROP TABLE IF EXISTS `dokumen`;
-CREATE TABLE `dokumen` (
-  `DokKdBc` tinyint(1) NOT NULL DEFAULT '0',
-  `CAR` varchar(6) NOT NULL DEFAULT '' COMMENT 'Nomor Pengajuan',
-  `no` int(2) NOT NULL COMMENT 'No. Urut',
-  `DokKd` tinyint(1) DEFAULT NULL COMMENT 'Kode Dokumen',
-  `DokNo` varchar(30) DEFAULT NULL COMMENT 'Nomor Dokumen',
-  `DokTg` date DEFAULT NULL COMMENT 'Tanggal Dokumen',
-  `PosSub` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`DokKdBc`,`CAR`,`no`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of dokumen
--- ----------------------------
-INSERT INTO `dokumen` VALUES ('1', '000700', '1', '1', 'MINHS12040145', '2012-04-24', null);
-INSERT INTO `dokumen` VALUES ('1', '000700', '2', '17', 'HASL0280D4CDW98', '2012-04-26', null);
-INSERT INTO `dokumen` VALUES ('1', '000700', '3', '18', '001995 Pos: 0043 Sub:', '2012-05-05', null);
-INSERT INTO `dokumen` VALUES ('1', '000701', '1', '1', '999', '2012-10-31', null);
-INSERT INTO `dokumen` VALUES ('3', '000001', '1', '1', '1', '2012-07-25', null);
-INSERT INTO `dokumen` VALUES ('3', '000002', '1', '2', '001', '2012-10-31', null);
-INSERT INTO `dokumen` VALUES ('3', '201..2', '1', '1', '1', '2012-07-25', null);
-INSERT INTO `dokumen` VALUES ('3', '201.20', '1', '1', '1', '2012-07-25', null);
-INSERT INTO `dokumen` VALUES ('3', '201207', '1', '1', '1', '2012-07-25', null);
-INSERT INTO `dokumen` VALUES ('4', '000001', '1', '2', '1', '2012-07-31', null);
-INSERT INTO `dokumen` VALUES ('4', '000002', '1', '1', '001', '2012-10-30', null);
-INSERT INTO `dokumen` VALUES ('4', '000003', '1', '1', '234', '2012-12-12', null);
-INSERT INTO `dokumen` VALUES ('5', '000001', '1', '2', '2', '2012-07-31', null);
-INSERT INTO `dokumen` VALUES ('5', '000002', '1', '1', '001', '2012-10-30', null);
-INSERT INTO `dokumen` VALUES ('6', '000001', '1', '4', '1234', '2012-12-12', null);
-INSERT INTO `dokumen` VALUES ('7', '000001', '1', '1', 'u', '2012-07-17', null);
-INSERT INTO `dokumen` VALUES ('7', '000002', '1', '1', '883', '2012-10-31', null);
-INSERT INTO `dokumen` VALUES ('8', '000001', '1', '2', '1', '2012-08-01', null);
-INSERT INTO `dokumen` VALUES ('8', '000002', '1', '4', '003', '2012-10-29', null);
-INSERT INTO `dokumen` VALUES ('8', '000003', '1', '4', 'SJ001', '2012-11-26', null);
-INSERT INTO `dokumen` VALUES ('8', '000004', '1', '1', '0001', '2012-12-12', null);
-INSERT INTO `dokumen` VALUES ('8', '111111', '1', '4', '0001', '2012-12-12', null);
-INSERT INTO `dokumen` VALUES ('8', '111111', '2', '5', '002', '2012-12-12', null);
-INSERT INTO `dokumen` VALUES ('8', '111111', '3', '6', '003', '2012-12-12', null);
-INSERT INTO `dokumen` VALUES ('9', '000001', '1', '3', '2', '2012-08-02', null);
-INSERT INTO `dokumen` VALUES ('9', '000001', '2', '14', '1', '2012-08-02', null);
-INSERT INTO `dokumen` VALUES ('9', '000001', '3', '14', '2', '2012-08-03', null);
-INSERT INTO `dokumen` VALUES ('9', '000002', '1', '1', '001', '2012-10-30', null);
-INSERT INTO `dokumen` VALUES ('9', '000003', '1', '15', '0001', '2012-12-12', null);
-INSERT INTO `dokumen` VALUES ('9', '000003', '2', '4', '0002', '2012-12-05', null);
-INSERT INTO `dokumen` VALUES ('9', '000003', '3', '3', '0003', '2012-12-12', null);
-
--- ----------------------------
--- Table structure for `hdrjaminan`
--- ----------------------------
-DROP TABLE IF EXISTS `hdrjaminan`;
-CREATE TABLE `hdrjaminan` (
-  `DokKdBc` tinyint(1) NOT NULL DEFAULT '0',
-  `CAR` varchar(6) NOT NULL DEFAULT '',
-  `NoJaminan` varchar(20) NOT NULL DEFAULT '',
-  `TgJaminan` date DEFAULT NULL,
-  `JnsJaminan` varchar(15) NOT NULL DEFAULT '',
-  `bayar` decimal(12,2) DEFAULT NULL,
-  `hutang` decimal(12,2) DEFAULT NULL,
-  `TgJatuhTempo` date DEFAULT NULL,
-  `KodeAkun` varchar(10) NOT NULL DEFAULT '',
-  `NoTandaBayar` varchar(20) DEFAULT NULL,
-  `TglTandaBayar` date DEFAULT NULL,
-  `Penjamin` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`DokKdBc`,`CAR`,`JnsJaminan`,`KodeAkun`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of hdrjaminan
--- ----------------------------
-INSERT INTO `hdrjaminan` VALUES ('0', '', '', '0000-00-00', '', '0.00', null, '0000-00-00', '', '', '0000-00-00', '');
-INSERT INTO `hdrjaminan` VALUES ('0', '', '', null, 'BM', '0.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('0', '', '', null, 'Cukai', '0.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('0', '', '', null, 'PPh', '0.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('0', '', '', null, 'PPN', '0.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('0', '', '', null, 'PPnBM', '0.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('1', '000700', '', null, 'BM', '0.00', '1.00', null, '1', '2', '2012-07-18', null);
-INSERT INTO `hdrjaminan` VALUES ('1', '000700', '', null, 'Cukai', '0.00', '10.00', null, '1', '2', '2012-07-04', null);
-INSERT INTO `hdrjaminan` VALUES ('1', '000700', '', null, 'PNBP', '0.00', '100.00', null, '1', '2', '2012-07-06', null);
-INSERT INTO `hdrjaminan` VALUES ('1', '000700', '', null, 'PPh', '0.00', '1000.00', null, '1', '2', '2012-07-01', null);
-INSERT INTO `hdrjaminan` VALUES ('1', '000700', '', null, 'PPN', '0.00', '10000.00', null, '1', '2', '2012-07-03', null);
-INSERT INTO `hdrjaminan` VALUES ('1', '000700', '', null, 'PPnBM', '0.00', '100000.00', null, '1', '2', '2012-07-02', null);
-INSERT INTO `hdrjaminan` VALUES ('1', '000701', '', null, 'BM', '0.00', '0.00', null, '', '', '0000-00-00', null);
-INSERT INTO `hdrjaminan` VALUES ('1', '000701', '', null, 'Cukai', '0.00', '0.00', null, '', '', '0000-00-00', null);
-INSERT INTO `hdrjaminan` VALUES ('1', '000701', '', null, 'PNBP', '0.00', '0.00', null, '', '', '0000-00-00', null);
-INSERT INTO `hdrjaminan` VALUES ('1', '000701', '', null, 'PPh', '0.00', '0.00', null, '', '', '0000-00-00', null);
-INSERT INTO `hdrjaminan` VALUES ('1', '000701', '', null, 'PPN', '0.00', '0.00', null, '', '', '0000-00-00', null);
-INSERT INTO `hdrjaminan` VALUES ('1', '000701', '', null, 'PPnBM', '0.00', '0.00', null, '', '', '0000-00-00', null);
-INSERT INTO `hdrjaminan` VALUES ('3', '000001', '', null, 'BM', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '000001', '', null, 'BungaPPNPPnBM', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '000001', '', null, 'Cukai', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '000001', '', null, 'DBBMCukai', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '000001', '', null, 'NTB', null, null, null, 'SSCP', '2', '2012-07-17', null);
-INSERT INTO `hdrjaminan` VALUES ('3', '000001', '', null, 'NTPN', null, null, null, 'SSP', '2', '2012-07-30', null);
-INSERT INTO `hdrjaminan` VALUES ('3', '000001', '', null, 'PNBP', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '000001', '', null, 'PPh', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '000001', '', null, 'PPN', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '000001', '', null, 'PPnBM', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '000001', '', null, 'SSCP', null, null, null, '', '1', '2012-07-25', null);
-INSERT INTO `hdrjaminan` VALUES ('3', '000001', '', null, 'SSP', null, null, null, '', '1', '2012-07-27', null);
-INSERT INTO `hdrjaminan` VALUES ('3', '000002', '', null, 'BM', '0.00', '0.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '000002', '', null, 'BungaPPNPPnBM', '0.00', '0.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '000002', '', null, 'Cukai', '0.00', '0.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '000002', '', null, 'DBBMCukai', '0.00', '0.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '000002', '', null, 'NTPN', null, null, null, 'SSCP', '', '0000-00-00', null);
-INSERT INTO `hdrjaminan` VALUES ('3', '000002', '', null, 'NTPN', null, null, null, 'SSP', '', '0000-00-00', null);
-INSERT INTO `hdrjaminan` VALUES ('3', '000002', '', null, 'PNBP', '0.00', '0.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '000002', '', null, 'PPh', '0.00', '0.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '000002', '', null, 'PPN', '0.00', '0.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '000002', '', null, 'PPnBM', '0.00', '0.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '000002', '', null, 'SSCP', null, null, null, '', '', '0000-00-00', null);
-INSERT INTO `hdrjaminan` VALUES ('3', '000002', '', null, 'SSP', null, null, null, '', '', '0000-00-00', null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201..2', '', null, 'BM', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201..2', '', null, 'BungaPPNPPnBM', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201..2', '', null, 'Cukai', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201..2', '', null, 'DBBMCukai', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201..2', '', null, 'NTB', null, null, null, 'SSCP', '2', '2012-07-17', null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201..2', '', null, 'NTB', null, null, null, 'SSP', '1', '2012-07-24', null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201..2', '', null, 'PNBP', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201..2', '', null, 'PPh', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201..2', '', null, 'PPN', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201..2', '', null, 'PPnBM', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201..2', '', null, 'SSCP', null, null, null, '', '1', '2012-07-25', null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201..2', '', null, 'SSP', null, null, null, '', '1', '2012-07-27', null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201.20', '', null, 'BM', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201.20', '', null, 'BungaPPNPPnBM', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201.20', '', null, 'Cukai', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201.20', '', null, 'DBBMCukai', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201.20', '', null, 'NTB', null, null, null, 'SSCP', '2', '2012-07-17', null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201.20', '', null, 'NTB', null, null, null, 'SSP', '1', '2012-07-24', null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201.20', '', null, 'PNBP', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201.20', '', null, 'PPh', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201.20', '', null, 'PPN', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201.20', '', null, 'PPnBM', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201.20', '', null, 'SSCP', null, null, null, '', '1', '2012-07-25', null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201207', '', null, 'BM', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201207', '', null, 'BungaPPNPPnBM', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201207', '', null, 'Cukai', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201207', '', null, 'DBBMCukai', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201207', '', null, 'NTB', null, null, null, 'SSCP', '2', '2012-07-17', null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201207', '', null, 'NTB', null, null, null, 'SSP', '1', '2012-07-24', null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201207', '', null, 'PNBP', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201207', '', null, 'PPh', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201207', '', null, 'PPN', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201207', '', null, 'PPnBM', '1.00', '2.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('3', '201207', '', null, 'SSCP', null, null, null, '', '1', '2012-07-25', null);
-INSERT INTO `hdrjaminan` VALUES ('4', '000001', '1', '2012-07-31', '2', '2.00', null, '2012-07-30', '', '2', '2012-07-31', '1');
-INSERT INTO `hdrjaminan` VALUES ('4', '000001', '', null, 'BM', '1.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('4', '000001', '', null, 'Cukai', '2.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('4', '000001', '', null, 'PPh', '1.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('4', '000001', '', null, 'PPN', '1.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('4', '000001', '', null, 'PPnBM', '2.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('4', '000002', '', '0000-00-00', '', '0.00', null, '0000-00-00', '', '', '0000-00-00', '');
-INSERT INTO `hdrjaminan` VALUES ('4', '000002', '', null, 'BM', '0.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('4', '000002', '', null, 'Cukai', '0.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('4', '000002', '', null, 'PPh', '0.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('4', '000002', '', null, 'PPN', '0.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('4', '000002', '', null, 'PPnBM', '0.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('4', '000003', '', '0000-00-00', '', '0.00', null, '0000-00-00', '', '', '0000-00-00', '');
-INSERT INTO `hdrjaminan` VALUES ('4', '000003', '', null, 'BM', '0.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('4', '000003', '', null, 'Cukai', '0.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('4', '000003', '', null, 'PPh', '0.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('4', '000003', '', null, 'PPN', '0.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('4', '000003', '', null, 'PPnBM', '0.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('5', '000001', '1', '2012-07-31', '2', '2.00', null, '2012-07-30', '', '2', '2012-07-31', '1');
-INSERT INTO `hdrjaminan` VALUES ('5', '000001', '', null, 'BM', '2.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('5', '000001', '', null, 'Cukai', '1.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('5', '000001', '', null, 'PPh', '2.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('5', '000001', '', null, 'PPN', '2.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('5', '000001', '', null, 'PPnBM', '1.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('5', '000002', '', '0000-00-00', '', '0.00', null, '0000-00-00', '', '', '0000-00-00', '');
-INSERT INTO `hdrjaminan` VALUES ('5', '000002', '', null, 'BM', '0.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('5', '000002', '', null, 'Cukai', '0.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('5', '000002', '', null, 'PPh', '0.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('5', '000002', '', null, 'PPN', '0.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('5', '000002', '', null, 'PPnBM', '0.00', null, null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('7', '000001', '', null, 'BK', '2.00', null, null, 'NTB', '1', '2012-07-27', null);
-INSERT INTO `hdrjaminan` VALUES ('7', '000001', '', null, 'PNBP', '1.00', null, null, 'NTPN', '2', '2012-07-11', null);
-INSERT INTO `hdrjaminan` VALUES ('7', '000001', '', null, 'SSPCP', null, null, null, '', '1.00', '2012-07-22', null);
-INSERT INTO `hdrjaminan` VALUES ('7', '000002', '', null, 'BK', '0.00', null, null, 'NTPN', '', '0000-00-00', null);
-INSERT INTO `hdrjaminan` VALUES ('7', '000002', '', null, 'PNBP', '0.00', null, null, 'NTPN', '', '0000-00-00', null);
-INSERT INTO `hdrjaminan` VALUES ('7', '000002', '', null, 'SSPCP', null, null, null, '', '', '2012-10-31', null);
-INSERT INTO `hdrjaminan` VALUES ('8', '000001', '', null, 'BM', '0.00', '0.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('8', '000001', '', null, 'BungaPPNPPnBM', '0.00', '0.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('8', '000001', '', null, 'Cukai', '0.00', '0.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('8', '000001', '', null, 'DBBMCukai', '0.00', '0.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('8', '000001', '', null, 'NTPN', null, null, null, 'SSCP', '', '0000-00-00', null);
-INSERT INTO `hdrjaminan` VALUES ('8', '000001', '', null, 'NTPN', null, null, null, 'SSP', '', '0000-00-00', null);
-INSERT INTO `hdrjaminan` VALUES ('8', '000001', '', null, 'PNBP', '0.00', '0.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('8', '000001', '', null, 'PPh', '0.00', '0.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('8', '000001', '', null, 'PPN', '0.00', '0.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('8', '000001', '', null, 'PPnBM', '0.00', '0.00', null, '', null, null, null);
-INSERT INTO `hdrjaminan` VALUES ('8', '000001', '', null, 'SSCP', null, null, null, '', '', '0000-00-00', null);
-INSERT INTO `hdrjaminan` VALUES ('8', '000001', '', null, 'SSP', null, null, null, '', '', '0000-00-00', null);
-
--- ----------------------------
--- Table structure for `hdrpelabuhan`
--- ----------------------------
-DROP TABLE IF EXISTS `hdrpelabuhan`;
-CREATE TABLE `hdrpelabuhan` (
-  `DokKdBc` tinyint(1) NOT NULL DEFAULT '0',
-  `CAR` varchar(6) NOT NULL DEFAULT '',
-  `MuatAsal` varchar(5) DEFAULT NULL,
-  `MuatEkspor` varchar(5) DEFAULT NULL,
-  `Transit` varchar(5) DEFAULT NULL,
-  `Bongkar` varchar(5) DEFAULT NULL,
-  PRIMARY KEY (`DokKdBc`,`CAR`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of hdrpelabuhan
--- ----------------------------
-INSERT INTO `hdrpelabuhan` VALUES ('1', '000700', 'KRPUS', '', '', 'IDTPP');
-INSERT INTO `hdrpelabuhan` VALUES ('1', '000701', '', '', '', 'IDTPP');
-INSERT INTO `hdrpelabuhan` VALUES ('7', '000001', 'IDTPP', 'IDTPP', '', 'USFAT');
-INSERT INTO `hdrpelabuhan` VALUES ('7', '000002', 'IDTPP', 'IDTPP', '', '');
-
--- ----------------------------
--- Table structure for `hdrpengangkutan`
--- ----------------------------
-DROP TABLE IF EXISTS `hdrpengangkutan`;
-CREATE TABLE `hdrpengangkutan` (
-  `DokKdBc` tinyint(1) NOT NULL DEFAULT '0',
-  `CAR` varchar(6) NOT NULL DEFAULT '',
-  `CaraAngkut` tinyint(1) DEFAULT NULL,
-  `JnsAngkut` varchar(30) DEFAULT NULL COMMENT 'Jenis Sarana Pengangkut Darat',
-  `NmAngkut` varchar(40) DEFAULT NULL,
-  `NoPolisi` varchar(15) DEFAULT NULL,
-  `KdNegara` varchar(3) DEFAULT NULL,
-  `TgKiraEkspor` date DEFAULT NULL,
-  PRIMARY KEY (`DokKdBc`,`CAR`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of hdrpengangkutan
--- ----------------------------
-INSERT INTO `hdrpengangkutan` VALUES ('0', '', null, '', null, '', null, null);
-INSERT INTO `hdrpengangkutan` VALUES ('1', '000701', '0', null, '', '', null, null);
-INSERT INTO `hdrpengangkutan` VALUES ('3', '201207', '0', '', '', '', null, null);
-INSERT INTO `hdrpengangkutan` VALUES ('4', '000001', null, '1', null, '2', null, null);
-INSERT INTO `hdrpengangkutan` VALUES ('4', '000002', null, '', null, '', null, null);
-INSERT INTO `hdrpengangkutan` VALUES ('4', '000003', null, 'TRUK', null, '41000', null, null);
-INSERT INTO `hdrpengangkutan` VALUES ('5', '000001', null, '2', null, '1', null, null);
-INSERT INTO `hdrpengangkutan` VALUES ('5', '000002', null, '', null, '', null, null);
-INSERT INTO `hdrpengangkutan` VALUES ('6', '000.00', null, '2', null, '1', null, null);
-INSERT INTO `hdrpengangkutan` VALUES ('6', '000.11', null, '2', null, '1', null, null);
-INSERT INTO `hdrpengangkutan` VALUES ('6', '000001', null, '12', null, '2', null, null);
-INSERT INTO `hdrpengangkutan` VALUES ('6', '000002', null, '', null, '', null, null);
-INSERT INTO `hdrpengangkutan` VALUES ('7', '000001', '1', null, '', '189', 'US', '0000-00-00');
-INSERT INTO `hdrpengangkutan` VALUES ('7', '000002', '0', null, '', '', '', '0000-00-00');
-INSERT INTO `hdrpengangkutan` VALUES ('8', '000001', null, '2', null, '1', null, null);
-INSERT INTO `hdrpengangkutan` VALUES ('8', '000002', null, 'Truk', null, 'B201', null, null);
-INSERT INTO `hdrpengangkutan` VALUES ('8', '000003', null, '', null, '', null, null);
-INSERT INTO `hdrpengangkutan` VALUES ('8', '000004', null, '12', null, '22', null, null);
-INSERT INTO `hdrpengangkutan` VALUES ('8', '111111', null, 'D100', null, '333', null, null);
-INSERT INTO `hdrpengangkutan` VALUES ('9', '000001', null, '2', null, '1', null, null);
-INSERT INTO `hdrpengangkutan` VALUES ('9', '000002', null, '', null, '', null, null);
-INSERT INTO `hdrpengangkutan` VALUES ('9', '000003', null, 'Truk', null, 'D 153', null, null);
-
--- ----------------------------
--- Table structure for `hdrperdagangan`
--- ----------------------------
-DROP TABLE IF EXISTS `hdrperdagangan`;
-CREATE TABLE `hdrperdagangan` (
-  `DokKdBc` tinyint(1) NOT NULL DEFAULT '0',
-  `CAR` varchar(6) NOT NULL DEFAULT '',
-  `KdDaerah` varchar(4) DEFAULT NULL,
-  `KdNegaraEkspor` varchar(2) DEFAULT NULL,
-  `KdCrSerahBrg` varchar(3) DEFAULT NULL,
-  PRIMARY KEY (`DokKdBc`,`CAR`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of hdrperdagangan
--- ----------------------------
-INSERT INTO `hdrperdagangan` VALUES ('7', '000001', '3200', 'US', 'FOB');
-INSERT INTO `hdrperdagangan` VALUES ('7', '000002', '', '', '');
-
--- ----------------------------
--- Table structure for `hdrpetikemas`
--- ----------------------------
-DROP TABLE IF EXISTS `hdrpetikemas`;
-CREATE TABLE `hdrpetikemas` (
-  `DokKdBc` tinyint(1) NOT NULL DEFAULT '0',
-  `CAR` varchar(6) NOT NULL DEFAULT '',
-  `NoUrut` tinyint(2) NOT NULL DEFAULT '0',
-  `Merk` varchar(15) DEFAULT NULL,
-  `Nomor` varchar(10) DEFAULT NULL,
-  `Ukuran` varchar(10) DEFAULT NULL,
-  `Tipe` varchar(15) DEFAULT NULL,
-  PRIMARY KEY (`DokKdBc`,`CAR`,`NoUrut`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of hdrpetikemas
--- ----------------------------
-INSERT INTO `hdrpetikemas` VALUES ('1', '000700', '1', 'FCLU', '2037740', '20 Feet', 'FCL');
-INSERT INTO `hdrpetikemas` VALUES ('7', '000001', '1', 'fcl', '88', '89', '1');
-
--- ----------------------------
--- Table structure for `hdrtransaksi`
--- ----------------------------
-DROP TABLE IF EXISTS `hdrtransaksi`;
-CREATE TABLE `hdrtransaksi` (
-  `DokKdBc` tinyint(1) NOT NULL DEFAULT '0',
-  `CAR` varchar(6) NOT NULL DEFAULT '',
-  `KdVal` varchar(3) DEFAULT NULL,
-  `NDPBM` decimal(12,2) DEFAULT '1.00',
-  `Freight` decimal(12,2) DEFAULT NULL,
-  `AsLNDN` decimal(12,2) DEFAULT NULL,
-  `FOB` decimal(12,2) DEFAULT NULL,
-  `CIF` decimal(12,2) DEFAULT NULL,
-  `CIFUSD` decimal(12,2) NOT NULL,
-  `HrgSerah` decimal(12,2) DEFAULT NULL,
-  PRIMARY KEY (`DokKdBc`,`CAR`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of hdrtransaksi
--- ----------------------------
-INSERT INTO `hdrtransaksi` VALUES ('0', '', '', '1.00', null, null, null, '0.00', '0.00', null);
-INSERT INTO `hdrtransaksi` VALUES ('1', '000700', 'USD', '9203.00', '0.00', '0.00', '0.00', '128002686.00', '0.00', '0.00');
-INSERT INTO `hdrtransaksi` VALUES ('1', '000701', 'USD', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00');
-INSERT INTO `hdrtransaksi` VALUES ('3', '000001', 'USD', '9409.00', '0.00', '0.00', '0.00', '19149197.00', '0.00', '293512254.00');
-INSERT INTO `hdrtransaksi` VALUES ('3', '000002', 'USD', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00');
-INSERT INTO `hdrtransaksi` VALUES ('3', '201..2', 'USD', '2.00', '0.00', '0.00', '0.00', '1.00', '0.00', '1.00');
-INSERT INTO `hdrtransaksi` VALUES ('3', '201.20', 'USD', '2.00', '0.00', '0.00', '0.00', '1.00', '0.00', '1.00');
-INSERT INTO `hdrtransaksi` VALUES ('3', '201207', 'USD', '2.00', '0.00', '0.00', '0.00', '1.00', '0.00', '1.00');
-INSERT INTO `hdrtransaksi` VALUES ('4', '000001', 'USD', '2.00', null, null, null, '2.00', '0.00', null);
-INSERT INTO `hdrtransaksi` VALUES ('4', '000002', 'USD', '0.00', null, null, null, '0.00', '0.00', null);
-INSERT INTO `hdrtransaksi` VALUES ('4', '000003', 'USD', '0.00', null, null, null, '0.00', '0.00', null);
-INSERT INTO `hdrtransaksi` VALUES ('5', '000001', 'USD', '1.00', null, null, null, '2.00', '0.00', null);
-INSERT INTO `hdrtransaksi` VALUES ('5', '000002', 'USD', '1.00', null, null, null, '0.00', '0.00', null);
-INSERT INTO `hdrtransaksi` VALUES ('6', '000.00', 'USD', '0.00', null, null, null, '0.00', '0.00', '0.00');
-INSERT INTO `hdrtransaksi` VALUES ('6', '000.11', 'USD', '0.00', null, null, null, '2.00', '0.00', '0.00');
-INSERT INTO `hdrtransaksi` VALUES ('6', '000001', 'USD', '0.00', null, null, null, '1.00', '0.00', '1.00');
-INSERT INTO `hdrtransaksi` VALUES ('6', '000002', 'USD', '0.00', null, null, null, '0.00', '0.00', '0.00');
-INSERT INTO `hdrtransaksi` VALUES ('7', '000001', 'USD', '0.00', '0.00', '0.00', '684.00', '0.00', '0.00', '0.00');
-INSERT INTO `hdrtransaksi` VALUES ('7', '000002', 'USD', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00');
-INSERT INTO `hdrtransaksi` VALUES ('8', '000001', 'Rp', '1.00', null, null, null, null, '0.00', '2.00');
-INSERT INTO `hdrtransaksi` VALUES ('8', '000002', 'Rp', '1.00', null, null, null, null, '0.00', '300.00');
-INSERT INTO `hdrtransaksi` VALUES ('8', '000003', 'Rp', '1.00', null, null, null, null, '0.00', '0.00');
-INSERT INTO `hdrtransaksi` VALUES ('8', '000004', 'Rp', '1.00', null, null, null, null, '0.00', '0.00');
-INSERT INTO `hdrtransaksi` VALUES ('8', '111111', 'Rp', '1.00', null, null, null, null, '0.00', '200000.00');
-INSERT INTO `hdrtransaksi` VALUES ('9', '000001', 'Rp', '1.00', null, null, null, null, '0.00', '2.00');
-INSERT INTO `hdrtransaksi` VALUES ('9', '000002', 'Rp', '1.00', null, null, null, null, '0.00', '0.00');
-INSERT INTO `hdrtransaksi` VALUES ('9', '000003', 'Rp', '1.00', null, null, null, null, '0.00', '0.00');
-
--- ----------------------------
--- Table structure for `header`
--- ----------------------------
-DROP TABLE IF EXISTS `header`;
-CREATE TABLE `header` (
-  `DokKdBc` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Kode Dokumen BC',
-  `CAR` varchar(6) NOT NULL DEFAULT '' COMMENT 'Nomor Pengajuan',
-  `NoDaf` varchar(8) NOT NULL DEFAULT '' COMMENT 'Nomor Pendaftaran',
-  `TgDaf` date DEFAULT NULL COMMENT 'Tanggal Pendaftaran',
-  `KdTp` tinyint(1) DEFAULT NULL COMMENT 'Npwp Perusahaan Asal',
-  `KdKpbcAsal` varchar(6) DEFAULT NULL COMMENT 'Kantor Pabean Asal',
-  `KdJnsEkspor` varchar(15) DEFAULT NULL,
-  `KdKatEkspor` varchar(20) DEFAULT NULL,
-  `KdKpbcTuj` varchar(6) DEFAULT NULL COMMENT 'Kantor Pabean Tujuan',
-  `KdJnsBarang` int(2) DEFAULT NULL,
-  `KdCrDagang` varchar(15) DEFAULT NULL,
-  `KdCrBayar` varchar(15) DEFAULT NULL,
-  `KdKpBongkar` varchar(6) DEFAULT NULL,
-  `KdKpPengawas` varchar(6) DEFAULT NULL,
-  `KdJnsTpbAsal` tinyint(1) DEFAULT NULL COMMENT 'Kode Jenis TPB Asal',
-  `KdJnsTpbTuj` tinyint(1) DEFAULT NULL COMMENT 'Kode Jenis TPB Tujuan',
-  `JnsBc25` enum('2','1') DEFAULT NULL,
-  `KondisiBrg` enum('2','1') DEFAULT NULL,
-  `NmPpjk` varchar(20) DEFAULT NULL,
-  `NmTuj` varchar(50) DEFAULT NULL,
-  `KdTimbun` varchar(5) DEFAULT NULL,
-  `KdLokPeriksa` varchar(5) DEFAULT NULL,
-  `KdKpPeriksa` varchar(6) DEFAULT NULL,
-  `KdDaerahAsalBrg` varchar(6) DEFAULT NULL,
-  `NoSegel` varchar(6) DEFAULT NULL,
-  `JnsSegel` varchar(15) DEFAULT NULL,
-  `CatBcTuj` varchar(250) DEFAULT NULL COMMENT 'Catatan BC Tujuan',
-  `MerekKemas` varchar(50) DEFAULT NULL,
-  `KdKemas` varchar(3) DEFAULT NULL,
-  `JmlKemas` int(12) DEFAULT NULL,
-  `VOL` decimal(12,4) DEFAULT NULL,
-  `BRUTO` decimal(12,2) DEFAULT NULL,
-  `NETTO` decimal(12,2) DEFAULT NULL,
-  `Total` decimal(12,2) DEFAULT NULL,
-  `TotalH` decimal(12,2) DEFAULT NULL,
-  `NilaiBkRp` decimal(12,2) DEFAULT NULL,
-  `NmPengusaha` varchar(30) DEFAULT NULL,
-  `NipPengusaha` varchar(20) DEFAULT NULL,
-  `NmPejabat` varchar(30) DEFAULT NULL,
-  `NipPejabat` varchar(20) DEFAULT NULL,
-  `ref_id` int(10) DEFAULT NULL,
-  `ket` enum('in','out') DEFAULT NULL,
-  PRIMARY KEY (`DokKdBc`,`CAR`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of header
--- ----------------------------
-INSERT INTO `header` VALUES ('1', '000700', '000700', '2012-05-07', '2', '050800', null, null, null, '2', null, null, '040300', '050800', '1', null, null, null, '', 'HANSOLL TEXTILE LTD.', 'UTPK', null, null, null, null, null, null, 'FCLU', 'CT', '101', null, '9999999999.99', '9999999999.99', null, null, null, 'LEE JONG HYUK', 'a', 'kikin', 'b1', null, null);
-INSERT INTO `header` VALUES ('1', '000701', '000701', '2012-10-31', '0', '050800', null, null, null, '0', null, null, '050800', '050800', '0', null, null, null, '', 'PT. DIHEN BERSAMA', '', null, null, null, null, null, null, '', '', '0', null, '0.00', '0.00', '0.00', '0.00', null, 'Mr. Y. Tobusawa', '_', '', '', '2', null);
-INSERT INTO `header` VALUES ('3', '000001', '000001', '2012-07-28', '0', '050800', null, null, '', null, null, null, null, null, '1', '0', '1', '2', null, 'THE GAP INC.,', null, null, null, null, '', '', '', '2', 'AE', '1', '2.0000', '1.00', '2.00', '1.00', '2.00', null, 'LEE JONG HYUK', '_', '1', '2', null, null);
-INSERT INTO `header` VALUES ('3', '000002', '000002', '2012-10-31', '0', '050800', null, null, '', null, null, null, null, null, '2', '0', '1', '1', null, '', null, null, null, null, '', '', '', '', '', '0', '0.0000', '0.00', '0.00', '0.00', '0.00', null, 'Mr. Y. Tobusawa', '_', '', '', '7', null);
-INSERT INTO `header` VALUES ('4', '000001', '000001', '2012-07-31', '2', '050800', null, null, null, null, null, null, null, null, '1', null, null, null, null, 'PT. DK INTERNATIONAL', null, null, null, null, null, null, null, '1', 'AE', '2', '1.0000', '2.00', '1.00', '7.00', null, null, 'LEE JONG HYUK', '_', '1', '2', null, null);
-INSERT INTO `header` VALUES ('4', '000002', '000002', '2012-10-30', '2', '050800', null, null, null, null, null, null, null, null, '0', null, null, null, null, 'PARAMOUNT BED', null, null, null, null, null, null, null, '', '', '0', '0.0000', '0.00', '0.00', '0.00', null, null, 'Mr. Y. Tobusawa', '_', '', '', '7', null);
-INSERT INTO `header` VALUES ('4', '000003', '000003', '2012-12-12', '2', '050800', null, null, null, null, null, null, null, null, '1', null, null, null, null, 'BUANA BARU JAYA', null, null, null, null, null, null, null, '', '', '0', '0.0000', '0.00', '0.00', '0.00', null, null, 'Mr. Y. Tobusawa', '_', '', '', '5', null);
-INSERT INTO `header` VALUES ('5', '000001', '000001', '2012-07-31', '6', '050800', null, null, null, null, null, null, null, null, '1', null, null, null, null, 'HANSOLL TEXTILE LTD.', null, null, null, null, null, null, null, '2', 'AE', '1', '2.0000', '1.00', '2.00', '8.00', null, null, 'LEE JONG HYUK', '_', '2', '1', null, null);
-INSERT INTO `header` VALUES ('5', '000002', '000002', '2012-10-30', '6', '050800', null, null, null, null, null, null, null, null, '0', null, null, null, null, 'PT. ALUMINDO LIGHT METAL INDUSTRY', null, null, null, null, null, null, null, '', '', '0', '0.0000', '0.00', '0.00', '0.00', null, null, 'Mr. Y. Tobusawa', '_', '', '', '1', null);
-INSERT INTO `header` VALUES ('6', '000001', '000001', '2012-12-12', '1', '050800', null, null, '000000', null, null, null, null, null, '1', '1', null, null, null, 'BUANA BARU JAYA', null, null, null, null, '', 'Kertas', '2', '2', 'AE', '1', '0.0000', '5.00', '4.00', null, null, null, 'Mr. Y. Tobusawa', '_', '', '', '0', 'in');
-INSERT INTO `header` VALUES ('7', '000001', '000001', '2012-07-22', null, '040300', '1', '12', null, null, '2', '9', null, '', null, null, null, null, '', 'THE GAP INC.,', null, '1', '050800', null, null, null, null, '', '', '0', '0.0000', '0.00', '0.00', null, null, null, 'LEE JONG HYUK', '_', '', '', null, null);
-INSERT INTO `header` VALUES ('7', '000002', '000002', '2012-10-31', null, '040300', '1', '1', null, null, '1', '1', null, '', null, null, null, null, '', 'DENON', null, '', '', null, null, null, null, '', '', '0', '0.0000', '0.00', '0.00', null, null, null, 'Mr. Y. Tobusawa', '_', '', '', '2', null);
-INSERT INTO `header` VALUES ('8', '000001', '000001', '2012-08-01', '2', '050800', null, null, '', null, null, null, null, null, '1', '0', '', '', null, 'PT. LUCAS ABADI', null, null, null, null, '', '', '', '1', 'AP', '2', '2.0000', '1.00', '2.00', '0.00', '0.00', null, 'LEE JONG HYUK', '_', '1', '2', null, null);
-INSERT INTO `header` VALUES ('8', '000002', '000002', '2012-10-29', '1', '050800', null, null, null, null, null, null, null, null, '1', null, null, null, null, 'PT. DIHEN BERSAMA', null, null, null, null, null, null, null, 'Tes', 'AM', '4', '0.0000', '310.00', '300.00', null, null, null, 'Mr. Y. Tobusawa', '_', 'Dani', '111', '2', null);
-INSERT INTO `header` VALUES ('8', '000003', '000003', '2012-11-26', '0', '050800', null, null, null, null, null, null, null, null, '0', null, null, null, null, 'PT. DIHEN BERSAMA', null, null, null, null, null, null, null, '', '', '0', '0.0000', '0.00', '0.00', null, null, null, 'Mr. Y. Tobusawa', '_', '', '', '2', null);
-INSERT INTO `header` VALUES ('8', '000004', '000004', '2012-12-12', '2', '050800', null, null, null, null, null, null, null, null, '1', null, null, null, null, 'BUANA BARU JAYA', null, null, null, null, null, null, null, '', '', '0', '0.0000', '0.00', '0.00', null, null, null, 'Mr. Y. Tobusawa', '_', '', '', '1', null);
-INSERT INTO `header` VALUES ('8', '111111', '111111', '2012-12-12', '1', '050800', null, null, null, null, null, null, null, null, '1', null, null, null, null, 'BUANA BARU JAYA', null, null, null, null, null, null, null, 'F1', 'AE', '10', '0.0000', '500.00', '480.00', null, null, null, 'Mr. Y. Tobusawa', '_', '', '', '2', null);
-INSERT INTO `header` VALUES ('9', '000001', '000001', '2012-08-02', '1', '050800', null, null, null, null, null, null, null, null, '2', null, null, null, null, 'PT. KAILO SUMBER KAS', null, null, null, null, null, null, null, '1', 'BB', '2', '1.0000', '2.00', '1.00', null, null, null, 'LEE JONG HYUK', '_', '1', '2', null, null);
-INSERT INTO `header` VALUES ('9', '000002', '000002', '2012-10-30', '5', '050800', null, null, null, null, null, null, null, null, '1', null, null, null, null, 'HITACHI', null, null, null, null, null, null, null, '', '', '0', '0.0000', '0.00', '0.00', null, null, null, 'Mr. Y. Tobusawa', '_', '', '', '7', null);
-INSERT INTO `header` VALUES ('9', '000003', '000003', '2012-12-12', '5', '050800', null, null, null, null, null, null, null, null, '1', null, null, null, null, 'CV. Jaya Mulya Mandiri', null, null, null, null, null, null, null, '1', 'AM', '10', '0.0000', '400.00', '380.00', null, null, null, 'Mr. Y. Tobusawa', '_', '', '', '6', null);
 
 -- ----------------------------
 -- Table structure for `jenis_barang`
@@ -1719,7 +1164,7 @@ CREATE TABLE `log` (
   `nama_user` varchar(20) DEFAULT NULL,
   `ket` text,
   PRIMARY KEY (`no`)
-) ENGINE=InnoDB AUTO_INCREMENT=966 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=982 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of log
@@ -2169,6 +1614,22 @@ INSERT INTO `log` VALUES ('962', '2012-12-25 23:16:43', 'admin', 'Edit delivery 
 INSERT INTO `log` VALUES ('963', '2012-12-25 23:44:13', 'admin', 'Edit matin 2');
 INSERT INTO `log` VALUES ('964', '2012-12-25 23:46:09', 'admin', 'Add initial balance machine & office equipment 5 2012-11-29 12');
 INSERT INTO `log` VALUES ('965', '2012-12-25 23:47:04', 'admin', 'Add scrap in 4');
+INSERT INTO `log` VALUES ('966', '2012-12-26 08:56:55', 'admin', 'login');
+INSERT INTO `log` VALUES ('967', '2013-01-02 12:38:35', 'admin', 'login');
+INSERT INTO `log` VALUES ('968', '2013-01-02 12:46:00', 'admin', 'Delete outgoing material 6');
+INSERT INTO `log` VALUES ('969', '2013-01-02 12:46:09', 'admin', 'Delete outgoing material 5');
+INSERT INTO `log` VALUES ('970', '2013-01-02 12:46:41', 'admin', 'Add outgoing material 9');
+INSERT INTO `log` VALUES ('971', '2013-01-06 22:49:54', 'admin', 'login');
+INSERT INTO `log` VALUES ('972', '2013-01-07 00:09:28', 'admin', 'login');
+INSERT INTO `log` VALUES ('973', '2013-01-08 20:59:25', 'admin', 'login');
+INSERT INTO `log` VALUES ('974', '2013-01-08 22:57:37', 'admin', 'login');
+INSERT INTO `log` VALUES ('975', '2013-01-09 20:41:14', 'admin', 'login');
+INSERT INTO `log` VALUES ('976', '2013-01-09 21:18:19', 'admin', 'tambah data unit of items MT');
+INSERT INTO `log` VALUES ('977', '2013-01-09 21:18:28', 'admin', 'tambah data unit of items EA');
+INSERT INTO `log` VALUES ('978', '2013-01-09 22:48:43', 'admin', 'Edit outgoing material 17');
+INSERT INTO `log` VALUES ('979', '2013-01-09 23:01:10', 'admin', 'Edit matin 7');
+INSERT INTO `log` VALUES ('980', '2013-01-09 23:38:09', 'admin', 'Edit outgoing material 17');
+INSERT INTO `log` VALUES ('981', '2013-01-09 17:40:58', 'admin', 'logout');
 
 -- ----------------------------
 -- Table structure for `mat_group`
@@ -2201,9 +1662,9 @@ CREATE TABLE `mat_incdet` (
   `matin_id` int(10) NOT NULL DEFAULT '0' COMMENT 'Nomor ID Transaksi Incoming Material',
   `child_no` int(10) NOT NULL DEFAULT '0' COMMENT 'Nomor Item di Transaksi Detail',
   `mat_id` varchar(20) NOT NULL DEFAULT '0' COMMENT 'ID Material Yang Masuk',
-  `weight` decimal(12,4) DEFAULT NULL,
+  `weight` decimal(12,2) DEFAULT NULL,
   `qty` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT 'Jumlah Quantity Saat Masuk',
-  `price` decimal(12,2) DEFAULT NULL,
+  `price` decimal(12,4) DEFAULT NULL,
   PRIMARY KEY (`matin_id`,`child_no`),
   CONSTRAINT `mat_incdet_ibfk_1` FOREIGN KEY (`matin_id`) REFERENCES `mat_inchdr` (`matin_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Detail Transaksi Incoming Material';
@@ -2211,12 +1672,29 @@ CREATE TABLE `mat_incdet` (
 -- ----------------------------
 -- Records of mat_incdet
 -- ----------------------------
-INSERT INTO `mat_incdet` VALUES ('1', '1', 'RAC-0001', null, '10.00', '10.00');
-INSERT INTO `mat_incdet` VALUES ('2', '1', 'RAC-0002', null, '200.00', '1000.00');
-INSERT INTO `mat_incdet` VALUES ('2', '2', 'RAC-0003', null, '200.00', '100.00');
-INSERT INTO `mat_incdet` VALUES ('2', '3', 'RAC-0004', null, '100.00', '200.00');
-INSERT INTO `mat_incdet` VALUES ('3', '1', 'ST', null, '500.00', null);
-INSERT INTO `mat_incdet` VALUES ('4', '1', 'ST', null, '20.00', null);
+INSERT INTO `mat_incdet` VALUES ('1', '1', 'HA02-00049AA', null, '9760.00', '2495.5756');
+INSERT INTO `mat_incdet` VALUES ('1', '2', 'HA03-00031AA', null, '2100000.00', '29.3188');
+INSERT INTO `mat_incdet` VALUES ('1', '3', 'HA04-00240AA', null, '10000.00', '153.2346');
+INSERT INTO `mat_incdet` VALUES ('1', '4', 'HA04-00236AA', null, '140000.00', '86.8742');
+INSERT INTO `mat_incdet` VALUES ('1', '5', 'HA04-00237AA', null, '134000.00', '126.6908');
+INSERT INTO `mat_incdet` VALUES ('1', '6', 'HA04-00238AA', null, '1000.00', '146.0157');
+INSERT INTO `mat_incdet` VALUES ('1', '7', 'HA04-00239AA', null, '50000.00', '153.2365');
+INSERT INTO `mat_incdet` VALUES ('2', '1', 'HA04-00102AA', null, '350000.00', '102.2688');
+INSERT INTO `mat_incdet` VALUES ('2', '2', 'HA03-00012AA', null, '2800000.00', '22.1904');
+INSERT INTO `mat_incdet` VALUES ('3', '1', 'HA03-00024AA', null, '2800000.00', '25.0848');
+INSERT INTO `mat_incdet` VALUES ('5', '1', 'HA01-00001AA', null, '100.10', '0.0000');
+INSERT INTO `mat_incdet` VALUES ('5', '2', 'HA01-00006AA', null, '100.00', '0.0000');
+INSERT INTO `mat_incdet` VALUES ('6', '1', 'HA01-00001AA', null, '2000.00', '0.0000');
+INSERT INTO `mat_incdet` VALUES ('6', '2', 'HA01-00008AA', null, '2500.00', '0.0000');
+INSERT INTO `mat_incdet` VALUES ('7', '1', 'HA03-00023AA', null, '1700.00', '25.0600');
+INSERT INTO `mat_incdet` VALUES ('7', '2', 'HA03-00012AA', null, '1720.00', '22.1700');
+INSERT INTO `mat_incdet` VALUES ('7', '3', 'HA04-00090AA', null, '150000.00', '145.5300');
+INSERT INTO `mat_incdet` VALUES ('7', '4', 'HA04-00102AA', null, '150000.00', '102.1600');
+INSERT INTO `mat_incdet` VALUES ('12', '1', 'HA04-00102AA', null, '60000.00', '102.2158');
+INSERT INTO `mat_incdet` VALUES ('12', '2', 'HA04-00090AA', null, '60000.00', '145.6093');
+INSERT INTO `mat_incdet` VALUES ('12', '3', 'HA03-00024AA', null, '480000.00', '25.0718');
+INSERT INTO `mat_incdet` VALUES ('12', '4', 'HA03-00012AA', null, '480000.00', '22.1789');
+INSERT INTO `mat_incdet` VALUES ('18', '1', 'HA02-00049AA', null, '10065.00', '2499.4675');
 
 -- ----------------------------
 -- Table structure for `mat_inchdr`
@@ -2236,20 +1714,25 @@ CREATE TABLE `mat_inchdr` (
   `supl_do` varchar(20) NOT NULL DEFAULT '' COMMENT 'Nomor Surat Jalan dari Supplier',
   `supl_inv` varchar(20) DEFAULT NULL,
   `KdJnsDok` tinyint(1) DEFAULT NULL,
-  `CAR` varchar(6) DEFAULT NULL,
+  `NoDaf` varchar(6) DEFAULT NULL,
+  `TgDaf` date DEFAULT NULL,
   `tot_qty` decimal(9,0) NOT NULL DEFAULT '0' COMMENT 'Jumlah Dalam Bentuang Rupiah',
-  `tot_amount` decimal(12,2) DEFAULT NULL,
+  `tot_amount` decimal(15,4) DEFAULT NULL,
   `notes` varchar(80) NOT NULL DEFAULT '' COMMENT 'Catatan dari Kedatangan Barang',
   PRIMARY KEY (`matin_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 COMMENT='Header Incoming Material';
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1 COMMENT='Header Incoming Material';
 
 -- ----------------------------
 -- Records of mat_inchdr
 -- ----------------------------
-INSERT INTO `mat_inchdr` VALUES ('1', '0', '001', '2012-12-12', null, 'Rp', '0', '001', '0', 'BUANA BARU JAYA', 'DO001', 'Inv001', '6', null, '0', null, 'tes');
-INSERT INTO `mat_inchdr` VALUES ('2', '0', 'inc/2012/12/01', '2012-12-12', null, 'Rp', '0', '00001', '0', 'CV. Anisa Mulya', '0001', '0001', '1', null, '0', null, 'TES');
-INSERT INTO `mat_inchdr` VALUES ('3', '3', '', '2012-12-24', '12', null, '0', null, '0', null, '', null, null, null, '0', null, 'tess...');
-INSERT INTO `mat_inchdr` VALUES ('4', '3', '', '2012-12-18', '12', null, '0', null, '0', null, '', null, null, null, '0', null, '');
+INSERT INTO `mat_inchdr` VALUES ('1', '0', 'PM1211040001', '2012-11-04', null, null, '0', 'PO1211040001', '0', 'HAN KYUNG COMPONENT TRADING', '', null, null, null, null, '0', null, '');
+INSERT INTO `mat_inchdr` VALUES ('2', '0', 'PM1212110002', '2012-12-11', null, null, '0', 'PO1212130003', '0', 'Hyubjin Cable(Tianjin)', '', null, null, null, null, '0', null, '');
+INSERT INTO `mat_inchdr` VALUES ('3', '0', 'PM1212110003', '2012-12-11', null, null, '0', 'PO1212140001', '0', 'Hyubjin Cable(Tianjin)', '', null, null, null, null, '0', null, '');
+INSERT INTO `mat_inchdr` VALUES ('5', '0', 'PM1212210005', '2012-12-21', null, null, '0', 'PG1212210005', '0', 'Chemtronics(Korea)', '', null, null, null, null, '0', null, '');
+INSERT INTO `mat_inchdr` VALUES ('6', '0', 'PM1212210006', '2012-12-21', null, null, '0', 'PO1212210003', '0', 'Chemtronics(Korea)', '', null, null, null, null, '0', null, '');
+INSERT INTO `mat_inchdr` VALUES ('7', '0', 'PM1211010007', '2012-11-01', null, 'USD', '0', 'PO1211010001', '0', 'Hyubjin Cable(Tianjin)', '1', '2', '8', '4040', '2013-01-09', '0', null, '');
+INSERT INTO `mat_inchdr` VALUES ('12', '0', 'PM1212130012', '2012-12-13', null, null, '0', 'PO1212140002', '0', 'Hyubjin Cable(Tianjin)', '', null, null, null, null, '0', null, '');
+INSERT INTO `mat_inchdr` VALUES ('18', '0', 'PM1212140018', '2012-12-14', null, null, '0', 'PO1212140003', '0', 'Hyubjin Cable(Tianjin)', '', null, null, null, null, '0', null, '');
 
 -- ----------------------------
 -- Table structure for `mat_opnamedet`
@@ -2305,7 +1788,7 @@ CREATE TABLE `mat_outdet` (
   `mat_id` varchar(20) NOT NULL DEFAULT '0' COMMENT 'ID Material Yang Dikeluarkan',
   `weight` decimal(9,2) DEFAULT NULL,
   `qty` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT 'Jumlah Quantity yang dikeluarkan',
-  `price` decimal(12,4) DEFAULT NULL,
+  `price` decimal(12,5) DEFAULT NULL,
   PRIMARY KEY (`matout_id`,`child_no`),
   KEY `MAT_ID` (`matout_id`,`child_no`),
   CONSTRAINT `mat_outdet_ibfk_1` FOREIGN KEY (`matout_id`) REFERENCES `mat_outhdr` (`matout_id`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -2314,10 +1797,17 @@ CREATE TABLE `mat_outdet` (
 -- ----------------------------
 -- Records of mat_outdet
 -- ----------------------------
-INSERT INTO `mat_outdet` VALUES ('5', '1', 'RAC-0002', null, '200.00', null);
-INSERT INTO `mat_outdet` VALUES ('6', '1', 'RAC-0001', null, '200.00', null);
-INSERT INTO `mat_outdet` VALUES ('7', '1', 'ST', null, '222.00', null);
-INSERT INTO `mat_outdet` VALUES ('8', '1', 'FAB-0001', '1.00', '2.00', '3.0000');
+INSERT INTO `mat_outdet` VALUES ('17', '1', 'HA02-00049AA', null, '1000.00', null);
+INSERT INTO `mat_outdet` VALUES ('17', '2', 'HA04-00102AA', null, '1000.00', null);
+INSERT INTO `mat_outdet` VALUES ('17', '3', 'HA04-00102AA', null, '1000.00', null);
+INSERT INTO `mat_outdet` VALUES ('36', '1', 'HA03-00011AA', null, '10.00', '10.56550');
+INSERT INTO `mat_outdet` VALUES ('36', '2', 'HA01-00007AA', null, '10.00', '1003.72250');
+INSERT INTO `mat_outdet` VALUES ('36', '3', 'HA02-00055AA', null, '10.00', '455.28750');
+INSERT INTO `mat_outdet` VALUES ('36', '4', 'HA01-00012AA', null, '10.00', '1440.75000');
+INSERT INTO `mat_outdet` VALUES ('42', '1', 'HA02-00049AA', null, '0.00', '0.00000');
+INSERT INTO `mat_outdet` VALUES ('42', '2', 'HA04-00102AA', null, '0.00', '0.00000');
+INSERT INTO `mat_outdet` VALUES ('43', '1', 'HA02-00055AA', null, '0.00', '0.00000');
+INSERT INTO `mat_outdet` VALUES ('43', '2', 'HA03-00011AA', null, '0.00', '0.00000');
 
 -- ----------------------------
 -- Table structure for `mat_outhdr`
@@ -2325,30 +1815,31 @@ INSERT INTO `mat_outdet` VALUES ('8', '1', 'FAB-0001', '1.00', '2.00', '3.0000')
 DROP TABLE IF EXISTS `mat_outhdr`;
 CREATE TABLE `mat_outhdr` (
   `matout_id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'ID Transaksi OutGoing Material',
+  `matout_type` enum('0','1','2','3') DEFAULT '0' COMMENT '0=Consumption, 1=Return, 2=From Production, 3=scrap',
   `matout_no` varchar(20) NOT NULL DEFAULT '' COMMENT 'Nomor Transaksi Pengeluaran',
   `matout_date` date NOT NULL COMMENT 'Tanggal dan Jam PengeluaranMaterial',
-  `matout_type` enum('0','1','2','3') DEFAULT NULL COMMENT '0=Consumption, 1=Return, 2=From Production, 3=scrap',
   `mat_type` int(2) DEFAULT NULL,
   `ref_id` int(10) DEFAULT NULL,
   `ref_no` varchar(20) DEFAULT NULL,
-  `cust` varchar(50) DEFAULT NULL,
-  `vehicle_no` varchar(15) NOT NULL DEFAULT '' COMMENT 'Nomor Polisi Kendaraan',
-  `driver` varchar(30) NOT NULL DEFAULT '' COMMENT 'Nama Sopir Pengirim',
+  `cust` varchar(50) NOT NULL DEFAULT '0' COMMENT 'Digunakan Jika Out Type T',
+  `vehicle_no` varchar(15) NOT NULL DEFAULT '0' COMMENT 'Digunakan Jika Out Type T',
+  `driver` varchar(30) DEFAULT NULL,
   `tot_qty` decimal(12,2) DEFAULT NULL,
-  `tot_amount` decimal(15,2) DEFAULT NULL,
-  `notes` varchar(80) NOT NULL DEFAULT '' COMMENT 'Catatan Pengeluaran',
+  `tot_amount` decimal(15,4) DEFAULT NULL,
+  `notes` char(80) NOT NULL DEFAULT '' COMMENT 'Catatan Pengeluaran',
   `KdJnsDok` tinyint(1) DEFAULT NULL,
-  `CAR` varchar(6) DEFAULT NULL,
+  `NoDaf` varchar(6) DEFAULT NULL,
+  `TgDaf` date DEFAULT NULL,
   PRIMARY KEY (`matout_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1 COMMENT='Header Transaksi Outgoing Material';
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=latin1 COMMENT='Header Transaksi Outgoing Material';
 
 -- ----------------------------
 -- Records of mat_outhdr
 -- ----------------------------
-INSERT INTO `mat_outhdr` VALUES ('5', '001', '2012-12-12', '1', null, null, null, null, '', '', '200.00', null, '', '4', null);
-INSERT INTO `mat_outhdr` VALUES ('6', 'OUT001', '2012-12-12', '1', null, null, null, null, '', '', '200.00', null, '', '9', null);
-INSERT INTO `mat_outhdr` VALUES ('7', 'SSS', '2012-12-22', '3', '12', '0', '', 'PT. Hartono Istana Teknologi', '1', '2', '222.00', null, '222', '3', null);
-INSERT INTO `mat_outhdr` VALUES ('8', 'DO-0001', '2012-12-25', null, '0', '0', 'SO001', 'CV. Jaya Mulya Mandiri', 'D 5962', 'Kikin', '2.00', '6.00', 'tes', '3', null);
+INSERT INTO `mat_outhdr` VALUES ('17', '0', 'OI1211300017', '2012-11-30', null, '0', 'PD1212070010', 'Customer1', '0', null, '3000.00', null, '', '9', '4141', '2013-01-09');
+INSERT INTO `mat_outhdr` VALUES ('36', '0', 'OI1211300036', '2012-11-30', null, null, '', '', '0', null, null, null, '', null, null, null);
+INSERT INTO `mat_outhdr` VALUES ('42', '0', 'OI1211300042', '2012-11-30', null, null, '', '', '0', null, null, null, '', null, null, null);
+INSERT INTO `mat_outhdr` VALUES ('43', '0', 'OI1211300043', '2012-11-30', null, null, '', '', '0', null, null, null, '', null, null, null);
 
 -- ----------------------------
 -- Table structure for `mat_stockcard`
@@ -3495,59 +2986,6 @@ INSERT INTO `mat_warehouse` VALUES ('4', 'WAREHOUSE SCRAP');
 INSERT INTO `mat_warehouse` VALUES ('5', 'OTHERS');
 
 -- ----------------------------
--- Table structure for `mkt_comminvdet`
--- ----------------------------
-DROP TABLE IF EXISTS `mkt_comminvdet`;
-CREATE TABLE `mkt_comminvdet` (
-  `comm_id` int(10) NOT NULL DEFAULT '0' COMMENT 'Id Paking',
-  `child_no` int(10) NOT NULL,
-  `fg_id` varchar(20) DEFAULT NULL,
-  `qty` decimal(8,0) NOT NULL DEFAULT '0' COMMENT 'Jumlah quantity / pasang',
-  `price` decimal(8,3) NOT NULL DEFAULT '0.000' COMMENT 'Jumlah Karton',
-  PRIMARY KEY (`comm_id`,`child_no`),
-  CONSTRAINT `mkt_comminvdet_ibfk_1` FOREIGN KEY (`comm_id`) REFERENCES `mkt_comminvhdr` (`comm_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of mkt_comminvdet
--- ----------------------------
-INSERT INTO `mkt_comminvdet` VALUES ('1', '1', 'LUS23003AY', '100', '200.000');
-
--- ----------------------------
--- Table structure for `mkt_comminvhdr`
--- ----------------------------
-DROP TABLE IF EXISTS `mkt_comminvhdr`;
-CREATE TABLE `mkt_comminvhdr` (
-  `comm_id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'Id Commercial Invoice',
-  `comm_no` varchar(25) CHARACTER SET latin1 NOT NULL DEFAULT '' COMMENT 'Nomor Commercial Invoice',
-  `comm_date` date NOT NULL COMMENT 'Tanggal Commercial Invoice',
-  `do_id` int(10) NOT NULL DEFAULT '0' COMMENT 'ID Delevery Order Yang Dipilih',
-  `payment` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `pol` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `pod` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `container` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `currency` char(5) CHARACTER SET latin1 NOT NULL DEFAULT '''USD''' COMMENT 'Jenis Mata Uang',
-  `vessel` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `voy_no` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `sail_date` date DEFAULT NULL,
-  `fob` decimal(12,2) NOT NULL DEFAULT '0.00' COMMENT 'PPN 10%',
-  `freight` decimal(12,2) NOT NULL COMMENT 'Ongkos Angkut',
-  `insurance` decimal(12,2) NOT NULL COMMENT 'Asuransi',
-  `cnf` decimal(12,2) DEFAULT NULL,
-  `tot_qty` decimal(12,2) NOT NULL DEFAULT '0.00' COMMENT 'Total Quantity',
-  `tot_amount` decimal(14,2) NOT NULL DEFAULT '0.00' COMMENT 'Total Uang',
-  `notify` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `auth_sign` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `notes` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`comm_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- ----------------------------
--- Records of mkt_comminvhdr
--- ----------------------------
-INSERT INTO `mkt_comminvhdr` VALUES ('1', '111', '2012-09-04', '1', 'LC', 'A', 'B', '123456', 'USD', '1', '2', '0000-00-00', '3.00', '4.00', '5.00', '6.00', '100.00', '20000.00', null, null, null);
-
--- ----------------------------
 -- Table structure for `mkt_dodet`
 -- ----------------------------
 DROP TABLE IF EXISTS `mkt_dodet`;
@@ -3583,157 +3021,11 @@ CREATE TABLE `mkt_dohdr` (
   `tot_amount` decimal(15,2) DEFAULT NULL,
   `notes` char(80) NOT NULL DEFAULT '' COMMENT 'Catatan Transaksi Pesanan',
   PRIMARY KEY (`do_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='Table Header Pemesanan dari Customer';
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Table Header Pemesanan dari Customer';
 
 -- ----------------------------
 -- Records of mkt_dohdr
 -- ----------------------------
-
--- ----------------------------
--- Table structure for `mkt_packingdet`
--- ----------------------------
-DROP TABLE IF EXISTS `mkt_packingdet`;
-CREATE TABLE `mkt_packingdet` (
-  `pack_id` int(10) NOT NULL DEFAULT '0' COMMENT 'Id Paking',
-  `child_no` int(10) NOT NULL,
-  `fg_id` varchar(20) DEFAULT NULL,
-  `fromct` int(10) DEFAULT NULL,
-  `toct` int(10) DEFAULT NULL,
-  `qty` decimal(12,2) NOT NULL DEFAULT '0.00' COMMENT 'Jumlah quantity / pasang',
-  `amount` decimal(12,2) DEFAULT NULL,
-  `remark` varchar(40) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '' COMMENT 'Keterangan Detail',
-  PRIMARY KEY (`pack_id`,`child_no`),
-  CONSTRAINT `mkt_packingdet_ibfk_1` FOREIGN KEY (`pack_id`) REFERENCES `mkt_packinghdr` (`pack_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of mkt_packingdet
--- ----------------------------
-
--- ----------------------------
--- Table structure for `mkt_packinghdr`
--- ----------------------------
-DROP TABLE IF EXISTS `mkt_packinghdr`;
-CREATE TABLE `mkt_packinghdr` (
-  `pack_id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'Id Packing',
-  `pack_no` varchar(25) NOT NULL DEFAULT '' COMMENT 'Nomor Packing',
-  `pack_date` date NOT NULL COMMENT 'Tanggal dan Waktu Pengiriman',
-  `comm_id` int(10) NOT NULL DEFAULT '0' COMMENT 'ID Sales Order yang pilih',
-  `tot_ctn` decimal(8,0) NOT NULL DEFAULT '0' COMMENT 'Total Carton',
-  `tot_amount` decimal(12,2) DEFAULT NULL,
-  `size` varchar(100) NOT NULL,
-  `notes` varchar(80) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '' COMMENT 'Keterangan dari Entry Packing',
-  PRIMARY KEY (`pack_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of mkt_packinghdr
--- ----------------------------
-
--- ----------------------------
--- Table structure for `mkt_sorderdet`
--- ----------------------------
-DROP TABLE IF EXISTS `mkt_sorderdet`;
-CREATE TABLE `mkt_sorderdet` (
-  `so_id` int(10) NOT NULL DEFAULT '0' COMMENT 'Nomor ID Transaksi Sales Order',
-  `child_no` int(10) NOT NULL DEFAULT '0' COMMENT 'Nomor Item Detail Transaksi',
-  `fg_id` varchar(20) NOT NULL DEFAULT '0' COMMENT 'Nomor ID Finish Good',
-  `qty` decimal(9,0) NOT NULL DEFAULT '0' COMMENT 'Quantity yang Dipesan',
-  `price` decimal(19,3) NOT NULL DEFAULT '0.000' COMMENT 'Harga Baran Jadi',
-  PRIMARY KEY (`so_id`,`child_no`),
-  CONSTRAINT `mkt_sorderdet_ibfk_1` FOREIGN KEY (`so_id`) REFERENCES `mkt_sorderhdr` (`so_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Detail Transaksi Pemesanan Barang Produk dari Customer';
-
--- ----------------------------
--- Records of mkt_sorderdet
--- ----------------------------
-INSERT INTO `mkt_sorderdet` VALUES ('25', '1', '123', '300', '2.000');
-
--- ----------------------------
--- Table structure for `mkt_sorderhdr`
--- ----------------------------
-DROP TABLE IF EXISTS `mkt_sorderhdr`;
-CREATE TABLE `mkt_sorderhdr` (
-  `so_id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'Nomor ID Transaksi Sales Order',
-  `so_no` varchar(20) NOT NULL DEFAULT '' COMMENT 'Nomor Pesanan Customer',
-  `so_date` date NOT NULL COMMENT 'Tanggal dan Waktu Transaksi',
-  `cust` varchar(50) NOT NULL COMMENT 'Kode Customer',
-  `currency` varchar(3) NOT NULL DEFAULT 'IDR' COMMENT 'Jenis Matauang yang digunakan',
-  `due_date` date NOT NULL,
-  `tot_qty` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT 'Total Qty Pesanan',
-  `tot_amount` decimal(15,2) DEFAULT NULL,
-  `notes` varchar(80) NOT NULL DEFAULT '' COMMENT 'Catatan Transaksi Pesanan',
-  PRIMARY KEY (`so_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1 COMMENT='Table Header Pemesanan dari Customer';
-
--- ----------------------------
--- Records of mkt_sorderhdr
--- ----------------------------
-INSERT INTO `mkt_sorderhdr` VALUES ('25', '002', '2012-09-11', 'DENON', 'USD', '2012-09-13', '300.00', '600.00', '1222');
-
--- ----------------------------
--- Table structure for `mst_bank`
--- ----------------------------
-DROP TABLE IF EXISTS `mst_bank`;
-CREATE TABLE `mst_bank` (
-  `KdBank` varchar(3) NOT NULL DEFAULT '',
-  `NmBank` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`KdBank`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of mst_bank
--- ----------------------------
-INSERT INTO `mst_bank` VALUES ('002', 'Bank BRI');
-INSERT INTO `mst_bank` VALUES ('008', 'Bank Mandiri');
-INSERT INTO `mst_bank` VALUES ('009', 'Bank BNI');
-INSERT INTO `mst_bank` VALUES ('011', 'Bank Danamon');
-INSERT INTO `mst_bank` VALUES ('013', 'Bank Permata');
-INSERT INTO `mst_bank` VALUES ('016', 'Bank BII');
-INSERT INTO `mst_bank` VALUES ('019', 'Bank Panin');
-INSERT INTO `mst_bank` VALUES ('020', 'Bank Arta Niaga Kenc');
-INSERT INTO `mst_bank` VALUES ('022', 'Bank Niaga');
-INSERT INTO `mst_bank` VALUES ('023', 'Bank UOB Buana');
-INSERT INTO `mst_bank` VALUES ('026', 'LippoBank');
-INSERT INTO `mst_bank` VALUES ('028', 'Bank NISP');
-INSERT INTO `mst_bank` VALUES ('050', 'Standard Chartered B');
-INSERT INTO `mst_bank` VALUES ('052', 'ABN AMRO');
-INSERT INTO `mst_bank` VALUES ('093', 'Bank IFI');
-INSERT INTO `mst_bank` VALUES ('097', 'Bank Mayapada');
-INSERT INTO `mst_bank` VALUES ('110', 'Bank Jabar');
-INSERT INTO `mst_bank` VALUES ('111', 'Bank DKI');
-INSERT INTO `mst_bank` VALUES ('112', 'Bank BPD DIY');
-INSERT INTO `mst_bank` VALUES ('114', 'Bank Jatim');
-INSERT INTO `mst_bank` VALUES ('115', 'Bank BPD Jambi');
-INSERT INTO `mst_bank` VALUES ('116', 'Bank BPD Aceh');
-INSERT INTO `mst_bank` VALUES ('117', 'Bank Sumut');
-INSERT INTO `mst_bank` VALUES ('118', 'Bank Nagari');
-INSERT INTO `mst_bank` VALUES ('119', 'Bank Riau');
-INSERT INTO `mst_bank` VALUES ('121', 'Bank Lampung');
-INSERT INTO `mst_bank` VALUES ('122', 'Bank Kalsel');
-INSERT INTO `mst_bank` VALUES ('124', 'Bank BPD Kaltim');
-INSERT INTO `mst_bank` VALUES ('126', 'Bank Sulsel');
-INSERT INTO `mst_bank` VALUES ('127', 'Bank Sulut');
-INSERT INTO `mst_bank` VALUES ('128', 'Bank BPD NTB');
-INSERT INTO `mst_bank` VALUES ('129', 'Bank BPD Bali');
-INSERT INTO `mst_bank` VALUES ('130', 'Bank NTT');
-INSERT INTO `mst_bank` VALUES ('131', 'Bank Maluku');
-INSERT INTO `mst_bank` VALUES ('132', 'Bank Papua');
-INSERT INTO `mst_bank` VALUES ('133', 'Bank Bengkulu');
-INSERT INTO `mst_bank` VALUES ('135', 'Bank Sultra');
-INSERT INTO `mst_bank` VALUES ('145', 'Bank Nusantara Parah');
-INSERT INTO `mst_bank` VALUES ('147', 'Bank Muamalat');
-INSERT INTO `mst_bank` VALUES ('151', 'Bank Mestika');
-INSERT INTO `mst_bank` VALUES ('212', 'Bank Saudara');
-INSERT INTO `mst_bank` VALUES ('426', 'Bank Mega');
-INSERT INTO `mst_bank` VALUES ('441', 'Bank Bukopin');
-INSERT INTO `mst_bank` VALUES ('451', 'Bank Syariah Mandiri');
-INSERT INTO `mst_bank` VALUES ('485', 'Bank Bumiputera');
-INSERT INTO `mst_bank` VALUES ('494', 'Bank Agroniaga');
-INSERT INTO `mst_bank` VALUES ('506', 'Bank Syariah Mega In');
-INSERT INTO `mst_bank` VALUES ('513', 'Bank Ina Perdana');
-INSERT INTO `mst_bank` VALUES ('558', 'Bank Eksekutif');
-INSERT INTO `mst_bank` VALUES ('950', 'Bank Commonwealth');
 
 -- ----------------------------
 -- Table structure for `mst_barang`
@@ -3819,6 +3111,26 @@ INSERT INTO `mst_barang` VALUES ('CM61-00391B', '1', 'PCB ', 'BN64-02101A', '', 
 INSERT INTO `mst_barang` VALUES ('CM61-00395B', '1', 'PCB ', 'BN63-09712A', '', '', null, null, null, null, null, null, '', '', 'KG', '0.11700', '', 'BN63-09712A[12.07.12]', '');
 INSERT INTO `mst_barang` VALUES ('CM61-00396A', '1', 'PCB ', 'BN64-02100A', '', '', null, null, null, null, null, null, '', '', 'KG', '0.05000', '', 'BN64-02100A', '');
 INSERT INTO `mst_barang` VALUES ('CT90-00046A-H2', '1', 'SMT', 'CT1N08E_F MLF28', '', '', null, null, null, null, null, null, '', '', 'KG', '0.22000', '', 'CT1N08E_F 28MLF;ITEK(TEST)', '');
+INSERT INTO `mst_barang` VALUES ('HA01-00001AA', '1', '', 'Cable(UL21520 #30 2C, LTK / De Ryook)', '', '', null, null, null, null, null, null, '', '', 'MT ', '0.00000', '', '', '');
+INSERT INTO `mst_barang` VALUES ('HA01-00006AA', '1', '', 'Cable(UL21520 #30 7C, LTK / De Ryook)', '', '', null, null, null, null, null, null, '', '', 'MT ', '0.00000', '', '', '');
+INSERT INTO `mst_barang` VALUES ('HA01-00007AA', '1', '', 'Cable(UL21520 #30 8C, LTK / De Ryook)', '', '', null, null, null, null, null, null, '', '', 'MT ', '1003.72250', '', '', '');
+INSERT INTO `mst_barang` VALUES ('HA01-00008AA', '1', '', 'Cable(UL21520 #30 9C, LTK / De Ryook)', '', '', null, null, null, null, null, null, '', '', 'MT ', '0.00000', '', '', '');
+INSERT INTO `mst_barang` VALUES ('HA01-00012AA', '1', '', 'Cable(UL21520 #30 16C, LTK / De Ryook)', '', '', null, null, null, null, null, null, '', '', 'MT ', '1440.75000', '', '', '');
+INSERT INTO `mst_barang` VALUES ('HA02-00049AA', '1', '', 'Wire(UL 21016 #28 8C, LTK / ??? / ???)', '', '', null, null, null, null, null, null, '', '', 'MT ', '12.92591', '', '', '');
+INSERT INTO `mst_barang` VALUES ('HA02-00055AA', '1', '', 'Wire(UL10368 #28 RED, YEONHO)', '', '', null, null, null, null, null, null, '', '', 'MT ', '455.28750', '', '', '');
+INSERT INTO `mst_barang` VALUES ('HA03-00011AA', '1', '', 'Terminal(12507TS, YEON HO)', '', '', null, null, null, null, null, null, '', '', 'EA ', '10.56550', '', '', '');
+INSERT INTO `mst_barang` VALUES ('HA03-00012AA', '1', '', 'Terminal(12507TS-G1, YEON HO)', '', '', null, null, null, null, null, null, '', '', 'EA ', '22.16740', '', '', '');
+INSERT INTO `mst_barang` VALUES ('HA03-00023AA', '1', '', 'Terminal(YST200(0.3), YEON HO)', '', '', null, null, null, null, null, null, '', '', 'EA ', '25.05880', '', '', '');
+INSERT INTO `mst_barang` VALUES ('HA03-00024AA', '1', '', 'Terminal(YST200-S, YEON HO)', '', '', null, null, null, null, null, null, '', '', 'EA ', '25.08480', '', '', '');
+INSERT INTO `mst_barang` VALUES ('HA03-00031AA', '1', '', 'Terminal(12505TS, YEON HO)', '', '', null, null, null, null, null, null, '', '', 'EA ', '29.31875', '', '', '');
+INSERT INTO `mst_barang` VALUES ('HA04-00090AA', '1', '', 'Housing(12507HS-H08G1, YEON HO)', '', '', null, null, null, null, null, null, '', '', 'EA ', '145.53380', '', '', '');
+INSERT INTO `mst_barang` VALUES ('HA04-00102AA', '1', '', 'Housing(SMH200-08, YEON HO)', '', '', null, null, null, null, null, null, '', '', 'EA ', '0.00350', '', '', '');
+INSERT INTO `mst_barang` VALUES ('HA04-00236AA', '1', '', 'Housing(12505HS-02, YEON HO)', '', '', null, null, null, null, null, null, '', '', 'EA ', '86.87418', '', '', '');
+INSERT INTO `mst_barang` VALUES ('HA04-00237AA', '1', '', 'Housing(12505HS-04, YEON HO)', '', '', null, null, null, null, null, null, '', '', 'EA ', '126.69079', '', '', '');
+INSERT INTO `mst_barang` VALUES ('HA04-00238AA', '1', '', 'Housing(12505HS-05, YEON HO)', '', '', null, null, null, null, null, null, '', '', 'EA ', '146.01570', '', '', '');
+INSERT INTO `mst_barang` VALUES ('HA04-00239AA', '1', '', 'Housing(12505HS-06, YEON HO)', '', '', null, null, null, null, null, null, '', '', 'EA ', '153.23649', '', '', '');
+INSERT INTO `mst_barang` VALUES ('HA04-00240AA', '1', '', 'Housing(12505HS-07, YEON HO)', '', '', null, null, null, null, null, null, '', '', 'EA ', '153.23456', '', '', '');
+INSERT INTO `mst_barang` VALUES ('HA04-00249AA', '1', '', 'Housing(12505HS-12)', '', '', null, null, null, null, null, null, '', '', 'EA ', '228.04472', '', '', '');
 
 -- ----------------------------
 -- Table structure for `mst_caraangkut`
@@ -4230,41 +3542,6 @@ INSERT INTO `mst_status_petikemas` VALUES ('2', 'LCL', 'Less Container Load');
 INSERT INTO `mst_status_petikemas` VALUES ('3', 'Gabungan FCL dan LCL', 'Gabungan FCL dan LCL');
 
 -- ----------------------------
--- Table structure for `penggunaanbarang`
--- ----------------------------
-DROP TABLE IF EXISTS `penggunaanbarang`;
-CREATE TABLE `penggunaanbarang` (
-  `DokKdBc` tinyint(1) NOT NULL DEFAULT '0',
-  `CAR` varchar(6) NOT NULL DEFAULT '' COMMENT 'Nomor Pengajuan',
-  `no` tinyint(2) NOT NULL COMMENT 'No. Urut',
-  `KdJnsDok` tinyint(1) DEFAULT NULL,
-  `NoAju` varchar(6) DEFAULT NULL,
-  `NoUrut` tinyint(2) NOT NULL DEFAULT '0',
-  `KdBarang` varchar(11) DEFAULT NULL,
-  `UrBarang` varchar(100) DEFAULT NULL COMMENT 'Nomor Dokumen',
-  `qty` int(11) DEFAULT NULL,
-  `CIF` decimal(12,2) DEFAULT NULL COMMENT 'Nilai CIF',
-  `BM` decimal(12,2) DEFAULT NULL,
-  `Cukai` decimal(12,2) DEFAULT NULL,
-  `PPN` decimal(12,2) DEFAULT NULL,
-  `PPnBM` decimal(12,2) DEFAULT NULL,
-  `PPh` decimal(12,2) DEFAULT NULL,
-  PRIMARY KEY (`DokKdBc`,`CAR`,`no`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of penggunaanbarang
--- ----------------------------
-INSERT INTO `penggunaanbarang` VALUES ('3', '000001', '1', '1', '000700', '1', 'MAT-0001', 'tes', '1', '2.00', '1.00', '2.00', '1.00', '2.00', '1.00');
-INSERT INTO `penggunaanbarang` VALUES ('3', '000003', '0', '0', '0000-0', '1', '0', '6103.90.9000', '0', '0.00', '3.00', null, '450.00', null, '300.00');
-INSERT INTO `penggunaanbarang` VALUES ('3', '000004', '0', '0', '0000-0', '1', '0', '6103.90.9000', '0', '0.00', '3.00', null, '450.00', null, '300.00');
-INSERT INTO `penggunaanbarang` VALUES ('3', '000005', '0', '0', '0000-0', '1', '0', '6103.90.9000', '0', '0.00', '3.00', null, '450.00', null, '300.00');
-INSERT INTO `penggunaanbarang` VALUES ('3', '000006', '0', '0', '0000-0', '1', '0', '6103.90.9000', '0', '0.00', '3.00', null, '450.00', null, '300.00');
-INSERT INTO `penggunaanbarang` VALUES ('3', '201..2', '1', '1', '000700', '1', 'MAT-0001', 'tes', '1', '2.00', '1.00', '2.00', '1.00', '2.00', '1.00');
-INSERT INTO `penggunaanbarang` VALUES ('3', '201.20', '1', '1', '000700', '1', 'MAT-0001', 'tes', '1', '2.00', '1.00', '2.00', '1.00', '2.00', '1.00');
-INSERT INTO `penggunaanbarang` VALUES ('3', '201207', '1', '1', '000700', '1', 'MAT-0001', 'tes', '1', '2.00', '1.00', '2.00', '1.00', '2.00', '1.00');
-
--- ----------------------------
 -- Table structure for `penjamin`
 -- ----------------------------
 DROP TABLE IF EXISTS `penjamin`;
@@ -4299,44 +3576,6 @@ CREATE TABLE `ppic_fgmatcon` (
 INSERT INTO `ppic_fgmatcon` VALUES ('FBI-0001', '1', 'ALME0001', '0.01');
 INSERT INTO `ppic_fgmatcon` VALUES ('FBI-0001', '2', 'ALME0003', '0.40');
 INSERT INTO `ppic_fgmatcon` VALUES ('FBI-0001', '3', 'ALME0002', '0.04');
-
--- ----------------------------
--- Table structure for `ppic_wodet`
--- ----------------------------
-DROP TABLE IF EXISTS `ppic_wodet`;
-CREATE TABLE `ppic_wodet` (
-  `wo_id` int(10) NOT NULL,
-  `child_no` int(10) NOT NULL,
-  `fg_id` varchar(20) NOT NULL DEFAULT '0' COMMENT 'Nomor ID Finish Good',
-  `qty_plan` decimal(12,2) NOT NULL,
-  PRIMARY KEY (`wo_id`,`child_no`),
-  CONSTRAINT `ppic_wodet_ibfk_1` FOREIGN KEY (`wo_id`) REFERENCES `ppic_wohdr` (`wo_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Detail Work Order';
-
--- ----------------------------
--- Records of ppic_wodet
--- ----------------------------
-INSERT INTO `ppic_wodet` VALUES ('3', '1', '123', '1.00');
-
--- ----------------------------
--- Table structure for `ppic_wohdr`
--- ----------------------------
-DROP TABLE IF EXISTS `ppic_wohdr`;
-CREATE TABLE `ppic_wohdr` (
-  `wo_id` int(10) NOT NULL AUTO_INCREMENT,
-  `wo_no` varchar(20) NOT NULL,
-  `wo_date` date NOT NULL,
-  `so_id` int(10) NOT NULL,
-  `expplan_date` date NOT NULL COMMENT 'Tanggal Ekspor Rencana',
-  `tot_qty` decimal(9,2) NOT NULL,
-  `notes` varchar(80) NOT NULL,
-  PRIMARY KEY (`wo_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COMMENT='Header Work Order';
-
--- ----------------------------
--- Records of ppic_wohdr
--- ----------------------------
-INSERT INTO `ppic_wohdr` VALUES ('3', '002', '2012-09-19', '25', '2012-09-20', '1.00', 'sial');
 
 -- ----------------------------
 -- Table structure for `pur_podet`
@@ -4461,6 +3700,7 @@ INSERT INTO `satuan` VALUES ('DTN', 'Decitonne, Centner, Quintall, ');
 INSERT INTO `satuan` VALUES ('DWT', 'Pennyweight GB,US (1,555174 g)');
 INSERT INTO `satuan` VALUES ('DZN', 'Dozen');
 INSERT INTO `satuan` VALUES ('DZP', 'Dozen packs');
+INSERT INTO `satuan` VALUES ('EA', 'EA');
 INSERT INTO `satuan` VALUES ('FAH', 'degree Fahrenheit');
 INSERT INTO `satuan` VALUES ('FOT', 'Foot (0.3048 m)');
 INSERT INTO `satuan` VALUES ('FTK', 'Square foot');
@@ -4535,6 +3775,7 @@ INSERT INTO `satuan` VALUES ('MMT', 'Millimetre');
 INSERT INTO `satuan` VALUES ('MON', 'Month');
 INSERT INTO `satuan` VALUES ('MQH', 'cubic metre per hour');
 INSERT INTO `satuan` VALUES ('MSK', 'Metre per second squared');
+INSERT INTO `satuan` VALUES ('MT', 'MT');
 INSERT INTO `satuan` VALUES ('MTK', 'Square metre');
 INSERT INTO `satuan` VALUES ('MTQ', 'Cubic metre');
 INSERT INTO `satuan` VALUES ('MTR', 'Metre');

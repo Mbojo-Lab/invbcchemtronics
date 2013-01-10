@@ -28,7 +28,7 @@ $(function(){
 </head>
 <body>
 <div id="w" style="padding:10px;">
-<form id="frm" action="proses.php" method="post" enctype="multipart/form-data">
+<form id="frm" action="matin_upload.php" method="post" enctype="multipart/form-data">
 <br>
 Silahkan pilih file excel : <input name="userfile" type="file" />
 <br><br>
@@ -36,7 +36,7 @@ Silahkan pilih file excel : <input name="userfile" type="file" />
 </form>
 </div>
 <div id="dlg-buttons">  
-    <a href="#" class="easyui-linkbutton" iconCls="icon-ok" onClick="$('#frm').submit()">Import</a>  
+    <a href="#" class="easyui-linkbutton" iconCls="icon-ok" onClick="$('#frm').submit()">Upload</a>  
 </div> 
 </body>
 </html>

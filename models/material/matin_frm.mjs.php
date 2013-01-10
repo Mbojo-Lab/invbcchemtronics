@@ -10,10 +10,9 @@ function setdg(){
 		fitColumns:"true",
 		rownumbers:"true",
 		columns:[[  
-			{field:'KdBarang2',title:'Mat. Code',width:80},
-			{field:'NmBarang2',title:'Desc.',width:150},
-			{field:'twhmp',title:'Section',width:150},
-			{field:'Sat2',title:'Unit',width:80},
+			{field:'KdBarang2',title:'Mat. Code',width:100},
+			{field:'NmBarang2',title:'Desc.',width:250},
+			{field:'Sat2',title:'Unit',width:40},
 			{field:'qty',title:'Qty.',width:100,align:'right'},
 			{field:'price',title:'Price',width:100,align:'right'},
 			{field:'amount',title:'Amount',width:100,align:'right'}
@@ -50,6 +49,8 @@ function setdgCari(){
 			$('#matin_type').val(row.matin_type);	
 			$('#matin_no').val(row.matin_no);
 			$('#matin_date').datebox('setValue',row.matin_date);
+			$('#NoDaf').val(row.NoDaf);
+			$('#TgDaf').datebox('setValue',row.TgDaf);
 			insert_menu(row);			
 			setdg();
 			$('#toolbar2').hide();
@@ -71,8 +72,7 @@ function setComboGrid(){
 		pageList:[25,50,75,100],    
 		columns:[[  
 			{field:'KdBarang2',title:'Mat. Code',width:60},
-			{field:'NmBarang2',title:'Desc.',width:50},
-			{field:'twhmp',title:'Section',width:50},
+			{field:'NmBarang2',title:'Desc.',width:150},
 			{field:'Sat2',title:'Unit',width:50}
 		]],
 		onClickRow:function(index,row){insert_det(row)}  
@@ -118,7 +118,6 @@ function insert_refUbh(row){
 
 function insert_det(row){
 	$('#NmBarang2').val(row.NmBarang2);
-	$('#twhmp').val(row.twhmp);
 	$('#Sat2').val(row.Sat2);
 	$('#qty').numberbox('setValue',row.qty);
 	$('#price').numberbox('setValue',row.price);
@@ -170,6 +169,8 @@ function simpan(){
 		supl_do: $('#supl_do').val(),
 		supl_inv: $('#supl_inv').val(),
 		KdJnsDok: $('#KdJnsDok').val(),
+		NoDaf: $('#NoDaf').val(),
+		TgDaf: $('#TgDaf').datebox('getValue'),
 		notes: $('#notes').val(),	
 		
 		//FORM LIST DATA BARANG	

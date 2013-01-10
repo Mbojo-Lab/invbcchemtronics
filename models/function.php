@@ -80,6 +80,11 @@ function nformatr($nNumber){
 	return $format_number;
 }
 
+function nformatr2($nNumber){
+	$format_number = str_replace(",","",$nNumber);
+	return $format_number;
+}
+
 function GetDay($tanggal) {
 
 		list($d,$m,$y) = explode("/",$tanggal);

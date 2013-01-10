@@ -10,10 +10,9 @@ function setdg(){
 		fitColumns:"true",
 		rownumbers:"true",
 		columns:[[  
-			{field:'KdBarang2',title:'Mat. Code',width:80},
-			{field:'NmBarang2',title:'Desc.',width:150},
-			{field:'twhmp',title:'Section',width:100},
-			{field:'Sat2',title:'Unit',width:80},
+			{field:'KdBarang2',title:'Mat. Code',width:100},
+			{field:'NmBarang2',title:'Desc.',width:250},
+			{field:'Sat2',title:'Unit',width:40},
 			{field:'qty',title:'Qty.',width:100,align:'right'}
 		]],
 		url: '<?php echo $basedir; ?>models/material/matout_grid.php?req=list&matout_id='+matout_id
@@ -45,7 +44,10 @@ function insert_menu(row){
 	$('#matout_date').datebox('setValue',row.matout_date);
 	$('#wo_id').val(row.ref_id);
 	$('#wo_no').val(row.ref_no);	
+	$('#cust').val(row.cust);	
 	$('#KdJnsDok').val(row.KdJnsDok);	
+	$('#NoDaf').val(row.NoDaf);
+	$('#TgDaf').datebox('setValue',row.TgDaf);
 	$('#notes').val(row.notes);	
 	setdg();
 	$('#toolbar2').hide();
@@ -69,8 +71,7 @@ function setComboGrid(){
 		pageList:[25,50,75,100],   
 		columns:[[  
 			{field:'KdBarang2',title:'Mat. Code',width:60},
-			{field:'NmBarang2',title:'Desc.',width:50},
-			{field:'twhmp',title:'Section',width:50},
+			{field:'NmBarang2',title:'Desc.',width:150},
 			{field:'Sat2',title:'Unit',width:50},
 			{field:'qty',title:'Qty',width:50}
 		]],
@@ -85,7 +86,6 @@ function insert_ref(row){
 
 function insert_det(row){
 	$('#NmBarang2').val(row.NmBarang2);
-	$('#twhmp').val(row.twhmp);
 	$('#Sat2').val(row.Sat2);
 	$('#qty').numberbox('setValue',row.qty);
 }
@@ -125,8 +125,11 @@ function simpan(){
 		matout_date: $('#matout_date').datebox('getValue'),
 		wo_id: $('#wo_id').val(),
 		wo_no: $('#wo_no').val(),
+		cust: $('#cust').val(),
 		notes: $('#notes').val(),
 		KdJnsDok: $('#KdJnsDok').val(),
+		NoDaf: $('#NoDaf').val(),
+		TgDaf: $('#TgDaf').datebox('getValue'),
 		
 		//FORM LIST DATA BARANG	
 		nolist:nolist_val,KdBarang2:KdBarang2_val,

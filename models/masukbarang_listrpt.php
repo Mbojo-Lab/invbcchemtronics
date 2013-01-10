@@ -12,22 +12,22 @@ $DokKdBc=$_REQUEST['DokKdBc'];
 $dtdari=$_REQUEST['dtdari'];
 $dtsampai=$_REQUEST['dtsampai'];
 
-$q = "SELECT *,CONCAT(LEFT(h.CAR,8),'-',RIGHT(h.CAR,6)) AS FCAR,CONCAT(LEFT(NoDaf,3),'.',RIGHT(NoDaf,3)) AS FNoDaf,DATE_FORMAT(TgDaf,'%d/%m/%Y') AS tgl_daf,DATE_FORMAT(DokTg,'%d/%m/%Y') AS DokTg,FORMAT(qty,2) AS Fqty,FORMAT(b.HrgSerah,2) AS FHrgSerah 
-	  FROM header h 
-	  INNER JOIN jenis_dok jd ON jd.KdJnsDok=h.DokKdBc
-	  LEFT JOIN dokumen d ON d.DokKdBc=h.DokKdBc AND d.CAR=h.CAR AND DokKd='1' 
-	  LEFT JOIN barang b ON b.DokKdBc=h.DokKdBc AND b.CAR=h.CAR ";
+$q = "SELECT *,DATE_FORMAT(matin_date,'%d/%m/%Y') AS matin_date,FORMAT(qty,2) AS Fqty,FORMAT(qty*price,2) AS FHrgSerah
+	  FROM mat_inchdr a 
+	  INNER JOIN mat_incdet b ON b.matin_id=a.matin_id 
+	  INNER JOIN jenis_dok c ON c.KdJnsDok=a.KdJnsDok 
+	  LEFT JOIN mst_barang d ON d.KdBarang=b.mat_id "; 
 if ($DokKdBc != ""){  
-	$q .= "WHERE h.DokKdBc LIKE '%$DokKdBc%' ";
+	$q .= "WHERE a.KdJnsDok LIKE '%$DokKdBc%' ";
 } else {
-	$q .= "WHERE h.DokKdBc IN ('1','8','6','5') ";
+	$q .= "WHERE a.KdJnsDok IN ('1','8','6','5') ";
 }
 
 if($dtdari != '' && $dtsampai != ''):
 	$q .= "AND TgDaf BETWEEN '".dmys2ymd($dtdari)."' AND '".dmys2ymd($dtsampai)."' ";
 endif;
 
-$q .= "ORDER BY h.DokKdBc,NoDaf, TgDaf";
+$q .= "ORDER BY a.KdJnsDok,NoDaf, TgDaf";
 
 $runtot=$pdo->query($q);
 $rstot=$runtot->fetchAll(PDO::FETCH_ASSOC);

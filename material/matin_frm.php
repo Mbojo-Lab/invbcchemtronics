@@ -27,11 +27,11 @@ if ($rs){
 }
 .kolom1 {
 	float:left;
-	width:80px;	
+	width:100px;	
 }
 .kolom2 {
 	float:left;
-	width:120px;	
+	width:110px;	
 }
 .kolom3 {
 	float:left;
@@ -47,7 +47,7 @@ if ($rs){
 }
 .kolom6 {
 	float:left;
-	width:130px;	
+	width:120px;	
 	/*border:1px solid #000;*/
 }
 
@@ -159,7 +159,16 @@ require_once "matin_frm.cjs.php";
       </select>
       </span>
     </div>  
-    <!--
+    <div class="hdr">
+      <span class="kolom1">No. Dok. Pabean</span><span class="kolom2">
+      <input type="text" id="NoDaf" name="NoDaf" style="width:100px">    
+      </span>
+      <span class="kolom3">Tgl. Dok. Pabean</span>
+      <span class="kolom4">
+      <input type="text" id="TgDaf" name="TgDaf" class="easyui-datebox" maxlength="10" tabindex="10" style="width:100px">
+      </span>
+    </div>
+	<!--
     <div class="hdr">
       <span class="kolom1">
         Total Qty.
@@ -190,7 +199,7 @@ require_once "matin_frm.cjs.php";
 </div>        
 <div class="hdr" style="padding-top:10px">
  Notes: 
-  <textarea id="notes" name="notes" style="width:700px; height:70px;"></textarea>
+  <textarea id="notes" name="notes" style="width:700px; height:40px;"></textarea>
 </div>
   
 <input type="submit" id="btnSubmit1" name="btnSubmit1" style="display:none">
@@ -206,10 +215,6 @@ require_once "matin_frm.cjs.php";
     <tr>
       <td>Desc.</td>
       <td><input name="NmBarang2" type="text" id="NmBarang2" style="width:150px" readonly></td>
-    </tr>
-	<tr>
-      <td>Section</td>
-      <td><input name="twhmp" type="text" id="twhmp" style="width:150px" readonly></td>
     </tr>
     <tr>
       <td>Unit</td>

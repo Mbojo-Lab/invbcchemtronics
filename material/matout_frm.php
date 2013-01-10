@@ -27,11 +27,11 @@ if ($rs){
 }
 .kolom1 {
 	float:left;
-	width:85px;	
+	width:100px;	
 }
 .kolom2 {
 	float:left;
-	width:130px;	
+	width:120px;	
 }
 .kolom3 {
 	float:left;
@@ -39,7 +39,7 @@ if ($rs){
 }
 .kolom4 {
 	float:left;
-	width:140px;	
+	width:120px;	
 }
 .kolom5 {
 	float:left;
@@ -94,9 +94,13 @@ require_once "matout_frm.cjs.php";
       <span class="kolom2">
       <input type="hidden" id="wo_id" name="wo_id" style="width:100px">
       <input name="wo_no" id="wo_no" style="width:100px"> 
-      </span>
-      <span class="kolom3">Jenis BC</span>
+      </span>	  
+      <span class="kolom3">Customer</span>
       <span class="kolom4">
+	  <input name="cust" id="cust" style="width:100px"> 
+      </span>
+      <span class="kolom5">Jenis BC</span>
+      <span class="kolom6">
       <select name="KdJnsDok" id="KdJnsDok" style="width:80px">
         <option value=""></option>
         <?php
@@ -107,10 +111,18 @@ require_once "matout_frm.cjs.php";
         ?>
       </select>
       </span>      
-      <span class="kolom5"></span>
-      <span class="kolom6">
-      </span>
     </div>            
+	<div class="hdr">      
+	  <span class="kolom1">No. Dok. Pabean</span>
+      <span class="kolom2"><input name="NoDaf" id="NoDaf" style="width:100px"> </span>      
+      <span class="kolom3">Tgl. Dok. Pabean</span>
+      <span class="kolom4">
+	  	<input type="text" id="TgDaf" name="TgDaf" class="easyui-datebox" maxlength="10" tabindex="10" style="width:100px">
+      </span>
+      
+      <span class="kolom5"></span>
+      <span class="kolom6"> </span>
+    </div>
     <!--
     <div class="hdr">
       <span class="kolom1">
@@ -141,7 +153,7 @@ require_once "matout_frm.cjs.php";
     <a href="javascript:void(0)" id="tl2Hps" class="easyui-linkbutton" iconCls="icon-remove" plain="true" title="Hapus">Delete</a>  
 </div>        
 <div class="hdr" style="padding-top:10px">Notes: 
-  <textarea id="notes" name="notes" style="width:700px; height:70px;"></textarea></div>    
+  <textarea id="notes" name="notes" style="width:700px; height:45px;"></textarea></div>    
 <input type="submit" id="btnSubmit1" name="btnSubmit1" style="display:none">
 </form>     
 
@@ -155,10 +167,6 @@ require_once "matout_frm.cjs.php";
     <tr>
       <td>Desc.</td>
       <td><input name="NmBarang2" type="text" id="NmBarang2" style="width:150px" readonly></td>
-    </tr>
-	<tr>
-      <td>Section</td>
-      <td><input name="twhmp" type="text" id="twhmp" style="width:150px" readonly></td>
     </tr>
     <tr>
       <td>Unit</td>

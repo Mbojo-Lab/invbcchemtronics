@@ -59,29 +59,18 @@ $(function(){
 		columns:[[  
 			{field:'UrJnsDok',title:'Jenis<br>Dokumen',rowspan:2,width:20},  			
 			{title:'Dokumen Pabean',colspan:2,width:45},
-			{title:'Bukti/Dokumen<br>Pengeluaran',colspan:2,width:55,align:"center",
-				formatter:function(value){
-					for(var i=0; i<tuj_kirim.length; i++){
-						if (tuj_kirim[i].KdTp == value) return tuj_kirim[i].UrTp;
-					}
-					return value;
-				},
-			 	editor:{
-					valueField:'KdTp',  
-					textField:'UrTp',  
-					data:tuj_kirim
-				}},
-			{field:'NmTuj',title:'Pembeli/Penerima',rowspan:2,width:40}, 
+			{title:'Bukti/Dokumen<br>Pengeluaran',colspan:2,width:55,align:"center"},
+			{field:'cust',title:'Pembeli/Penerima',rowspan:2,width:40}, 
 			{field:'KdBarang',title:'Kode<br>Barang',rowspan:2,width:25},
-			{field:'UrBarang',title:'Nama<br>Barang',rowspan:2,width:40},
-			{field:'unit',title:'Sat',rowspan:2,width:15},
+			{field:'NmBarang',title:'Nama<br>Barang',rowspan:2,width:40},
+			{field:'Sat',title:'Sat',rowspan:2,width:15},
 			{field:'Fqty',title:'Jumlah',rowspan:2,width:20,align:"right"},
 			{field:'FHrgSerah',title:'Nilai Barang',rowspan:2,width:30,align:"right"}
 		],[						
-			{field:'FNoDaf',title:'Nomor',width:20,align:"center"},
-			{field:'tgl_daf',title:'Tanggal',width:25,align:'center'},
-			{field:'DokNo',title:'Nomor',width:30,align:"center"},
-			{field:'DokTg',title:'Tanggal',width:25,align:'center'}			
+			{field:'NoDaf',title:'Nomor',width:20,align:"center"},
+			{field:'TgDaf',title:'Tanggal',width:25,align:'center'},
+			{field:'matout_no',title:'Nomor',width:30,align:"center"},
+			{field:'matout_date',title:'Tanggal',width:25,align:'center'}			
 		]],
 		onClickRow:function(index,row){}
 	});

@@ -41,6 +41,8 @@
 				"text":"Incoming",
 				"state":"closed",  
 				"children":[{  
+						"text":"<a href=\"material/matin_upload_frm.php?NmMenu=Upload Incoming Material\" target=\"content\">Upload Incoming Material (IN)</a>"
+					},{ 
 						"text":"<a href=\"material/matin_frm.php?NmMenu=Incoming Material\" target=\"content\">Incoming Material (IN)</a>"
 					},{ 
 						"text":"<a href=\"material/scrap_in_frm.php?NmMenu=Scrap In\" target=\"content\">Scrap In</a>"							
@@ -54,6 +56,8 @@
 				"text":"Outgoing",
 				"state":"closed",  
 				"children":[{  
+						"text":"<a href=\"material/matout_upload_frm.php?NmMenu=Upload Outgoing Material\" target=\"content\">Upload Outgoing Material (IN)</a>"
+					},{ 
 						"text":"<a href=\"material/matout_frm.php?NmMenu=Outgoing Material\" target=\"content\">Outgoing Material (OUT)</a>"
 					},{ 
 						"text":"<a href=\"material/scrap_out_frm.php?NmMenu=Scrap Out\" target=\"content\">Scrap Out</a>"						

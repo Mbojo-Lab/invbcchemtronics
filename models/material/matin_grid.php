@@ -14,7 +14,7 @@ if ($req=='menu'){
 	$offset = ($page-1)*$rows;
 	$result = array();
 
-	$q = "SELECT *,DATE_FORMAT(matin_date,'%d/%m/%Y') AS matin_date
+	$q = "SELECT *,DATE_FORMAT(matin_date,'%d/%m/%Y') AS matin_date,DATE_FORMAT(TgDaf,'%d/%m/%Y') AS TgDaf
 		  FROM mat_inchdr a 
 		  LEFT JOIN mst_in_type c ON c.matin_type=a.matin_type 
 		  WHERE a.matin_type NOT IN('3') ";

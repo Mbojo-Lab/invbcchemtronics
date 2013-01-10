@@ -1,1 +1,3 @@
-<?php phpinfo(); ?>
+<?php //phpinfo(); 
+echo substr('kikin','-4');
+?>
