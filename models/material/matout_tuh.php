@@ -22,6 +22,7 @@ $TgDaf=dmys2ymd($_REQUEST['TgDaf']);
 $nolist=explode("`", $_REQUEST['nolist']);
 $KdBarang2=explode("`", $_REQUEST['KdBarang2']);
 $qty=explode("`", $_REQUEST['qty']);
+$weight=explode("`", $_REQUEST['weight']);
 $tot_qty=0;
 $jmlnodet=sizeof($nolist)-1;
 for ($i=0; $i<$jmlnodet; $i++){
@@ -52,9 +53,9 @@ try {
 		//TAMBAH DETAIL		
 		for ($i=0; $i<$jmlnodet; $i++){			
 		$sql[] = "INSERT INTO mat_outdet (
-				  matout_id,child_no,mat_id,qty
+				  matout_id,child_no,mat_id,qty,weight
 				  ) VALUES (
-				  '$matout_id','$nolist[$i]','$KdBarang2[$i]','$qty[$i]'
+				  '$matout_id','$nolist[$i]','$KdBarang2[$i]','$qty[$i]','$weight[$i]'
 				  )";	
 		}//AKHIR TAMBAH DETAIL
 		
@@ -79,9 +80,9 @@ try {
 		//UBAH DETAIL	
 		for ($i=0; $i<$jmlnodet; $i++){			
 		$sql[] = "INSERT INTO mat_outdet (
-				  matout_id,child_no,mat_id,qty
+				  matout_id,child_no,mat_id,qty,weight
 				  ) VALUES (
-				  '$matout_id','$nolist[$i]','$KdBarang2[$i]','$qty[$i]'
+				  '$matout_id','$nolist[$i]','$KdBarang2[$i]','$qty[$i]','$weight[$i]'
 				  )";	
 		}//AKHIR UBAH DETAIL
 		

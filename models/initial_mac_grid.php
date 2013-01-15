@@ -50,7 +50,7 @@ if ($req=='menu'){
 } else if ($req=='list') {	
 	$mat_type = $_REQUEST["mat_type"];
 	$date = dmys2ymd($_REQUEST["date"]);
-	$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,HsNo AS HsNo2,Sat AS Sat2,FORMAT(qty, 2) AS qty
+	$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,HsNo AS HsNo2,Sat AS Sat2,FORMAT(qty, 2) AS qty,FORMAT(weight, 2) AS weight
 		  FROM mst_barang a 
 		  LEFT JOIN mat_stockcard b ON mat_id = KdBarang 
 		  WHERE TpBarang='$mat_type' AND date='$date'

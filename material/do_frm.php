@@ -35,7 +35,7 @@ if ($rs){
 }
 .kolom3 {
 	float:left;
-	width:80px;	
+	width:100px;	
 }
 .kolom4 {
 	float:left;
@@ -113,6 +113,12 @@ require_once "do_frm.cjs.php";
         ?>
       </select>
       </span>
+	  <span class="kolom3">No. Dok. Pabean</span>
+      <span class="kolom4"><input name="NoDaf" id="NoDaf" style="width:100px"> </span>      
+      <span class="kolom5">Tgl. Dok. Pabean</span>
+      <span class="kolom6">
+	  	<input type="text" id="TgDaf" name="TgDaf" class="easyui-datebox" maxlength="10" tabindex="10" style="width:100px">
+      </span>
 	</div>  
     <!--
     <div class="hdr">
@@ -172,14 +178,14 @@ require_once "do_frm.cjs.php";
         ?>
           </select>
       </td>
+    </tr>	
+    <tr>
+      <td>Qty</td>
+      <td><input name="qty" type="text" id="qty" value="" style="width:100px"></td>
     </tr>
 	<tr>
       <td>Weight</td>
       <td><input name="weight" type="text" id="weight" value="" style="width:100px"></td>
-    </tr>
-    <tr>
-      <td>Qty</td>
-      <td><input name="qty" type="text" id="qty" value="" style="width:100px"></td>
     </tr>
     <tr>
       <td>Price</td>

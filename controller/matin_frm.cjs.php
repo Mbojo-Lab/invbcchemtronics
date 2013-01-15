@@ -62,9 +62,17 @@ $('#qty').numberbox({
 	}
 });
 
-$('#price').numberbox({  
+$('#weight').numberbox({  
     min:0, 
 	precision:2, 
+	groupSeparator:',',
+	decimalSeparator:'.',
+});
+
+
+$('#price').numberbox({  
+    min:0, 
+	precision:4, 
 	groupSeparator:',',
 	decimalSeparator:'.',
 	onChange:function(newValue,oldValue){
@@ -226,7 +234,8 @@ $('#tl2Ubh2').click(function(){
 				NmBarang2: $('#NmBarang2').val(),
 				Sat2: $('#Sat2').val(),
 				qty: nformat2($('#qty').numberbox('getValue'),2),
-				price: nformat2($('#price').numberbox('getValue'),2),
+				weight: nformat2($('#weight').numberbox('getValue'),2),
+				price: nformat2($('#price').numberbox('getValue'),4),
 				amount: nformat2($('#amount').numberbox('getValue'),2)
 				}
 		});
@@ -240,7 +249,8 @@ $('#tl2Sim').click(function(){
 		NmBarang2: $('#NmBarang2').val(),
 		Sat2: $('#Sat2').val(),
 		qty: nformat2($('#qty').numberbox('getValue'),2),
-		price: nformat2($('#price').numberbox('getValue'),2),
+		weight: nformat2($('#weight').numberbox('getValue'),2),
+		price: nformat2($('#price').numberbox('getValue'),4),
 		amount: nformat2($('#amount').numberbox('getValue'),2)
 	});
 });

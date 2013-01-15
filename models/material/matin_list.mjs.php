@@ -46,6 +46,7 @@ function setdg(){
 					{field:'NmBarang2',title:'Desc.',width:100},   
 					{field:'Sat2',title:'Unit',width:80}, 
 					{field:'qty',title:'Quantity',width:100,align:'right'},
+					{field:'weight',title:'Weight',width:100,align:'right'},
 					{field:'price',title:'Price',width:100,align:'right'},
 					{field:'amount',title:'Amount',width:100,align:'right'}  
 				]],  

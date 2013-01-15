@@ -62,6 +62,8 @@ function insert_menu(row){
 	$('#vehicle_no').val(row.vehicle_no);
 	$('#driver').val(row.driver);
 	$('#KdJnsDok').val(row.KdJnsDok);
+	$('#NoDaf').val(row.NoDaf);
+	$('#TgDaf').datebox('setValue',row.TgDaf);
 	$('#notes').val(row.notes);	
 	setdg();
 	$('#toolbar2').hide();
@@ -104,8 +106,6 @@ function insert_det(row){
 	$('#PartNo').val(row.PartNo);
 	$('#NmBarang2').val(row.NmBarang2);
 	$('#Sat2').val(row.Sat2);
-	$('#qty').numberbox('setValue',row.qty);
-	$('#price').numberbox('setValue',row.price);
 }
 
 function simpan(){
@@ -149,6 +149,8 @@ function simpan(){
 		vehicle_no: $('#vehicle_no').val(),
 		driver: $('#driver').val(),
 		KdJnsDok: $('#KdJnsDok').val(),
+		NoDaf: $('#NoDaf').val(),
+		TgDaf: $('#TgDaf').datebox('getValue'),
 		notes: $('#notes').val(),
 		
 		//FORM LIST DATA BARANG	

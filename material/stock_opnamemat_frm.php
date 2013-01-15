@@ -152,7 +152,11 @@ require_once "stock_opnamemat_frm.cjs.php";
     <tr>
       <td>Quantity</td>
       <td><input name="qty" type="text" id="qty" value="" style="width:100px"></td>
-    </tr>    
+    </tr> 
+	<tr>
+      <td>Weight</td>
+      <td><input name="weight" type="text" id="weight" value="" style="width:100px"></td>
+    </tr>   
     </table>
     <input type="submit" id="btnSubmit2" name="btnSubmit2" style="display:none">
     </form>

@@ -13,7 +13,8 @@ function setdg(){
 			{field:'KdBarang2',title:'Scrap Code',width:80},
 			{field:'NmBarang2',title:'Desc.',width:150},
 			{field:'Sat2',title:'Unit',width:80},
-			{field:'qty',title:'Qty.',width:100,align:'right'}
+			{field:'qty',title:'Qty.',width:100,align:'right'},
+			{field:'weight',title:'Weight',width:100,align:'right'}
 		]],
 		url: '<?php echo $basedir; ?>models/material/scrap_out_grid.php?req=list&matout_id='+matout_id
 	});
@@ -83,7 +84,6 @@ function setComboGrid(){
 function insert_det(row){
 	$('#NmBarang2').val(row.NmBarang2);
 	$('#Sat2').val(row.Sat2);
-	$('#qty').numberbox('setValue',row.qty);
 }
 
 function topdf(){

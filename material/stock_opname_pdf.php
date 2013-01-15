@@ -133,7 +133,7 @@ $q .= "ORDER BY opname_date ASC";
 $runh=$pdo->query($q);	
 $rsh=$runh->fetchAll(PDO::FETCH_ASSOC);
 
-$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2,NmBarang AS NmBarang2,HsNo AS HsNo2,Sat AS Sat2,FORMAT(qty, 2) AS qty
+$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2,NmBarang AS NmBarang2,HsNo AS HsNo2,Sat AS Sat2,FORMAT(qty, 2) AS qty,FORMAT(weight, 2) AS weight
 	  FROM mat_opnamedet a 
 	  LEFT JOIN mst_barang b ON KdBarang = mat_id 
 	  WHERE opname_id='$opname_id' 
@@ -164,6 +164,7 @@ $html = '<h2 align="center">'.$NmMenu.'</h2>'.
 		  <th width="150"><b>Part No</b></th>
 		  <th width="30"><b>Unit</b></th>
 		  <th align="right"><b>Qty.</b></th>
+		  <th align="right"><b>Weight</b></th>
 		</tr>
 		</thead>
 		<tbody>';
@@ -175,6 +176,7 @@ $html .= '<tr>'.
 		 '<td width="150">'.$r['NmBarang2'].'</td>'.
 		 '<td width="30">'.$r['Sat2'].'</td>'.
 		 '<td align="right">'.$r['qty'].'</td>'.
+		 '<td align="right">'.$r['weight'].'</td>'.
 		 '</tr>';
 $no+=1;	
 }

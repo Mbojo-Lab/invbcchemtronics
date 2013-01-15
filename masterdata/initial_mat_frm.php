@@ -121,6 +121,10 @@ require_once "initial_mat_frm.cjs.php";
       <td>Quantity</td>
       <td><input name="qty" type="text" id="qty" value="" style="width:50px"></td>
     </tr>
+	<tr>
+      <td>Weight</td>
+      <td><input name="weight" type="text" id="weight" value="" style="width:50px"></td>
+    </tr>
     </table>
     <input type="submit" id="btnSubmit2" name="btnSubmit2" style="display:none">
     </form>

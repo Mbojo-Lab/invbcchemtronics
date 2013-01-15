@@ -13,9 +13,8 @@ function setdg(){
 			{field:'KdBarang2',title:'Part Code',width:80},
 			{field:'NmBarang2',title:'Part No',width:150},
 			{field:'Sat2',title:'Unit',width:80},
-			{field:'qty',title:'Qty.',width:100,align:'right'}/*,
-			{field:'price',title:'Price',width:100,align:'right'},
-			{field:'amount',title:'Amount',width:100,align:'right'}*/
+			{field:'qty',title:'Qty.',width:100,align:'right'},
+			{field:'weight',title:'Weight',width:100,align:'right'}
 		]],
 		url: '<?php echo $basedir; ?>models/material/stock_opname_grid.php?req=list&opname_id='+opname_id
 	});

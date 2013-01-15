@@ -119,6 +119,10 @@ require_once "wip_frm.cjs.php";
       <td><input name="qty" type="text" id="qty" value="" style="width:50px"></td>
     </tr>
 	<tr>
+      <td>Weight</td>
+      <td><input name="weight" type="text" id="weight" value="" style="width:100px"></td>
+    </tr>
+	<tr>
       <td>Remark</td>
       <td>
 	  <select name="remark" id="remark" style="width:50px">

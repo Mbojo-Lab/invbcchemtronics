@@ -35,7 +35,7 @@ if ($rs){
 }
 .kolom3 {
 	float:left;
-	width:90px;	
+	width:100px;	
 }
 .kolom4 {
 	float:left;
@@ -97,7 +97,15 @@ require_once "matout_frm.cjs.php";
       </span>	  
       <span class="kolom3">Customer</span>
       <span class="kolom4">
-	  <input name="cust" id="cust" style="width:100px"> 
+	  <select name="cust" id="cust" style="width:100px">
+        <option value=""></option>
+        <?php
+            $run = $pdo->query("SELECT NmPrshn FROM mst_perusahaan WHERE TpPrshn='c' ORDER BY NmPrshn");
+            $rs = $run->fetchAll(PDO::FETCH_ASSOC);
+            foreach($rs as $r)
+                echo "<option value=\"".$r['NmPrshn']."\">".$r['NmPrshn']."</option>";
+        ?>
+      </select> 
       </span>
       <span class="kolom5">Jenis BC</span>
       <span class="kolom6">
@@ -185,6 +193,10 @@ require_once "matout_frm.cjs.php";
     <tr>
       <td>Quantity</td>
       <td><input name="qty" type="text" id="qty" value="" style="width:100px"></td>
+    </tr>
+	<tr>
+      <td>Weight</td>
+      <td><input name="weight" type="text" id="weight" value="" style="width:100px"></td>
     </tr>
     </table>
     <input type="submit" id="btnSubmit2" name="btnSubmit2" style="display:none">

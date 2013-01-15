@@ -14,6 +14,8 @@ $so_no=$_REQUEST['so_no'];
 $vehicle_no=$_REQUEST['vehicle_no'];
 $driver=$_REQUEST['driver'];
 $KdJnsDok=$_REQUEST['KdJnsDok'];
+$NoDaf=$_REQUEST['NoDaf'];
+$TgDaf=dmys2ymd($_REQUEST['TgDaf']);
 $notes=$_REQUEST['notes'];
 
 //FORM LIST DATA MATERIAL
@@ -44,10 +46,10 @@ try {
 		//TAMBAH HEADER
 		$sql[] = "INSERT INTO mat_outhdr (
 				  matout_id,matout_no,matout_date,mat_type,cust,ref_id,ref_no,
-				  tot_qty,tot_amount,vehicle_no,driver,notes,KdJnsDok
+				  tot_qty,tot_amount,vehicle_no,driver,notes,KdJnsDok,NoDaf,TgDaf
 				  ) VALUES (
 				  '$do_id','$do_no','$do_date','0','$cust','$so_id','$so_no',
-				  '$tot_qty','$tot_amount','$vehicle_no','$driver','$notes','$KdJnsDok'
+				  '$tot_qty','$tot_amount','$vehicle_no','$driver','$notes','$KdJnsDok','$NoDaf','$TgDaf'
 				  )";	
 		//AKHIR TAMBAH HEADER
 		
@@ -72,10 +74,10 @@ try {
 		//UBAH HEADER
 		$sql[] = "INSERT INTO mat_outhdr (
 				  matout_id,matout_no,matout_date,mat_type,cust,ref_id,ref_no,
-				  tot_qty,tot_amount,vehicle_no,driver,notes,KdJnsDok
+				  tot_qty,tot_amount,vehicle_no,driver,notes,KdJnsDok,NoDaf,TgDaf
 				  ) VALUES (
 				  '$do_id','$do_no','$do_date','0','$cust','$so_id','$so_no',
-				  '$tot_qty','$tot_amount','$vehicle_no','$driver','$notes','$KdJnsDok'
+				  '$tot_qty','$tot_amount','$vehicle_no','$driver','$notes','$KdJnsDok','$NoDaf','$TgDaf'
 				  )";	
 		//AKHIR UBAH HEADER		
 		//UBAH DETAIL	

@@ -14,7 +14,8 @@ function setdg(){
 			{field:'NmBarang2',title:'Desc.',width:150},
 			{field:'twhmp',title:'Section',width:150},
 			{field:'Sat2',title:'Unit',width:80},
-			{field:'qty',title:'Qty.',width:100,align:'right'}
+			{field:'qty',title:'Qty.',width:100,align:'right'},
+			{field:'weight',title:'Weight',width:100,align:'right'}
 		]],
 		url: '<?php echo $basedir; ?>models/material/stock_opnamemat_grid.php?req=list&opname_id='+opname_id
 	});

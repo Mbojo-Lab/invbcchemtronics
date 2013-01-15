@@ -38,7 +38,7 @@ if ($req=='menu'){
 	echo json_encode($result);
 } else if ($req=='list') {	
 	$matout_id = $_REQUEST["matout_id"];
-	$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,HsNo AS HsNo2,Sat AS Sat2,FORMAT(qty, 2) AS qty
+	$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,HsNo AS HsNo2,Sat AS Sat2,FORMAT(qty, 2) AS qty,FORMAT(weight, 2) AS weight
 		  FROM mat_outdet a 
 		  LEFT JOIN mst_barang b ON KdBarang = mat_id 
 		  WHERE matout_id='$matout_id' 

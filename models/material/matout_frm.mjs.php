@@ -13,7 +13,8 @@ function setdg(){
 			{field:'KdBarang2',title:'Mat. Code',width:100},
 			{field:'NmBarang2',title:'Desc.',width:250},
 			{field:'Sat2',title:'Unit',width:40},
-			{field:'qty',title:'Qty.',width:100,align:'right'}
+			{field:'qty',title:'Qty.',width:100,align:'right'},
+			{field:'weight',title:'Weight',width:100,align:'right'}
 		]],
 		url: '<?php echo $basedir; ?>models/material/matout_grid.php?req=list&matout_id='+matout_id
 	});
@@ -87,7 +88,6 @@ function insert_ref(row){
 function insert_det(row){
 	$('#NmBarang2').val(row.NmBarang2);
 	$('#Sat2').val(row.Sat2);
-	$('#qty').numberbox('setValue',row.qty);
 }
 
 function simpan(){
@@ -107,6 +107,7 @@ function simpan(){
 		nolist_val="";	
 		KdBarang2_val="";
 		qty_val="";
+		weight_val="";
 		price_val="";
 		j=1;
 		
@@ -114,6 +115,7 @@ function simpan(){
 			nolist_val += j+i + "`";		
 			KdBarang2_val += rows[i].KdBarang2 + "`";
 			qty_val += rows[i].qty.replace(",","") + "`";
+			weight_val += rows[i].weight.replace(",","") + "`";
 		}	 	
 		//AKHIR FORM LIST BARANG
 				
@@ -133,7 +135,7 @@ function simpan(){
 		
 		//FORM LIST DATA BARANG	
 		nolist:nolist_val,KdBarang2:KdBarang2_val,
-		qty:qty_val
+		qty:qty_val,weight:weight_val
 		},
 		function(result){
 			var result = eval('('+result+')');

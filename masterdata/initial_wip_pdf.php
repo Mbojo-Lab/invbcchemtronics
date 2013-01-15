@@ -124,7 +124,7 @@ $pdf->AddPage();
 //Data loading
 $wh_id = $_REQUEST["wh_id"];
 $date = dmys2ymd($_REQUEST["date"]);
-$q = "SELECT wh_name,DATE_FORMAT(date,'%d/%m/%Y') AS date,KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,HsNo AS HsNo2,Sat AS Sat2,FORMAT(qty, 2) AS qty
+$q = "SELECT wh_name,DATE_FORMAT(date,'%d/%m/%Y') AS date,KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,HsNo AS HsNo2,Sat AS Sat2,FORMAT(qty, 2) AS qty,FORMAT(weight, 2) AS weight
 	  FROM mst_barang a 
 	  LEFT JOIN mat_stockcard b ON mat_id = KdBarang 
 	  LEFT JOIN mat_warehouse c ON c.wh_id=b.wh_id  
@@ -156,6 +156,7 @@ $html = '<h2 align="center">'.$NmMenu.'</h2>'.
 		  <th width="150"><b>Part No</b></th>
 		  <th width="30"><b>Unit</b></th>
 		  <th align="right"><b>Qty.</b></th>
+		  <th align="right"><b>weight</b></th>
 		</tr>
 		</thead>
 		<tbody>';
@@ -167,6 +168,7 @@ $html .= '<tr>'.
 		 '<td width="150">'.$r['NmBarang2'].'</td>'.
 		 '<td width="30">'.$r['Sat2'].'</td>'.
 		 '<td align="right">'.$r['qty'].'</td>'.
+		 '<td align="right">'.$r['weight'].'</td>'.
 		 '</tr>';
 $no+=1;	
 }

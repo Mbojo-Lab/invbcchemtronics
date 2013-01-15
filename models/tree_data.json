@@ -6,10 +6,14 @@
     "children":[{
 			"text":"<a href=\"masterdata/user_frm.php?NmMenu=User Administration\" target=\"content\">User</a>"	
 		},{
-			"text":"<a href=\"masterdata/satuan_frm.php?NmMenu=Unit Of Items\" target=\"content\">Unit Of Items</a>"
-		},{ 			 
+			"text":"<a href=\"masterdata/company_frm.php?NmMenu=Customer&TpPrshn=c\" target=\"content\">Customer</a>"
+		},{  
+			"text":"<a href=\"masterdata/company_frm.php?NmMenu=Supplier&TpPrshn=s\" target=\"content\">Supplier</a>"
+		},{ 
 			"text":"<a href=\"masterdata/valuta_frm.php?NmMenu=Valuta\" target=\"content\">Valuta</a>"						
-		}
+		},{
+			"text":"<a href=\"masterdata/satuan_frm.php?NmMenu=Unit Of Items\" target=\"content\">Unit Of Items</a>"
+		}			
 	]
 },{  
     "id":1,  

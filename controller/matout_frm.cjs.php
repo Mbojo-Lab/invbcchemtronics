@@ -35,6 +35,13 @@ $('#qty').numberbox({
 	decimalSeparator:'.',
 });
 
+$('#weight').numberbox({  
+    min:0, 
+	precision:2, 
+	groupSeparator:',',
+	decimalSeparator:'.',
+});
+
 <? /*$('#wo_no').combogrid({  
 	panelWidth:500,  	
 	url: '<?php echo $basedir; ?>models/material/matout_grid.php?req=wo',  
@@ -196,7 +203,8 @@ $('#tl2Ubh2').click(function(){
 				KdBarang2: $('#KdBarang2').combogrid('getValue'),
 				NmBarang2: $('#NmBarang2').val(),
 				Sat2: $('#Sat2').val(),
-				qty: nformat2($('#qty').numberbox('getValue'),2)
+				qty: nformat2($('#qty').numberbox('getValue'),2),
+				weight: nformat2($('#weight').numberbox('getValue'),2)
 				}
 		});
 	}
@@ -208,7 +216,8 @@ $('#tl2Sim').click(function(){
 		KdBarang2: $('#KdBarang2').combogrid('getValue'),
 		NmBarang2: $('#NmBarang2').val(),
 		Sat2: $('#Sat2').val(),
-		qty: nformat2($('#qty').numberbox('getValue'),2)
+		qty: nformat2($('#qty').numberbox('getValue'),2),
+		weight: nformat2($('#weight').numberbox('getValue'),2)
 	});
 });
 

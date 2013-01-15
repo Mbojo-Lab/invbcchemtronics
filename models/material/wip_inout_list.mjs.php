@@ -42,7 +42,8 @@ function setdg(){
 					{field:'KdBarang2',title:'Part Code',width:80},  
 					//{field:'PartNo',title:'Part No.',width:80}, 
 					{field:'NmBarang2',title:'Part No.',width:100},   
-					{field:'qty',title:'Qty.',width:100,align:'right'} 
+					{field:'qty',title:'Qty.',width:100,align:'right'} ,
+					{field:'weight',title:'Weight',width:100,align:'right'}
 				]],  
 				onResize:function(){  
 					$('#dg').datagrid('fixDetailRowHeight',index);  
