@@ -49,10 +49,10 @@ try {
 		
 		//TAMBAH HEADER
 		$sql[] = "INSERT INTO mat_inchdr (
-				  matin_id,matin_type,matin_no,matin_date,currency,
+				  matin_id,matin_type,matin_no,matin_date,mat_type,currency,
 				  po_id,po_no,supplier,supl_do,supl_inv,KdJnsDok,notes,NoDaf,TgDaf 
 				  ) VALUES (
-				  '$matin_id','$matin_type','$matin_no','$matin_date','$currency',
+				  '$matin_id','$matin_type','$matin_no','$matin_date','1','$currency',
 				  '$po_id','$po_no','$supplier','$supl_do','$supl_inv','$KdJnsDok','$notes','$NoDaf','$TgDaf'
 				  )";	
 		//AKHIR TAMBAH HEADER
@@ -77,10 +77,10 @@ try {
 		//$sql[]="DELETE FROM mat_incdet WHERE matin_id='$matin_id'";
 		//UBAH HEADER
 		$sql[] = "INSERT INTO mat_inchdr (
-				  matin_id,matin_type,matin_no,matin_date,currency,
+				  matin_id,matin_type,matin_no,matin_date,mat_type,currency,
 				  po_id,po_no,supplier,supl_do,supl_inv,KdJnsDok,notes,NoDaf,TgDaf 
 				  ) VALUES (
-				  '$matin_id','$matin_type','$matin_no','$matin_date','$currency',
+				  '$matin_id','$matin_type','$matin_no','$matin_date','1','$currency',
 				  '$po_id','$po_no','$supplier','$supl_do','$supl_inv','$KdJnsDok','$notes','$NoDaf','$TgDaf'
 				  )";	
 		//AKHIR UBAH HEADER		

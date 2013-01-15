@@ -206,8 +206,9 @@
 			"text":"<a href=\"material/mutasi_scrap_pilap.php?NmMenu=LAPORAN PERTANGGUNGJAWABAN MUTASI BARANG SISA DAN SCRAP\" target=\"content\">Mutasi Barang Sisa & Scrap</a>"
 		},{
 			"text":"<a href=\"material/mutasi_mac_pilap.php?NmMenu=LAPORAN PERTANGGUNGJAWABAN MUTASI MESIN DAN PERALATAN PERKANTORAN\" target=\"content\">Mutasi Barang Mesin & Peralatan Perkantoran</a>"
-		}
-	]
+		},{
+			"text":"<a href=\"beacukai/rekapbcp_pilap.php?NmMenu=REKAPITULASI KEGIATAN PERUSAHAAN YANG MENDAPAT FASILITAS KAWASAN BERIKAT\" target=\"content\">Rekapitulasi BCP</a>"						
+	}]
 },{  
     "text":"<a href='logout.php'>Logout</a>"  
 }]

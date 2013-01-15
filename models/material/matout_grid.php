@@ -17,12 +17,12 @@ if ($req=='menu'){
 	$q = "SELECT *,DATE_FORMAT(matout_date,'%d/%m/%Y') AS matout_date,DATE_FORMAT(TgDaf,'%d/%m/%Y') AS TgDaf, a.notes AS notes, a.ref_no
 		  FROM mat_outhdr a 
 		  INNER JOIN mst_out_type c ON c.matout_type=a.matout_type 
-		  WHERE a.mat_type='0' ";
+		  WHERE a.mat_type NOT IN ('0') ";
 	if ($pilcari != ""){		  
 		if ($pilcari == "matout_date"){		  
-			$q .= "WHERE $pilcari LIKE '%".dmys2ymd($txtcari)."%' ";	  
+			$q .= "AND $pilcari LIKE '%".dmys2ymd($txtcari)."%' ";	  
 		} else {
-			$q .= "WHERE $pilcari LIKE '%$txtcari%' ";	  
+			$q .= "AND $pilcari LIKE '%$txtcari%' ";	  
 		}
 	}  
 	$q .= "ORDER BY matout_no, matout_date ASC";

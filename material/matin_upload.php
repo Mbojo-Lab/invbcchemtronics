@@ -52,7 +52,7 @@ $supplier = $data->val($i, 26);
 
 // setelah data dibaca, sisipkan ke dalam tabel dokumen
 //mysql_query("DELETE FROM mat_inchdr WHERE matin_date='$matin_date' AND matin_no='$matin_no' ");
-$q= "INSERT INTO mat_inchdr (matin_id,matin_date,matin_no,po_no,supplier) VALUES ('$matin_id','$matin_date','$matin_no','$po_no','$supplier')";
+$q= "INSERT INTO mat_inchdr (matin_id,matin_date,mat_type,matin_no,po_no,supplier) VALUES ('$matin_id','$matin_date','1',$matin_no','$po_no','$supplier')";
 $hasil = mysql_query($q);
 
 // setelah data dibaca, sisipkan ke dalam tabel barang
