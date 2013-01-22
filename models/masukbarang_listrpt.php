@@ -12,7 +12,7 @@ $DokKdBc=$_REQUEST['DokKdBc'];
 $dtdari=$_REQUEST['dtdari'];
 $dtsampai=$_REQUEST['dtsampai'];
 
-$q = "SELECT *,DATE_FORMAT(matin_date,'%d/%m/%Y') AS matin_date,FORMAT(qty,2) AS Fqty,FORMAT(qty*price,2) AS FHrgSerah
+$q = "SELECT *,DATE_FORMAT(TgDaf,'%d/%m/%Y') AS TgDaf,DATE_FORMAT(matin_date,'%d/%m/%Y') AS matin_date,FORMAT(qty,2) AS Fqty,FORMAT(qty*price,2) AS FHrgSerah
 	  FROM mat_inchdr a 
 	  INNER JOIN mat_incdet b ON b.matin_id=a.matin_id 
 	  INNER JOIN jenis_dok c ON c.KdJnsDok=a.KdJnsDok 

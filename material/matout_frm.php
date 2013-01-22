@@ -198,6 +198,14 @@ require_once "matout_frm.cjs.php";
       <td>Weight</td>
       <td><input name="weight" type="text" id="weight" value="" style="width:100px"></td>
     </tr>
+	<tr>
+      <td>Price</td>
+      <td><input name="price" type="text" id="price" value="" style="width:100px"></td>
+    </tr>
+    <tr>
+      <td>Amount</td>
+      <td><input name="amount" type="text" id="amount" value="" style="width:100px" readonly></td>
+    </tr>
     </table>
     <input type="submit" id="btnSubmit2" name="btnSubmit2" style="display:none">
     </form>

@@ -7,7 +7,12 @@ require_once "function.php";
 
 //VARIABEL YANG DI POST
 $matin_id=$_REQUEST['matin_id'];
+$matin_no=$_REQUEST['matin_no'];
 $matin_date=dmys2ymd($_REQUEST['matin_date']);
+$supplier=$_REQUEST['supplier'];
+$KdJnsDok=$_REQUEST['KdJnsDok'];
+$NoDaf=$_REQUEST['NoDaf'];
+$TgDaf=dmys2ymd($_REQUEST['TgDaf']);
 $notes=$_REQUEST['notes'];
 
 //FORM LIST DATA MATERIAL
@@ -15,6 +20,7 @@ $nolist=explode("`", $_REQUEST['nolist']);
 $KdBarang2=explode("`", $_REQUEST['KdBarang2']);
 $qty=explode("`", $_REQUEST['qty']);
 $weight=explode("`", $_REQUEST['weight']);
+$price=explode("`", $_REQUEST['price']);
 $tot_qty=0;
 $jmlnodet=sizeof($nolist)-1;
 for ($i=0; $i<$jmlnodet; $i++){
@@ -34,18 +40,18 @@ try {
 		
 		//TAMBAH HEADER
 		$sql[] = "INSERT INTO mat_inchdr (
-				  matin_id,mat_type,matin_date,notes				  
+				  matin_id,mat_type,matin_no,matin_date,supplier,KdJnsDok,notes,NoDaf,TgDaf 				  
 				  ) VALUES (
-				  '$matin_id','12','$matin_date','$notes'
+				  '$matin_id','12','$matin_no','$matin_date','$supplier','$KdJnsDok','$notes','$NoDaf','$TgDaf'
 				  )";	
 		//AKHIR TAMBAH HEADER
 		
 		//TAMBAH DETAIL		
 		for ($i=0; $i<$jmlnodet; $i++){			
 		$sql[] = "INSERT INTO mat_incdet (
-				  matin_id,child_no,mat_id,qty,weight
+				  matin_id,child_no,mat_id,qty,weight,price
 				  ) VALUES (
-				  '$matin_id','$nolist[$i]','$KdBarang2[$i]','$qty[$i]','$weight[$i]'
+				  '$matin_id','$nolist[$i]','$KdBarang2[$i]','$qty[$i]','$weight[$i]','$price[$i]'
 				  )";	
 		}//AKHIR TAMBAH DETAIL
 		
@@ -60,18 +66,18 @@ try {
 		//$sql[]="DELETE FROM mat_incdet WHERE matin_id='$matin_id'";
 		//UBAH HEADER
 		$sql[] = "INSERT INTO mat_inchdr (
-				  matin_id,mat_type,matin_date,notes				  
+				  matin_id,mat_type,matin_no,matin_date,supplier,KdJnsDok,notes,NoDaf,TgDaf 				  
 				  ) VALUES (
-				  '$matin_id','12','$matin_date','$notes'
+				  '$matin_id','12','$matin_no','$matin_date','$supplier','$KdJnsDok','$notes','$NoDaf','$TgDaf'
 				  )";
 		//AKHIR UBAH HEADER		
 		//UBAH DETAIL	
 		$jmlnodet=sizeof($nolist)-1;		
 		for ($i=0; $i<$jmlnodet; $i++){			
 		$sql[] = "INSERT INTO mat_incdet (
-				  matin_id,child_no,mat_id,qty,weight
+				  matin_id,child_no,mat_id,qty,weight,price
 				  ) VALUES (
-				  '$matin_id','$nolist[$i]','$KdBarang2[$i]','$qty[$i]','$weight[$i]'
+				  '$matin_id','$nolist[$i]','$KdBarang2[$i]','$qty[$i]','$weight[$i]','$price[$i]'
 				  )";	
 		}//AKHIR UBAH DETAIL
 		

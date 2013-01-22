@@ -26,7 +26,7 @@ if ($rs){
 }
 .kolom1 {
 	float:left;
-	width:80px;	
+	width:100px;	
 }
 .kolom2 {
 	float:left;
@@ -38,7 +38,7 @@ if ($rs){
 }
 .kolom4 {
 	float:left;
-	width:160px;	
+	width:120px;	
 }
 .kolom5 {
 	float:left;
@@ -85,12 +85,51 @@ require_once "scrap_in_frm.cjs.php";
 	<input type="hidden" id="aksi" name="aksi">
 	<input type="hidden" id="matin_id" name="matin_id">
     <div class="hdr">	  
-      <span class="kolom5">Scrap In Date</span>
-      <span class="kolom6">
+	  <span class="kolom1">Scrap In No. </span>
+	  <span class="kolom2">
+      <input type="text" id="matin_no" name="matin_no" style="width:100px">    
+      </span>
+      <span class="kolom3">Scrap In Date</span>
+      <span class="kolom4">
       <input type="hidden" id="po_id" name="po_id">
       <input type="text" id="matin_date" name="matin_date" class="easyui-datebox" required maxlength="10" tabindex="10" style="width:100px">
       </span>
+	  <span class="kolom5">Supplier</span>
+      <span class="kolom6">
+      <select name="supplier" id="supplier" style="width:150px">
+        <option value=""></option>
+        <?php
+            $run = $pdo->query("SELECT NmPrshn FROM mst_perusahaan WHERE TpPrshn='s' ORDER BY NmPrshn");
+            $rs = $run->fetchAll(PDO::FETCH_ASSOC);
+            foreach($rs as $r)
+                echo "<option value=\"".$r['NmPrshn']."\">".$r['NmPrshn']."</option>";
+        ?>
+      </select>
+      </span>	  
     </div>    
+	<div class="hdr">      
+	  <span class="kolom1">Jenis BC</span>
+	  <span class="kolom2">
+	  <select name="KdJnsDok" id="KdJnsDok" style="width:80px">
+        <option value=""></option>
+        <?php
+            $run = $pdo->query("SELECT * FROM jenis_dok WHERE KdJnsDok IN ('5','6') ORDER BY KdJnsDok");
+            $rs = $run->fetchAll(PDO::FETCH_ASSOC);
+            foreach($rs as $r)
+                echo "<option value=\"".$r['KdJnsDok']."\">".$r['UrJnsDok']."</option>";
+        ?>
+      </select>
+	  </span>
+	  <span class="kolom3">No. Dok. Pabean</span>
+      <span class="kolom4"><input name="NoDaf" id="NoDaf" style="width:100px"> </span>      
+      <span class="kolom5">Tgl. Dok. Pabean</span>
+      <span class="kolom6">
+	  	<input type="text" id="TgDaf" name="TgDaf" class="easyui-datebox" maxlength="10" tabindex="10" style="width:100px">
+      </span>
+      
+      <span class="kolom5"></span>
+      <span class="kolom6"> </span>
+    </div>
     
 <div id="toolbar1">  
     <a href="javascript:void(0)" id="tl1Tbh" class="easyui-linkbutton" iconCls="icon-add" plain="true" title="Add">Add</a>  
@@ -148,6 +187,14 @@ require_once "scrap_in_frm.cjs.php";
 	<tr>
       <td>Weight</td>
       <td><input name="weight" type="text" id="weight" value="" style="width:100px"></td>
+    </tr>
+	 <tr>
+      <td>Price</td>
+      <td><input name="price" type="text" id="price" value="" style="width:100px"></td>
+    </tr>
+    <tr>
+      <td>Amount</td>
+      <td><input name="amount" type="text" id="amount" value="" style="width:100px" readonly></td>
     </tr>
     </table>
     <input type="submit" id="btnSubmit2" name="btnSubmit2" style="display:none">

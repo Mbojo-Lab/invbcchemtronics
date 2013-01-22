@@ -27,7 +27,7 @@ if ($rs){
 }
 .kolom1 {
 	float:left;
-	width:90px;	
+	width:100px;	
 }
 .kolom2 {
 	float:left;
@@ -35,7 +35,7 @@ if ($rs){
 }
 .kolom3 {
 	float:left;
-	width:90px;	
+	width:100px;	
 }
 .kolom4 {
 	float:left;
@@ -108,6 +108,17 @@ require_once "scrap_out_frm.cjs.php";
       </select>
       </span>       
     </div>        
+	<div class="hdr">      
+	  <span class="kolom1">No. Dok. Pabean</span>
+      <span class="kolom2"><input name="NoDaf" id="NoDaf" style="width:100px"> </span>      
+      <span class="kolom3">Tgl. Dok. Pabean</span>
+      <span class="kolom4">
+	  	<input type="text" id="TgDaf" name="TgDaf" class="easyui-datebox" maxlength="10" tabindex="10" style="width:100px">
+      </span>
+      
+      <span class="kolom5"></span>
+      <span class="kolom6"> </span>
+    </div>
     <!--
     <div class="hdr">
       <span class="kolom1">

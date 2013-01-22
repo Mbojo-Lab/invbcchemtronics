@@ -50,6 +50,8 @@ function insert_menu(row){
 	$('#vehicle_no').val(row.vehicle_no);	
 	$('#driver').val(row.driver);	
 	$('#KdJnsDok').val(row.KdJnsDok);	
+	$('#NoDaf').val(row.NoDaf);
+	$('#TgDaf').datebox('setValue',row.TgDaf);
 	$('#notes').val(row.notes);	
 	setdg();
 	$('#toolbar2').hide();

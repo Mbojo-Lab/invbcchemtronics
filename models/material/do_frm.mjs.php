@@ -12,15 +12,11 @@ function setdg(){
 		columns:[[  		
 			{field:'KdBarang2',title:'Part Code',width:80},
 			{field:'NmBarang2',title:'Part No',width:150},
-			{field:'Sat2',title:'Unit',width:60},
-			{field:'weight',title:'Weight',width:100,align:'right'},
+			{field:'Sat2',title:'Unit',width:60},			
 			{field:'qty',title:'Qty.',width:100,align:'right'},
+			{field:'weight',title:'Weight',width:100,align:'right'},
 			{field:'price',title:'Price',width:100,align:'right'},
-			{field:'amount',title:'Amount',width:100,align:'right',formatter:function(value){
-				amount=parseFloat(value);
-				amount=amount.toFixed(2);
-				return amount;
-			}}
+			{field:'amount',title:'Amount',width:100,align:'right'}
 		]],
 		url: '<?php echo $basedir; ?>models/material/do_grid.php?req=list&do_id='+do_id
 	});

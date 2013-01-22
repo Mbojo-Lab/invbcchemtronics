@@ -5,7 +5,7 @@ $(function(){
 $('#w').dialog({ 
 	title:"<?php echo strtoupper($NmMenu) ?>", 
     width:750,
-	height:475,
+	height:500,
 	left:0,  
 	top:0, 
 	collapsible:false,
@@ -147,6 +147,8 @@ $('#tl1Sim').click(function(){
 		vehicle_no: $('#vehicle_no').val(),
 		driver: $('#driver').val(),
 		KdJnsDok: $('#KdJnsDok').val(),
+		NoDaf: $('#NoDaf').val(),
+		TgDaf: $('#TgDaf').datebox('getValue'),
 		notes: $('#notes').val(),
 		
 		//FORM LIST DATA BARANG	

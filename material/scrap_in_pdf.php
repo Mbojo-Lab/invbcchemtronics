@@ -144,9 +144,15 @@ $rs=$run->fetchAll(PDO::FETCH_ASSOC);
 $html = '<h2 align="center">'.$NmMenu.'</h2>'.		
 		'<table>
 		<tr>
+		  <td width="80"><b>Scrap In No.</b></td>
+		  <td width="10"><b>:</b></td>
+		  <td width="60"><b>'.$rsh[0]['matin_no'].'</b></td>
 		  <td width="80"><b>Scrap In Date</b></td>
 		  <td width="10"><b>:</b></td>
 		  <td width="100"><b>'.$rsh[0]['matin_date'].'</b></td>
+		  <td width="80"><b>Supplier</b></td>
+		  <td width="10"><b>:</b></td>
+		  <td width="150"><b>'.$rsh[0]['supplier'].'</b></td>
 		</tr>
 		<tr><td colspan="3"></td></tr>
 		</table>'.
@@ -154,11 +160,13 @@ $html = '<h2 align="center">'.$NmMenu.'</h2>'.
 		<thead>
 		<tr>
 		  <th align="center" width="25"><b>No.</b></th>
-		  <th width="150"><b>Mat. Code</b></th>		  
-		  <th width="250"><b>Desc.</b></th>
+		  <th width="100"><b>Mat. Code</b></th>		  
+		  <th width="150"><b>Desc.</b></th>
 		  <th width="30"><b>Unit</b></th>
 		  <th align="right"><b>Qty.</b></th>
 		  <th align="right"><b>Weight</b></th>
+		  <th align="right"><b>Price</b></th>
+		  <th align="right"><b>Amount</b></th>
 		</tr>
 		</thead>
 		<tbody>';
@@ -166,11 +174,13 @@ $no=1;
 foreach ($rs as $r){
 $html .= '<tr>'.
 	  	 '<td align="center" width="25">'.$no.'</td>'.
-		 '<td width="150">'.$r['KdBarang2'].'</td>'.
-		 '<td width="250">'.$r['NmBarang2'].'</td>'.
+		 '<td width="100">'.$r['KdBarang2'].'</td>'.
+		 '<td width="150">'.$r['NmBarang2'].'</td>'.
 		 '<td width="30">'.$r['Sat2'].'</td>'.
 		 '<td align="right">'.$r['qty'].'</td>'.
 		 '<td align="right">'.$r['weight'].'</td>'.
+		 '<td align="right">'.$r['price'].'</td>'.
+		 '<td align="right">'.$r['amount'].'</td>'.
 		 '</tr>';
 $no+=1;	
 }

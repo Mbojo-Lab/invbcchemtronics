@@ -17,7 +17,7 @@ if ($req=='menu'){
 	$q = "SELECT *,DATE_FORMAT(matout_date,'%d/%m/%Y') AS matout_date,DATE_FORMAT(TgDaf,'%d/%m/%Y') AS TgDaf, a.notes AS notes, a.ref_no
 		  FROM mat_outhdr a 
 		  INNER JOIN mst_out_type c ON c.matout_type=a.matout_type 
-		  WHERE a.mat_type NOT IN ('0') ";
+		  WHERE a.mat_type NOT IN ('0','11','12') ";
 	if ($pilcari != ""){		  
 		if ($pilcari == "matout_date"){		  
 			$q .= "AND $pilcari LIKE '%".dmys2ymd($txtcari)."%' ";	  
@@ -41,7 +41,7 @@ if ($req=='menu'){
 	
 } else if ($req=='list') {	
 	$matout_id = $_REQUEST["matout_id"];
-	$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,twhmp,HsNo AS HsNo2,Sat AS Sat2,FORMAT(qty, 2) AS qty,FORMAT(weight, 2) AS weight
+	$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,twhmp,HsNo AS HsNo2,Sat AS Sat2,IF(qty>0,FORMAT(qty, 2),0) AS qty,IF(weight>0,FORMAT(weight, 2),0) AS weight,IF(price>0,FORMAT(a.price, 4),0) AS price,FORMAT(a.qty*a.price, 2) AS amount
 		  FROM mat_outdet a 
 		  LEFT JOIN mst_barang b ON KdBarang = mat_id 
 		  WHERE matout_id='$matout_id' 

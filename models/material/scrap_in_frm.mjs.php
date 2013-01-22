@@ -14,7 +14,9 @@ function setdg(){
 			{field:'NmBarang2',title:'Desc.',width:150},
 			{field:'Sat2',title:'Unit',width:80},
 			{field:'qty',title:'Qty.',width:100,align:'right'},
-			{field:'weight',title:'Weight',width:100,align:'right'}
+			{field:'weight',title:'Weight',width:100,align:'right'},
+			{field:'price',title:'Price',width:100,align:'right'},
+			{field:'amount',title:'Amount',width:100,align:'right'}
 		]],
 		url: '<?php echo $basedir; ?>models/material/scrap_in_grid.php?req=list&matin_id='+matin_id
 	});
@@ -36,7 +38,9 @@ function setdgCari(){
 		rownumbers:"true", 
 		toolbar:"#toolCari",
 		columns:[[  
-			{field:'matin_date',title:'Scrap In Date',width:50}
+			{field:'matin_no',title:'Incoming No.',width:40},
+			{field:'matin_date',title:'Incoming Date',width:50},
+			{field:'supplier',title:'Supplier',width:100}
 			
 		]],
 		url: '<?php echo $basedir ?>models/material/scrap_in_grid.php?req=menu&pilcari='+$("#pilcari").val()+'&txtcari='+$("#txtcari").val(),
@@ -76,7 +80,12 @@ function setcomboGridUbh(){
 
 function insert_menu(row){	
 	$('#matin_id').val(row.matin_id);
+	$('#matin_no').val(row.matin_no);
 	$('#matin_date').datebox('setValue',row.matin_date);
+	$('#supplier').combogrid('setValue',row.supplier);
+	$('#KdJnsDok').val(row.KdJnsDok);
+	$('#NoDaf').val(row.NoDaf);
+	$('#TgDaf').datebox('setValue',row.TgDaf);
 	$('#notes').val(row.notes);
 	setdg();
 			
@@ -125,24 +134,31 @@ function simpan(){
 		KdBarang2_val="";
 		qty_val="";
 		weight_val="";
+		price_val="";
 		j=1;
 		for(var i=0; i<rows.length; i++){
 			nolist_val += j+i + "`";		
 			KdBarang2_val += rows[i].KdBarang2 + "`";
 			qty_val += rows[i].qty.replace(",","") + "`";
 			weight_val += rows[i].weight.replace(",","") + "`";
+			price_val += rows[i].price.replace(",","") + "`";
 		}	 	
 		//AKHIR FORM LIST BARANG
 				
 		$.post("<?php echo $basedir ?>models/material/scrap_in_tuh.php", { 
 		aksi: $('#aksi').val(), 
 		matin_id: $('#matin_id').val(),
-		matin_date: $('#matin_date').datebox('getValue'),		
+		matin_no: $('#matin_no').val(),
+		matin_date: $('#matin_date').datebox('getValue'),
+		supplier: $('#supplier').combogrid('getValue'),
+		KdJnsDok: $('#KdJnsDok').val(),
+		NoDaf: $('#NoDaf').val(),
+		TgDaf: $('#TgDaf').datebox('getValue'),		
 		notes: $('#notes').val(),	
 		
 		//FORM LIST DATA BARANG	
 		nolist:nolist_val,KdBarang2:KdBarang2_val,
-		qty:qty_val,weight:weight_val
+		qty:qty_val,weight:weight_val,price:price_val
 		},
 		function(result){
 			var result = eval('('+result+')');

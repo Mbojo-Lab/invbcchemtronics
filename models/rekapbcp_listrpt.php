@@ -10,29 +10,28 @@ $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 200;
 $offset = ($page-1)*$rows;
 $result = array();
 
-$DokKdBc=$_REQUEST['DokKdBc'];
 $dtdari=$_REQUEST['dtdari'];
 $dtsampai=$_REQUEST['dtsampai'];
 
-$q1 = "SELECT COUNT(*) AS jml1 FROM header WHERE DokKdBc='1' AND KdJnsTpbAsal='1' ";
-$q2 = "SELECT COUNT(*) AS jml2 FROM header WHERE DokKdBc='6' AND KdJnsTpbAsal='2' ";
-$q3 = "SELECT COUNT(*) AS jml3 FROM header WHERE DokKdBc='6' AND KdJnsTpbAsal!='2' ";
-$q4 = "SELECT COUNT(*) AS jml4 FROM header a LEFT JOIN hdrjaminan b ON b.DokKdBc=a.DokKdBc AND b.CAR=a.CAR WHERE a.DokKdBc='5' AND KdTp='3' AND b.NoJaminan!='' ";
-$q5 = "SELECT COUNT(*) AS jml5 FROM header a LEFT JOIN hdrjaminan b ON b.DokKdBc=a.DokKdBc AND b.CAR=a.CAR WHERE a.DokKdBc='5' AND KdTp IN ('6','7','8') AND NoJaminan!='' ";
-$q6 = "SELECT COUNT(*) AS jml6 FROM header WHERE DokKdBc='6' AND KdTp='3' ";
-$q7 = "SELECT COUNT(*) AS jml7 FROM header WHERE DokKdBc='6' AND KdJnsTpbAsal='1' AND KdTp IN ('6','7','8') ";
-$q8 = "SELECT COUNT(*) AS jml8 FROM header WHERE DokKdBc='2' ";
-$q9 = "SELECT COUNT(*) AS jml9 FROM header WHERE DokKdBc='8' ";
-$q10 = "SELECT COUNT(*) AS jml10 FROM header WHERE DokKdBc='7' AND  KdJnsEkspor!='3' ";
-$q11 = "SELECT COUNT(*) AS jml11 FROM header WHERE DokKdBc='7' AND  KdJnsEkspor='3' ";
-$q12 = "SELECT COUNT(*) AS jml12 FROM header WHERE DokKdBc='6' AND KdJnsTpbTuj!='1' ";
-$q13 = "SELECT COUNT(*) AS jml13 FROM header a LEFT JOIN hdrjaminan b ON b.DokKdBc=a.DokKdBc AND b.CAR=a.CAR  WHERE a.DokKdBc='4' AND KdTp='3' AND b.NoJaminan!='' ";
-$q14 = "SELECT COUNT(*) AS jml14 FROM header a LEFT JOIN hdrjaminan b ON b.DokKdBc=a.DokKdBc AND b.CAR=a.CAR WHERE a.DokKdBc='4' AND KdTp IN ('6','7','8') AND NoJaminan!='' ";
-$q15 = "SELECT COUNT(*) AS jml15 FROM header WHERE DokKdBc='6' AND KdTp='3' ";
-$q16 = "SELECT COUNT(*) AS jml16 FROM header WHERE DokKdBc='6' AND KdJnsTpbAsal='1' AND KdTp IN ('6','7','8') ";
-$q17 = "SELECT COUNT(*) AS jml17 FROM header WHERE DokKdBc='3' ";
-$q18 = "SELECT COUNT(*) AS jml18 FROM header WHERE DokKdBc='9' ";
-$q24 = "SELECT SUM(bayar) AS jml24 FROM header a LEFT JOIN hdrjaminan b ON b.DokKdBc=a.DokKdBc AND b.CAR=a.CAR WHERE a.DokKdBc='3' AND JnsJaminan='BM' ";
+$q1 = "SELECT COUNT(*) AS jml1 FROM mat_inchdr WHERE KdJnsDok='1' ";
+$q2 = "SELECT COUNT(*) AS jml2 FROM mat_inchdr WHERE KdJnsDok='6' ";
+$q3 = "SELECT COUNT(*) AS jml3 FROM mat_inchdr WHERE KdJnsDok='6' ";
+$q4 = "SELECT COUNT(*) AS jml4 FROM mat_inchdr WHERE KdJnsDok='5' ";
+$q5 = "SELECT COUNT(*) AS jml5 FROM mat_inchdr WHERE KdJnsDok='5' ";
+$q6 = "SELECT COUNT(*) AS jml6 FROM mat_inchdr WHERE KdJnsDok='6' ";
+$q7 = "SELECT COUNT(*) AS jml7 FROM mat_inchdr WHERE KdJnsDok='6' ";
+$q8 = "SELECT COUNT(*) AS jml8 FROM mat_inchdr WHERE KdJnsDok='2' ";
+$q9 = "SELECT COUNT(*) AS jml9 FROM mat_inchdr WHERE KdJnsDok='8' ";
+$q10 = "SELECT COUNT(*) AS jml10 FROM mat_outhdr WHERE KdJnsDok='7' ";
+$q11 = "SELECT COUNT(*) AS jml11 FROM mat_outhdr WHERE KdJnsDok='7' ";
+$q12 = "SELECT COUNT(*) AS jml12 FROM mat_outhdr WHERE KdJnsDok='6' ";
+$q13 = "SELECT COUNT(*) AS jml13 FROM mat_outhdr WHERE KdJnsDok='4' ";
+$q14 = "SELECT COUNT(*) AS jml14 FROM mat_outhdr WHERE KdJnsDok='4' ";
+$q15 = "SELECT COUNT(*) AS jml15 FROM mat_outhdr WHERE KdJnsDok='6' ";
+$q16 = "SELECT COUNT(*) AS jml16 FROM mat_outhdr WHERE KdJnsDok='6' ";
+$q17 = "SELECT COUNT(*) AS jml17 FROM mat_outhdr WHERE KdJnsDok='3' ";
+$q18 = "SELECT COUNT(*) AS jml18 FROM mat_outhdr WHERE KdJnsDok='9' ";
+$q24 = "SELECT SUM(qty*price) AS jml24 FROM mat_outhdr a RIGHT JOIN mat_outdet b ON b.matout_id=a.matout_id WHERE KdJnsDok='3' ";
 
 if($dtdari != '' && $dtsampai != ''):
 	$wh = "AND TgDaf BETWEEN '".dmys2ymd($dtdari)."' AND '".dmys2ymd($dtsampai)."' ";
@@ -84,7 +83,7 @@ $run10=$pdo->query($q10);
 $rs10=$run10->fetchAll(PDO::FETCH_ASSOC);
 
 $run11=$pdo->query($q11);
-$rs11=$run11->fetchAll(PDO::FETCH_ASSOC);
+//$rs11=$run11->fetchAll(PDO::FETCH_ASSOC);
 
 $run12=$pdo->query($q12);
 $rs12=$run12->fetchAll(PDO::FETCH_ASSOC);
@@ -111,7 +110,7 @@ $run24=$pdo->query($q24);
 $rs24=$run24->fetchAll(PDO::FETCH_ASSOC);
 
 if ($_REQUEST['cetak'] == ""){
-	echo '{"total":1,"rows":[{"c_name":"'.$_SESSION['c_name'].'","1":"'.$rs1[0]['jml1'].'","2":"","3":"","4":"'.$rs4[0]['jml4'].'","5":"'.$rs5[0]['jml5'].'","6":"","7":"","8":"'.$rs8[0]['jml8'].'","9":"'.$rs9[0]['jml9'].'","10":"'.$rs10[0]['jml10'].'","11":"'.$rs11[0]['jml11'].'","12":"'.$rs12[0]['jml12'].'","13":"'.$rs13[0]['jml13'].'","14":"'.$rs14[0]['jml14'].'","15":"'.$rs15[0]['jml15'].'","16":"'.$rs16[0]['jml16'].'","17":"'.$rs17[0]['jml17'].'","18":"'.$rs18[0]['jml18'].'","BAP":"","i1":"","e1":"","i2":"","e2":"","bm":"'.number_format($rs24[0]['jml24'],2).'"}]}';
+	echo '{"total":1,"rows":[{"c_name":"'.$_SESSION['c_name'].'","1":"'.$rs1[0]['jml1'].'","2":"","3":"","4":"'.$rs4[0]['jml4'].'","5":"'.$rs5[0]['jml5'].'","6":"'.$rs6[0]['jml6'].'","7":"","8":"'.$rs8[0]['jml8'].'","9":"'.$rs9[0]['jml9'].'","10":"'.$rs10[0]['jml10'].'","11":"'.$rs11[0]['jml11'].'","12":"'.$rs12[0]['jml12'].'","13":"'.$rs13[0]['jml13'].'","14":"'.$rs14[0]['jml14'].'","15":"'.$rs15[0]['jml15'].'","16":"'.$rs16[0]['jml16'].'","17":"'.$rs17[0]['jml17'].'","18":"'.$rs18[0]['jml18'].'","BAP":"","i1":"","e1":"","i2":"","e2":"","bm":"'.number_format($rs24[0]['jml24'],2).'"}]}';
 } else {
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
@@ -261,12 +260,12 @@ table.tablereport tfoot tr td {
   <td align="center"></td>
   <td align="center"><?php echo $rs4[0]['jml4'] ?></td>
   <td align="center"><?php echo $rs5[0]['jml5'] ?></td>
-  <td align="center"><?php //echo $rs6[0]['jml6'] ?></td>
+  <td align="center"><?php echo $rs6[0]['jml6'] ?></td>
   <td align="center"><?php //echo $rs7[0]['jml7'] ?></td>
   <td align="center"><?php echo $rs8[0]['jml8'] ?></td>
   <td align="center"><?php echo $rs9[0]['jml9'] ?></td>
   <td align="center"><?php echo $rs10[0]['jml10'] ?></td>
-  <td align="center"><?php echo $rs11[0]['jml11'] ?></td>
+  <td align="center"><?php //echo $rs11[0]['jml11'] ?></td>
   <td align="center"><?php echo $rs12[0]['jml12'] ?></td>
   <td align="center"><?php echo $rs13[0]['jml13'] ?></td>
   <td align="center"><?php echo $rs14[0]['jml14'] ?></td>
@@ -279,7 +278,7 @@ table.tablereport tfoot tr td {
   <td align="center"><?php //echo $rs21[0]['jml21'] ?></td>
   <td align="center"><?php //echo $rs22[0]['jml22'] ?></td>
   <td align="center"><?php //echo $rs23[0]['jml23'] ?></td>
-  <td align="center"><?php echo number_format($rs24[0]['jml24'],2) ?></td>
+  <td align="center"><?php //echo number_format($rs24[0]['jml24'],2) ?></td>
 </tr>
 </tbody>
 </table>
