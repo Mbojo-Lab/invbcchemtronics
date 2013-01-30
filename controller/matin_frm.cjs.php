@@ -29,20 +29,6 @@ $('#supplier').combogrid({
 	fitColumns: true
 });
 
-/*$('#tot_qty').numberbox({  
-    min:0, 
-	precision:2, 
-	groupSeparator:',',
-	decimalSeparator:'.',
-});
-
-$('#tot_amount').numberbox({  
-    min:0, 
-	precision:2, 
-	groupSeparator:',',
-	decimalSeparator:'.',
-});*/
-
 $('#ppn').numberbox({  
     min:0, 
 	precision:2, 
@@ -250,7 +236,7 @@ $('#tl2Sim').click(function(){
 		Sat2: $('#Sat2').val(),
 		qty: nformat2($('#qty').numberbox('getValue'),2),
 		weight: nformat2($('#weight').numberbox('getValue'),2),
-		price: nformat2($('#price').numberbox('getValue'),4),
+		price: nformat2($('#price').numberbox('getValue'),2),
 		amount: nformat2($('#amount').numberbox('getValue'),2)
 	});
 });

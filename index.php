@@ -5,8 +5,10 @@ require_once "pdocon.php";
 
 $nama_user=$_SESSION['userName'];
 ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
+<meta charset="UTF-8">
 <title>INVENTORY & BEA CUKAI  SYSTEM</title>  
 <link rel="shortcut icon" href="themes/icons/favicon.png" >
 <link rel="stylesheet" type="text/css" href="<?php echo $basedir; ?>themes/default/easyui.css">
@@ -132,3 +134,4 @@ jam();
 </tr>
 </table>
 </body>
+</html>

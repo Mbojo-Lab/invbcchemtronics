@@ -63,7 +63,7 @@ if ($req=='menu'){
 } else if ($req=='dgDet') {
 	$so_id = $_REQUEST["so_id"];
 	$do_id = $_REQUEST["do_id"];
-	$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2,NmBarang AS NmBarang2,HsNo AS HsNo2,Sat AS Sat2,FORMAT(qty, 2) AS qty_so,FORMAT(price, 4) AS price,,FORMAT(weight, 2) AS weight
+	$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2,NmBarang AS NmBarang2,HsNo AS HsNo2,Sat AS Sat2,FORMAT(qty, 2) AS qty_so,FORMAT(price, 4) AS price,FORMAT(weight, 2) AS weight
 		 (qty-
 		 (SELECT IF(SUM(qty)>0,SUM(qty),0) FROM mkt_dodet da LEFT JOIN mkt_dohdr db ON db.do_id=da.do_id WHERE db.so_id = a.so_id AND da.fg_id = a.fg_id AND da.do_id NOT IN ('$do_id'))
 		 ) AS qty_bal,

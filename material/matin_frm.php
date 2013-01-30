@@ -234,6 +234,10 @@ require_once "matin_frm.cjs.php";
       <td>Quantity</td>
       <td><input name="qty" type="text" id="qty" value="" style="width:100px"></td>
     </tr>
+	<tr>
+      <td>Weight</td>
+      <td><input name="weight" type="text" id="weight" value="" style="width:100px"></td>
+    </tr>
     <tr>
       <td>Price</td>
       <td><input name="price" type="text" id="price" value="" style="width:100px"></td>

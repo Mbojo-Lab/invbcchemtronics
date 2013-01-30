@@ -33,32 +33,33 @@ for ($i=5; $i<=$baris; $i++){
 // membaca data (kolom A)
 $mat_id = $data->val($i, 1);
 // membaca data (kolom D)
-$matin_date = $data->val($i, 4);
+$matin_date = $data->val($i, 5);
 // membaca data (kolom F)
-$Sat = $data->val($i, 6);
+$Sat = $data->val($i, 7);
 // membaca data (kolom G)
-$qty = nformatr2($data->val($i, 7));
+$qty = nformatr2($data->val($i, 8));
 // membaca data (kolom H)
-$price = nformatr2($data->val($i, 8));
+$price = nformatr2($data->val($i, 9));
 // membaca data (kolom P)
-$matin_id = intval(substr($data->val($i, 16),'-4'));
-$matin_no = $data->val($i, 16);
+$matin_id = intval(substr($data->val($i, 17),'-10'));
+$matin_no = $data->val($i, 17);
 // membaca data (kolom Q)
-$child_no = $data->val($i, 17);
+$child_no = $data->val($i, 18);
 // membaca data (kolom T)
-$po_no = $data->val($i, 20);
+$po_no = $data->val($i, 21);
 // membaca data NoPolisi (kolom Z)
-$supplier = $data->val($i, 26);
+$supplier = $data->val($i, 27);
 
 // setelah data dibaca, sisipkan ke dalam tabel dokumen
 //mysql_query("DELETE FROM mat_inchdr WHERE matin_date='$matin_date' AND matin_no='$matin_no' ");
-$q= "INSERT INTO mat_inchdr (matin_id,matin_date,mat_type,matin_no,po_no,supplier) VALUES ('$matin_id','$matin_date','1',$matin_no','$po_no','$supplier')";
+$q= "INSERT INTO mat_inchdr (matin_id,matin_date,mat_type,matin_no,po_no,supplier) VALUES ('$matin_id','$matin_date','1','$matin_no','$po_no','$supplier')";
 $hasil = mysql_query($q);
 
 // setelah data dibaca, sisipkan ke dalam tabel barang
 $q2= "INSERT INTO mat_incdet (matin_id,child_no,mat_id,qty,price) VALUES ('$matin_id','$child_no','$mat_id','$qty','$price')";
 $hasil2 = mysql_query($q2);
-echo " $q2<br>";
+echo "$baris==> $q<br>";
+echo "$baris==> $q2<br><br>";
 // jika proses insert data sukses, maka counter $sukses bertambah
 // jika gagal, maka counter $gagal yang bertambah
 if ($hasil) $sukses++;

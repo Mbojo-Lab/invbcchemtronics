@@ -41,7 +41,7 @@ $qty = nformatr2($data->val($i, 8));
 // membaca data (kolom H)
 $price = nformatr2($data->val($i, 9));
 // membaca data (kolom P)
-$matout_id = intval(substr($data->val($i, 17),'-4'));
+$matout_id = intval(substr($data->val($i, 17),'-10'));
 $matout_no = $data->val($i, 17);
 // membaca data (kolom Q)
 $child_no = $data->val($i, 18);
@@ -58,7 +58,8 @@ $hasil = mysql_query($q);
 // setelah data dibaca, sisipkan ke dalam tabel barang
 $q2= "INSERT INTO mat_outdet (matout_id,child_no,mat_id,qty,price) VALUES ('$matout_id','$child_no','$mat_id','$qty','$price')";
 $hasil2 = mysql_query($q2);
-echo "$baris==> $q2<br>";
+echo "$baris==> $q<br>";
+echo "$baris==> $q2<br><br>";
 // jika proses insert data sukses, maka counter $sukses bertambah
 // jika gagal, maka counter $gagal yang bertambah
 if ($hasil) $sukses++;
