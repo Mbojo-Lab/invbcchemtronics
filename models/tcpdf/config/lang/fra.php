@@ -4,7 +4,7 @@
 // Begin       : 2010-10-26
 // Last Update : 2010-10-26
 //
-// Description : Language module for TCPDF
+// Specification : Language module for TCPDF
 //               (contains translated texts)
 //               French
 //

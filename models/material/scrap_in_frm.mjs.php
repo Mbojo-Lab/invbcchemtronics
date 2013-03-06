@@ -11,10 +11,11 @@ function setdg(){
 		rownumbers:"true",
 		columns:[[  
 			{field:'KdBarang2',title:'Mat. Code',width:80},
-			{field:'NmBarang2',title:'Desc.',width:150},
+			{field:'NmBarang2',title:'Specification',width:150},
+			{field:'Ket',title:'Description',width:150},
 			{field:'Sat2',title:'Unit',width:80},
 			{field:'qty',title:'Qty.',width:100,align:'right'},
-			{field:'weight',title:'Weight',width:100,align:'right'},
+			{field:'weight',title:'Weight',width:100,align:'right',hidden:true},
 			{field:'price',title:'Price',width:100,align:'right'},
 			{field:'amount',title:'Amount',width:100,align:'right'}
 		]],
@@ -37,6 +38,8 @@ function setdgCari(){
 		fitColumns:"true",
 		rownumbers:"true", 
 		toolbar:"#toolCari",
+		pagination:true,
+		pageList:[25,50,75,100], 
 		columns:[[  
 			{field:'matin_no',title:'Incoming No.',width:40},
 			{field:'matin_date',title:'Incoming Date',width:50},
@@ -64,7 +67,8 @@ function setComboGrid(){
 		pageList:[25,50,75,100],  
 		columns:[[  
 			{field:'KdBarang2',title:'Mat. Code',width:60},
-			{field:'NmBarang2',title:'Desc.',width:50},
+			{field:'NmBarang2',title:'Specification',width:50},
+			{field:'Ket',title:'Item Description',width:50},
 			{field:'Sat2',title:'Unit',width:50}
 		]],
 		onClickRow:function(index,row){insert_det(row)}  
@@ -79,6 +83,9 @@ function setcomboGridUbh(){
 }
 
 function insert_menu(row){	
+	$('#currency').val(row.currency);		
+	$('#kurs').val(row.kurs);		
+	$('#tot_weight').val(row.tot_weight);		
 	$('#matin_id').val(row.matin_id);
 	$('#matin_no').val(row.matin_no);
 	$('#matin_date').datebox('setValue',row.matin_date);
@@ -112,7 +119,7 @@ function insert_refUbh(row){
 
 function insert_det(row){
 	$('#NmBarang2').val(row.NmBarang2);
-	$('#twhmp').val(row.twhmp);
+	$('#Ket').val(row.Ket);
 	$('#Sat2').val(row.Sat2);
 }
 
@@ -155,6 +162,9 @@ function simpan(){
 		NoDaf: $('#NoDaf').val(),
 		TgDaf: $('#TgDaf').datebox('getValue'),		
 		notes: $('#notes').val(),	
+		currency: $('#currency').val(),
+		kurs: $('#kurs').val(),
+		tot_weight: $('#tot_weight').val(),
 		
 		//FORM LIST DATA BARANG	
 		nolist:nolist_val,KdBarang2:KdBarang2_val,

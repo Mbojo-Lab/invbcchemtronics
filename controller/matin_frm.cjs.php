@@ -19,7 +19,7 @@ $('#supplier').combogrid({
 	panelWidth: 400,  
 	idField: 'NmPrshn',  
 	textField: 'NmPrshn',  
-	url: '<?=$basedir?>models/company/company_grid.php?TpPrshn=s',  
+	url: '<?=$basedir?>models/company/company_grid2.php',  
 	columns: [[  
 		{field:'NmPrshn',title:'Nama',width:80}
 	]],  
@@ -27,6 +27,12 @@ $('#supplier').combogrid({
 		$('#currency').val(rowdata.Valuta);
 	},
 	fitColumns: true
+});
+
+$('#kurs').numberbox({  
+    min:0, 
+	groupSeparator:',',
+	decimalSeparator:'.'
 });
 
 $('#ppn').numberbox({  
@@ -46,6 +52,13 @@ $('#qty').numberbox({
 		amount = newValue*price;
 		$('#amount').numberbox('setValue',amount);
 	}
+});
+
+$('#tot_weight').numberbox({  
+    min:0, 
+	precision:2, 
+	groupSeparator:',',
+	decimalSeparator:'.'
 });
 
 $('#weight').numberbox({  
@@ -218,6 +231,7 @@ $('#tl2Ubh2').click(function(){
 			row: { 
 				KdBarang2: $('#KdBarang2').combogrid('getValue'),
 				NmBarang2: $('#NmBarang2').val(),
+				Ket: $('#Ket').val(),
 				Sat2: $('#Sat2').val(),
 				qty: nformat2($('#qty').numberbox('getValue'),2),
 				weight: nformat2($('#weight').numberbox('getValue'),2),
@@ -233,6 +247,7 @@ $('#tl2Sim').click(function(){
 	$('#dg').datagrid('appendRow',{		
 		KdBarang2: $('#KdBarang2').combogrid('getValue'),
 		NmBarang2: $('#NmBarang2').val(),
+		Ket: $('#Ket').val(),
 		Sat2: $('#Sat2').val(),
 		qty: nformat2($('#qty').numberbox('getValue'),2),
 		weight: nformat2($('#weight').numberbox('getValue'),2),

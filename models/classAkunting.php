@@ -3,7 +3,7 @@
 Program 	: Class
 File		: classAkunting.php
 Function	: Pengaturan format angka
-Description	: Kumpulan-kumpulan class yang berhubungan dengan angka
+Specification	: Kumpulan-kumpulan class yang berhubungan dengan angka
 Author		: Kikin Kusumah (kk)
 Environment	: Macromedia Dreamweaver 8
 Notes		: _

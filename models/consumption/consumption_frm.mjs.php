@@ -11,7 +11,7 @@ function setdg(){
 		rownumbers:"true",
 		columns:[[  
 			{field:'KdBarang2',title:'Mat. Code',width:80},
-			{field:'NmBarang2',title:'Desc.',width:150},
+			{field:'NmBarang2',title:'Specification',width:150},
 			{field:'Sat2',title:'Unit',width:80},
 			{field:'qty',title:'Qty.',width:100,align:'right'},
 		]],
@@ -33,7 +33,7 @@ function setdgCari(){
 		rownumbers:"true", 
 		toolbar:"#toolCari",
 		columns:[[  
-			{field:'KdBarang',title:'Part No.',width:50},
+			{field:'KdBarang',title:'Specification.',width:50},
 			{field:'Sat',title:'Unit',width:25},			
 			{field:'Treatment',title:'Support<br>Treatment',width:50},
 			{field:'Ket',title:'Remarks',width:50},

@@ -14,6 +14,19 @@ $('#w').dialog({
 	toolbar:"#toolbar1"
 }); 
 
+$('#tot_weight').numberbox({  
+    min:0, 
+	precision:2, 
+	groupSeparator:',',
+	decimalSeparator:'.'
+});
+
+$('#kurs').numberbox({  
+    min:0, 
+	groupSeparator:',',
+	decimalSeparator:'.'
+});
+
 $('#weight').numberbox({  
     min:0, 
 	precision:2, 
@@ -194,7 +207,7 @@ $('#tl2Ubh2').click(function(){
 			index: index, 
 			row: { 
 				KdBarang2: $('#KdBarang2').combogrid('getValue'),
-				PartNo: $('#PartNo').val(),	
+				Ket: $('#Ket').val(),	
 				NmBarang2: $('#NmBarang2').val(),	
 				Sat2: $('#Sat2').val(),
 				weight: nformat2($('#weight').numberbox('getValue'),2),
@@ -210,7 +223,7 @@ $('#tl2Sim').click(function(){
 	$('#dlg').dialog('close');
 	$('#dg').datagrid('appendRow',{		
 		KdBarang2: $('#KdBarang2').combogrid('getValue'),
-		PartNo: $('#PartNo').val(),	
+		Ket: $('#Ket').val(),		
 		NmBarang2: $('#NmBarang2').val(),	
 		Sat2: $('#Sat2').val(),
 		weight: nformat2($('#weight').numberbox('getValue'),2),

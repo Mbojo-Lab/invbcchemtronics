@@ -27,7 +27,7 @@
 // See LICENSE.TXT file for more information.
 // -------------------------------------------------------------------
 //
-// Description : Array of WEB safe colors
+// Specification : Array of WEB safe colors
 //
 //============================================================+
 

@@ -36,8 +36,8 @@ require_once "mst_list.cjs.php";
 <div id="toolCari">  
     Search
      <select id="pilcari" name="pilcari">
-    	<option value="KdBarang">Part Code</option>
-        <option value="NmBarang">Part No</option>
+    	<option value="KdBarang">Item Code</option>
+        <option value="NmBarang">Specification</option>
     </select> 
     <input type="text" id="txtcari" name="txtcari" style="width:100px">
     <a href="#" id="dtlCri" class="easyui-linkbutton" iconCls="icon-search"></a>

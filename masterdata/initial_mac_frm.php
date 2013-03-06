@@ -115,12 +115,16 @@ require_once "initial_mac_frm.cjs.php";
 	<form name="fm2" id="fm2" method="post" onSubmit="return false">
  	<table>
     <tr>
-      <td width="115">Material Code</td>
+      <td width="115">Item Code</td>
       <td width="319"><input name="KdBarang3" type="hidden" id="KdBarang3" class="easyui-validatebox" value=""><input id="KdBarang2" name="KdBarang2" type="text" style="width:100px"></td>
     </tr>
     <tr>
-      <td>Desc.</td>
+      <td>Specification</td>
       <td><input name="NmBarang2" type="text" id="NmBarang2" style="width:150px" readonly></td>
+    </tr>
+    <tr>
+      <td>Item Description</td>
+      <td><input name="Ket" type="text" id="Ket" style="width:150px" readonly></td>
     </tr>
     <tr>
       <td>Unit</td>

@@ -30,11 +30,11 @@ $nolist=explode("`", $_REQUEST['nolist']);
 $KdBarang2=explode("`", $_REQUEST['KdBarang2']);
 $qty=explode("`", $_REQUEST['qty']);
 $price=explode("`", $_REQUEST['price']);
-$tot_qty=0;
+$tot_weight=0;
 $tot_amount=0;
 $jmlnodet=sizeof($nolist)-1;
 for ($i=0; $i<$jmlnodet; $i++){
-	$tot_qty += $qty[$i];
+	$tot_weight += $qty[$i];
 	$tot_amount += $qty[$i]*$price[$i];
 }
 
@@ -55,14 +55,14 @@ try {
 				  payment,pol,pod,container,sail_date,
 				  currency,vessel,voy_no,fob,
 				  freight,insurance,cnf,				    
-				  tot_qty,tot_amount,
+				  tot_weight,tot_amount,
 				  notify,auth_sign,notes
 				  ) VALUES (
 				  '$comm_id','$comm_no','$comm_date','$do_id',
 				  '$payment','$pol','$pod','$container','$sail_date',
 				  '$currency','$vessel','$voy_no','$fob',
 				  '$freight','$insurance','$cnf',
-				  '$tot_qty','$tot_amount',
+				  '$tot_weight','$tot_amount',
 				  '$notify','$auth_sign','$notes'
 				  )";	
 		//AKHIR TAMBAH HEADER
@@ -91,14 +91,14 @@ try {
 				  payment,pol,pod,container,sail_date,
 				  currency,vessel,voy_no,fob,
 				  freight,insurance,cnf,				    
-				  tot_qty,tot_amount,
+				  tot_weight,tot_amount,
 				  notify,auth_sign,notes
 				  ) VALUES (
 				  '$comm_id','$comm_no','$comm_date','$do_id',
 				  '$payment','$pol','$pod','$container','$sail_date',
 				  '$currency','$vessel','$voy_no','$fob',
 				  '$freight','$insurance','$cnf',
-				  '$tot_qty','$tot_amount',
+				  '$tot_weight','$tot_amount',
 				  '$notify','$auth_sign','$notes'
 				  )";		
 		//AKHIR UBAH HEADER		

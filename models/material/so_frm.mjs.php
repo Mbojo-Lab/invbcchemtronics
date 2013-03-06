@@ -10,9 +10,9 @@ function setdg(){
 		fitColumns:"true",
 		rownumbers:"true",
 		columns:[[  
-			{field:'KdBarang2',title:'Part Code',width:80},
-			{field:'PartNo',title:'Part No.',width:100},
-			{field:'NmBarang2',title:'Part Name',width:150},
+			{field:'KdBarang2',title:'Item Code',width:80},
+			{field:'PartNo',title:'Specification.',width:100},
+			{field:'NmBarang2',title:'Specification',width:150},
 			{field:'Sat2',title:'Unit',width:80},
 			{field:'qty',title:'Qty.',width:100,align:'right'},
 			{field:'price',title:'Price',width:100,align:'right'},

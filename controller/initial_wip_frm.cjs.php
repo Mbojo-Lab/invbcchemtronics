@@ -50,8 +50,9 @@ $('#KdBarang2').combogrid({
 	pagination:true,
 	pageList:[25,50,75,100],  
 	columns:[[  
-		{field:'KdBarang2',title:'Part Code',width:60},
-		{field:'NmBarang2',title:'Part No',width:50},
+		{field:'KdBarang2',title:'Item Code',width:60},
+		{field:'NmBarang2',title:'Specification',width:50},
+		{field:'Ket',title:'Item Description',width:50},
 		{field:'Sat2',title:'Unit',width:50}
 	]],
 	onSelect:function(index,row){insert_det(row)}  

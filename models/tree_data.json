@@ -4,8 +4,8 @@
 	"state":"closed", 
     "iconCls":"icon-save",  
     "children":[{
-			"text":"<a href=\"masterdata/user_frm.php?NmMenu=User Administration\" target=\"content\">User</a>"	
-		},{
+			"text":"<a href=\"masterdata/negara_frm.php?NmMenu=Negara\" target=\"content\">Negara</a>"	
+		},{  	
 			"text":"<a href=\"masterdata/company_frm.php?NmMenu=Customer&TpPrshn=c\" target=\"content\">Customer</a>"
 		},{  
 			"text":"<a href=\"masterdata/company_frm.php?NmMenu=Supplier&TpPrshn=s\" target=\"content\">Supplier</a>"
@@ -73,7 +73,7 @@
 				"text":"Outgoing",
 				"state":"closed",  
 				"children":[{  
-						"text":"<a href=\"material/matout_upload_frm.php?NmMenu=Upload Outgoing Material\" target=\"content\">Upload Outgoing Material (IN)</a>"
+						"text":"<a href=\"material/matout_upload_frm.php?NmMenu=Upload Outgoing Material\" target=\"content\">Upload Outgoing Material (OUT)</a>"
 					},{ 
 						"text":"<a href=\"material/matout_frm.php?NmMenu=Outgoing Material\" target=\"content\">Outgoing Material (OUT)</a>"
 					},{ 
@@ -81,6 +81,8 @@
 					},{
 						"text":"<a href=\"material/wip_frm.php?NmMenu=WIP Out&type=O\" target=\"content\">WIP Out</a>"						
 					},{ 			 
+						"text":"<a href=\"material/do_upload_frm.php?NmMenu=Upload Delivery Order\" target=\"content\">Upload Delivery Order</a>"
+					},{ 
 						"text":"<a href=\"material/do_frm.php?NmMenu=Delivery Order\" target=\"content\">Delivery Order (DO)</a>"				
 					}
 				]
@@ -210,5 +212,11 @@
 			"text":"<a href=\"beacukai/rekapbcp_pilap.php?NmMenu=REKAPITULASI KEGIATAN PERUSAHAAN YANG MENDAPAT FASILITAS KAWASAN BERIKAT\" target=\"content\">Rekapitulasi BCP</a>"						
 	}]
 },{  
+	"text":"User Administration",  
+	"state":"closed",  
+	"children":[{  
+		"text":"<a href=\"masterdata/user_frm.php?NmMenu=User Administration\" target=\"content\">User</a>"	
+	}]
+},{ 
     "text":"<a href='logout.php'>Logout</a>"  
 }]

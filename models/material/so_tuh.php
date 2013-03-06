@@ -19,11 +19,11 @@ $nolist=explode("`", $_REQUEST['nolist']);
 $KdBarang2=explode("`", $_REQUEST['KdBarang2']);
 $qty=explode("`", $_REQUEST['qty']);
 $price=explode("`", $_REQUEST['price']);
-$tot_qty=0;
+$tot_weight=0;
 $tot_amount=0;
 $jmlnodet=sizeof($nolist)-1;
 for ($i=0; $i<$jmlnodet; $i++){
-	$tot_qty += $qty[$i];
+	$tot_weight += $qty[$i];
 	$tot_amount += $qty[$i]*$price[$i];
 }
 
@@ -41,10 +41,10 @@ try {
 		//TAMBAH HEADER
 		$sql[] = "INSERT INTO mkt_sorderhdr (
 				  so_id,so_no,so_date,currency,cust,
-				  due_date,tot_qty,tot_amount,notes
+				  due_date,tot_weight,tot_amount,notes
 				  ) VALUES (
 				  '$so_id','$so_no','$so_date','$currency','$cust',
-				  '$due_date','$tot_qty','$tot_amount','$notes'
+				  '$due_date','$tot_weight','$tot_amount','$notes'
 				  )";	
 		//AKHIR TAMBAH HEADER
 		
@@ -69,10 +69,10 @@ try {
 		//UBAH HEADER
 		$sql[] = "INSERT INTO mkt_sorderhdr (
 				  so_id,so_no,so_date,currency,cust,
-				  due_date,tot_qty,tot_amount,notes
+				  due_date,tot_weight,tot_amount,notes
 				  ) VALUES (
 				  '$so_id','$so_no','$so_date','$currency','$cust',
-				  '$due_date','$tot_qty','$tot_amount','$notes'
+				  '$due_date','$tot_weight','$tot_amount','$notes'
 				  )";	
 		//AKHIR UBAH HEADER		
 		//UBAH DETAIL	

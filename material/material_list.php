@@ -33,8 +33,8 @@ require_once "mst_list.cjs.php";
      <select id="pilcari" name="pilcari">
     	<option value="matgroup_name">Mat. Group</option>
         <option value="KdBarang">Mat. Code</option>
-        <option value="NmBarang">Desc.</option>
-        <option value="twhmp">Section</option>
+        <option value="NmBarang">Specification</option>
+        <option value="twhmp">Item Description</option>
     </select> 
     <input type="text" id="txtcari" name="txtcari" style="width:100px">
     <a href="#" id="dtlCri" class="easyui-linkbutton" iconCls="icon-search"></a>

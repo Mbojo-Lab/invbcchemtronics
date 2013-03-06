@@ -16,10 +16,10 @@ $nolist=explode("`", $_REQUEST['nolist']);
 $KdBarang2=explode("`", $_REQUEST['KdBarang2']);
 $qty=explode("`", $_REQUEST['qty']);
 $weight=explode("`", $_REQUEST['weight']);
-$tot_qty=0;
+$tot_weight=0;
 $jmlnodet=sizeof($nolist)-1;
 for ($i=0; $i<$jmlnodet; $i++){
-	$tot_qty += $qty[$i];
+	$tot_weight += $qty[$i];
 }
 
 $aksi=$_REQUEST['aksi'];
@@ -36,10 +36,10 @@ try {
 		//TAMBAH HEADER
 		$sql[] = "INSERT INTO mat_opnamehdr (
 				  opname_id,opname_date,mat_type,wh_id,
-				  tot_qty,notes
+				  tot_weight,notes
 				  ) VALUES (
 				  '$opname_id','$opname_date','0','$wh_id',
-				  '$tot_qty','$notes'
+				  '$tot_weight','$notes'
 				  )";	
 		//AKHIR TAMBAH HEADER
 		
@@ -64,10 +64,10 @@ try {
 		//UBAH HEADER
 		$sql[] = "INSERT INTO mat_opnamehdr (
 				  opname_id,opname_date,mat_type,wh_id,
-				  tot_qty,notes
+				  tot_weight,notes
 				  ) VALUES (
 				  '$opname_id','$opname_date','0','$wh_id',
-				  '$tot_qty','$notes'
+				  '$tot_weight','$notes'
 				  )";	
 		//AKHIR UBAH HEADER		
 		//UBAH DETAIL	

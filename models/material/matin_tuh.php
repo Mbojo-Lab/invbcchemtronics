@@ -11,6 +11,8 @@ $matin_type=$_REQUEST['matin_type'];
 $matin_no=$_REQUEST['matin_no'];
 $matin_date=dmys2ymd($_REQUEST['matin_date']);
 $currency=$_REQUEST['currency'];
+$kurs=$_REQUEST['kurs'];
+$tot_weight=$_REQUEST['tot_weight'];
 
 $po_id=$_REQUEST['po_id'];
 $po_no=$_REQUEST['po_no'];
@@ -28,11 +30,11 @@ $KdBarang2=explode("`", $_REQUEST['KdBarang2']);
 $qty=explode("`", $_REQUEST['qty']);
 $weight=explode("`", $_REQUEST['weight']);
 $price=explode("`", $_REQUEST['price']);
-$tot_qty=0;
+//$tot_weight=0;
 $tot_amount=0;
 $jmlnodet=sizeof($nolist)-1;
 for ($i=0; $i<$jmlnodet; $i++){
-	$tot_qty += $qty[$i];
+	//$tot_weight += $qty[$i];
 	$tot_amount += $amount[$i];
 }
 
@@ -49,11 +51,11 @@ try {
 		
 		//TAMBAH HEADER
 		$sql[] = "INSERT INTO mat_inchdr (
-				  matin_id,matin_type,matin_no,matin_date,mat_type,currency,
-				  po_id,po_no,supplier,supl_do,supl_inv,KdJnsDok,notes,NoDaf,TgDaf 
+				  matin_id,matin_type,matin_no,matin_date,mat_type,currency,kurs,
+				  po_id,po_no,supplier,supl_do,supl_inv,KdJnsDok,notes,NoDaf,TgDaf,tot_weight 
 				  ) VALUES (
 				  '$matin_id','$matin_type','$matin_no','$matin_date','1','$currency',
-				  '$po_id','$po_no','$supplier','$supl_do','$supl_inv','$KdJnsDok','$notes','$NoDaf','$TgDaf'
+				  '$kurs','$po_id','$po_no','$supplier','$supl_do','$supl_inv','$KdJnsDok','$notes','$NoDaf','$TgDaf','$tot_weight'
 				  )";	
 		//AKHIR TAMBAH HEADER
 		
@@ -77,11 +79,11 @@ try {
 		//$sql[]="DELETE FROM mat_incdet WHERE matin_id='$matin_id'";
 		//UBAH HEADER
 		$sql[] = "INSERT INTO mat_inchdr (
-				  matin_id,matin_type,matin_no,matin_date,mat_type,currency,
-				  po_id,po_no,supplier,supl_do,supl_inv,KdJnsDok,notes,NoDaf,TgDaf 
+				  matin_id,matin_type,matin_no,matin_date,mat_type,currency,kurs,
+				  po_id,po_no,supplier,supl_do,supl_inv,KdJnsDok,notes,NoDaf,TgDaf,tot_weight 
 				  ) VALUES (
 				  '$matin_id','$matin_type','$matin_no','$matin_date','1','$currency',
-				  '$po_id','$po_no','$supplier','$supl_do','$supl_inv','$KdJnsDok','$notes','$NoDaf','$TgDaf'
+				  '$kurs','$po_id','$po_no','$supplier','$supl_do','$supl_inv','$KdJnsDok','$notes','$NoDaf','$TgDaf','$tot_weight'
 				  )";	
 		//AKHIR UBAH HEADER		
 		//UBAH DETAIL	

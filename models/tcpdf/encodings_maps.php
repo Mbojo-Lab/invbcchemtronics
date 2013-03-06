@@ -27,7 +27,7 @@
 // See LICENSE.TXT file for more information.
 // -------------------------------------------------------------------
 //
-// Description : Unicode data for TCPDF library.
+// Specification : Unicode data for TCPDF library.
 //
 //============================================================+
 

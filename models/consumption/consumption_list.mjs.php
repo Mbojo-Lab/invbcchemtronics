@@ -8,9 +8,9 @@ function setdg(){
 		fitColumns:"true",
 		rownumbers:"true",
 		columns:[[  
-			{field:'KdBarang',title:'Part Code',width:80},
-			{field:'PartNo',title:'Part No.',width:80},
-			{field:'NmBarang',title:'Part Name',width:100},
+			{field:'KdBarang',title:'Item Code',width:80},
+			{field:'PartNo',title:'Specification.',width:80},
+			{field:'NmBarang',title:'Specification',width:100},
 			{field:'Sat',title:'Unit',width:80},
 			{field:'cust',title:'Customer',width:100},
 			{field:'Ket',title:'Remark',width:80},
@@ -36,8 +36,8 @@ function setdg(){
 				height:'auto',  
 				columns:[[  
 					{field:'KdBarang2',title:'Mat Code',width:80},  
-					//{field:'PartNo',title:'Part No.',width:80}, 
-					{field:'NmBarang2',title:'Desc.',width:100},   
+					//{field:'PartNo',title:'Specification.',width:80}, 
+					{field:'NmBarang2',title:'Specification',width:100},   
 					{field:'qty',title:'Qty.',width:100,align:'right'} 
 				]],  
 				onResize:function(){  

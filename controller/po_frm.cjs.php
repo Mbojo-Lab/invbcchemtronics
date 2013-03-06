@@ -13,7 +13,7 @@ $('#w').dialog({
 	toolbar:"#toolbar1"
 }); 
 
-/*$('#tot_qty').numberbox({  
+/*$('#tot_weight').numberbox({  
     min:0, 
 	precision:2, 
 	groupSeparator:',',
@@ -87,7 +87,7 @@ $('#KdBarang2').combogrid({
 	fitColumns:true,  
 	columns:[[  
 		{field:'KdBarang2',title:'Mat. Code',width:60},
-		{field:'NmBarang2',title:'Desc.',width:50},
+		{field:'NmBarang2',title:'Specification',width:50},
 		{field:'Sat2',title:'Unit',width:50}
 	]],
 	onSelect:function(index,row){insert_det(row)}  

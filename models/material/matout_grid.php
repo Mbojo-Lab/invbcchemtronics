@@ -41,7 +41,7 @@ if ($req=='menu'){
 	
 } else if ($req=='list') {	
 	$matout_id = $_REQUEST["matout_id"];
-	$q = "SELECT KdBarang AS KdBarang3,mat_id AS KdBarang2, NmBarang AS NmBarang2,twhmp,HsNo AS HsNo2,Sat AS Sat2,IF(qty>0,FORMAT(qty, 2),0) AS qty,IF(weight>0,FORMAT(weight, 2),0) AS weight,IF(price>0,FORMAT(a.price, 4),0) AS price,FORMAT(a.qty*a.price, 2) AS amount
+	$q = "SELECT KdBarang AS KdBarang3,mat_id AS KdBarang2, NmBarang AS NmBarang2,twhmp,Ket,Sat AS Sat2,IF(qty>0,FORMAT(qty, 2),0) AS qty,IF(weight>0,FORMAT(weight, 2),0) AS weight,IF(price>0,FORMAT(a.price, 4),0) AS price,FORMAT(a.qty*a.price, 2) AS amount
 		  FROM mat_outdet a 
 		  LEFT JOIN mst_barang b ON KdBarang = mat_id 
 		  WHERE matout_id='$matout_id' 
@@ -68,7 +68,7 @@ if ($req=='menu'){
 	$offset = ($page-1)*$rows;
 	$result = array();
 	
-	$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,twhmp,HsNo AS HsNo2,Sat AS Sat2
+	$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,twhmp,Ket,Sat AS Sat2
 		  FROM mst_barang a 
 		  LEFT JOIN mst_jenisbarang b ON KdJnsBarang=TpBarang 
 		  WHERE TpBarang NOT IN ('0','11') ";

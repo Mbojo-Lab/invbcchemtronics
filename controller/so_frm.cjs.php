@@ -15,7 +15,7 @@ $('#w').dialog({
 	toolbar:"#toolbar1"
 }); 
 
-/*$('#tot_qty').numberbox({  
+/*$('#tot_weight').numberbox({  
     min:0, 
 	precision:2, 
 	groupSeparator:',',
@@ -81,9 +81,9 @@ $('#KdBarang2').combogrid({
 	mode:'remote',  
 	fitColumns:true,  
 	columns:[[  
-		{field:'KdBarang2',title:'Part Code',width:60},
-		{field:'PartNo',title:'Part No.',width:50},
-		{field:'NmBarang2',title:'Part Name',width:50},
+		{field:'KdBarang2',title:'Item Code',width:60},
+		{field:'PartNo',title:'Specification.',width:50},
+		{field:'NmBarang2',title:'Specification',width:50},
 		{field:'Sat2',title:'Unit',width:50}
 	]],
 	onSelect:function(index,row){insert_det(row)}  

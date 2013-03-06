@@ -113,7 +113,7 @@ require_once "po_frm.cjs.php";
       <select name="supplier" id="supplier" style="width:150px">
         <option value=""></option>
         <?php
-            $run = $pdo->query("SELECT NmPrshn FROM mst_perusahaan WHERE TpPrshn='s' ORDER BY NmPrshn");
+            $run = $pdo->query("SELECT NmPrshn FROM mst_perusahaan WHERE TpPrshn NOT IN ('o') ORDER BY NmPrshn");
             $rs = $run->fetchAll(PDO::FETCH_ASSOC);
             foreach($rs as $r)
                 echo "<option value=\"".$r['NmPrshn']."\">".$r['NmPrshn']."</option>";
@@ -141,10 +141,10 @@ require_once "po_frm.cjs.php";
     <!--
     <div class="hdr">
       <span class="kolom1">
-        Total Qty.
+        Total Weight
       </span>
       <span class="kolom2">
-      <input type="text" id="tot_qty" name="tot_qty" style="width:100px" readonly>
+      <input type="text" id="tot_weight" name="tot_weight" style="width:100px" readonly>
       </span>
       <span class="kolom3"> Total Amount</span>
       <span class="kolom4">
@@ -204,7 +204,7 @@ require_once "po_frm.cjs.php";
       <td width="319"><input name="KdBarang3" type="hidden" id="KdBarang3" class="easyui-validatebox" value=""><input id="KdBarang2" name="KdBarang2" type="text" style="width:100px"></td>
     </tr>
     <tr>
-      <td>Desc.</td>
+      <td>Specification</td>
       <td><input name="NmBarang2" type="text" id="NmBarang2" style="width:150px" readonly></td>
     </tr>
     <tr>

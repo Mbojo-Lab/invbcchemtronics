@@ -7,14 +7,18 @@ $req = $_REQUEST["req"];
 
 if ($req=='menu'){
 	$txtcari = $_REQUEST["txtcari"];
-	$q = "SELECT DISTINCT wh_id,mat_type,JnsBarang,DATE_FORMAT(date,'%d/%m/%Y') AS date
+	$q = "SELECT DISTINCT mat_type,JnsBarang,DATE_FORMAT(date,'%d/%m/%Y') AS date
 		  FROM mat_stockcard a 
 		  LEFT JOIN mst_jenisbarang b ON b.KdJnsBarang=a.mat_type
 		  WHERE type='B' AND mat_type IN ('3','5','12') ";
-	if ($txtcari != ""){		  
+	if ($txtcari != "" ){		  
 			$q .= "AND mat_type LIKE '%$txtcari%' ";	  
 	}  
 	$q .= "ORDER BY mat_type, date ASC";
+	
+	$run=$pdo->query($q);	
+	$rs=$run->fetchAll(PDO::FETCH_ASSOC);
+	echo json_encode($rs);
 } else if ($req=='dgDet') {
 	$mat_type = $_REQUEST["mat_type"];
 	$key = $_REQUEST["q"];
@@ -24,7 +28,7 @@ if ($req=='menu'){
 	$offset = ($page-1)*$rows;
 	$result = array();
 	
-	$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,HsNo AS HsNo2,Sat AS Sat2
+	$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,Ket,Sat AS Sat2
 		  FROM mst_barang a 
 		  LEFT JOIN mst_jenisbarang b ON KdJnsBarang=TpBarang 
 		  WHERE TpBarang='$mat_type' ";
@@ -50,7 +54,7 @@ if ($req=='menu'){
 } else if ($req=='list') {	
 	$mat_type = $_REQUEST["mat_type"];
 	$date = dmys2ymd($_REQUEST["date"]);
-	$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,HsNo AS HsNo2,Sat AS Sat2,FORMAT(qty, 2) AS qty,FORMAT(weight, 2) AS weight
+	$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,Ket,Sat AS Sat2,FORMAT(qty, 2) AS qty,IFNULL(FORMAT(weight, 2),0) AS weight
 		  FROM mst_barang a 
 		  LEFT JOIN mat_stockcard b ON mat_id = KdBarang 
 		  WHERE TpBarang='$mat_type' AND date='$date'

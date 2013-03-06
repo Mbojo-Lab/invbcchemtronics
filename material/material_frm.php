@@ -54,18 +54,22 @@ require_once "mst_frm.cjs.php";
       </select></td>
     </tr>
     <tr>
-      <td width="114">Mat. Code.</td>
+      <td width="114">Mat. Code</td>
       <td width="254"><input name="KdBarang0" type="hidden" id="KdBarang0" class="easyui-validatebox" value="">        <input name="KdBarang" type="text" id="KdBarang" class="easyui-validatebox" value="" size="20" maxlength="20" required></td>
     </tr>
     <tr>
-      <td>Desc.</td>
+      <td>Specification</td>
       <td><input name="NmBarang" type="text" id="NmBarang" class="easyui-validatebox" value="" size="30" maxlength="30" required></td>
     </tr>
-    <tr style="display:none">
-      <td>Section</td>
-      <td><input name="twhmp" type="text" id="twhmp" class="easyui-validatebox" value="" size="25"></td>
+    <tr>
+      <td>Item Description</td>
+      <td><input name="Ket" type="text" id="Ket" class="easyui-validatebox" value="" size="30" maxlength="30"></td>
     </tr>
     <tr style="display:none">
+      <td>Item Description</td>
+      <td><input name="twhmp" type="text" id="twhmp" class="easyui-validatebox" value="" size="25"></td>
+    </tr>
+    <tr>
       <td>Hs No.</td>
       <td><input name="HsNo" type="text" id="HsNo" class="easyui-validatebox" size="20"></td>
     </tr>

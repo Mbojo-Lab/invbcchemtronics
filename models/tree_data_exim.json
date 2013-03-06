@@ -37,5 +37,11 @@
 		}]		
 	}]
 },{  
+	"text":"User Administration",  
+	"state":"closed",  
+	"children":[{  
+		"text":"<a href=\"masterdata/user_frm.php?NmMenu=User Administration\" target=\"content\">User</a>"	
+	}]
+},{ 
     "text":"<a href='logout.php'>Logout</a>"  
 }]

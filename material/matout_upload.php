@@ -58,8 +58,8 @@ $hasil = mysql_query($q);
 // setelah data dibaca, sisipkan ke dalam tabel barang
 $q2= "INSERT INTO mat_outdet (matout_id,child_no,mat_id,qty,price) VALUES ('$matout_id','$child_no','$mat_id','$qty','$price')";
 $hasil2 = mysql_query($q2);
-echo "$baris==> $q<br>";
-echo "$baris==> $q2<br><br>";
+//echo "$baris==> $q<br>";
+//echo "$baris==> $q2<br><br>";
 // jika proses insert data sukses, maka counter $sukses bertambah
 // jika gagal, maka counter $gagal yang bertambah
 if ($hasil) $sukses++;
@@ -72,8 +72,8 @@ $child_no++;
 <?php 
 // tampilan status sukses dan gagal
 echo "<h3>Proses upload data selesai.</h3>";
-echo "<p>Jumlah data yang sukses di upload : ".$sukses."<br>";
-echo "Jumlah data yang gagal di upload : ".$gagal."</p>";
+//echo "<p>Jumlah data yang sukses di upload : ".$sukses."<br>";
+//echo "Jumlah data yang gagal di upload : ".$gagal."</p>";
 ?>
 </div>
 </body>

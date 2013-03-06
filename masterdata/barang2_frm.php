@@ -45,17 +45,22 @@ require_once "mst_frm.cjs.php";
     <input type="hidden" name="TpBarang" id="TpBarang" value="">
  	<table>
     <tr>
-      <td width="114">Part Code</td>
+      <td width="114">Item Code</td>
       <td width="254">
       <input name="KdBarang0" type="hidden" id="KdBarang0">        
       <input name="KdBarang" type="text" id="KdBarang" class="easyui-validatebox" value="" size="20" required></td>
     </tr>
     <tr>
-      <td width="114">Part Number</td>
+      <td width="114">Specification</td>
       <td width="254">
       <input name="NmBarang" type="text" id="NmBarang" class="easyui-validatebox" value="" size="20" required></td>
     </tr>
-    <tr style="display:none">
+    <tr>
+      <td valign="top">Item Description</td>
+      <td>
+        <textarea name="Ket" cols="25" class="easyui-validatebox" id="Ket"></textarea></td>
+    </tr>
+    <tr>
       <td>HS No.</td>
       <td><input name="HsNo" type="text" id="HsNo" class="easyui-validatebox" value="" size="20" maxlength="20"></td>
     </tr>
@@ -74,17 +79,12 @@ require_once "mst_frm.cjs.php";
           </select>
       </td>
     </tr>
-    <tr>
+    <tr style="display:none">
       <td valign="top">Support Treatment</td>
       <td>
         <input name="Treatment" type="text" id="Treatment" size="20"></td>
-    </tr>
-    <tr>
-      <td valign="top">Remarks</td>
-      <td>
-        <textarea name="Ket" cols="25" class="easyui-validatebox" id="Ket"></textarea></td>
-    </tr>
-    <tr>
+    </tr>    
+    <tr style="display:none">
       <td valign="top">Customer</td>
       <td>
         <select name="cust" id="cust" style="width:150px">

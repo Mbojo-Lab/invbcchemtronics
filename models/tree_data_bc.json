@@ -19,5 +19,11 @@
 		"text":"<a href=\"beacukai/rekapbcp_pilap.php?NmMenu=REKAPITULASI KEGIATAN PERUSAHAAN YANG MENDAPAT FASILITAS KAWASAN BERIKAT\" target=\"content\">Rekapitulasi BCP</a>"						
 	}]			
 },{  
+	"text":"User Administration",  
+	"state":"closed",  
+	"children":[{  
+		"text":"<a href=\"masterdata/user_frm.php?NmMenu=User Administration\" target=\"content\">User</a>"	
+	}]
+},{ 
     "text":"<a href='logout.php'>Logout</a>"  
 }]

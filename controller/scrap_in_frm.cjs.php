@@ -19,7 +19,7 @@ $('#supplier').combogrid({
 	panelWidth: 400,  
 	idField: 'NmPrshn',  
 	textField: 'NmPrshn',  
-	url: '<?=$basedir?>models/company/company_grid.php?TpPrshn=s',  
+	url: '<?=$basedir?>models/company/company_grid2.php',  
 	columns: [[  
 		{field:'NmPrshn',title:'Nama',width:80}
 	]],  
@@ -47,6 +47,19 @@ $('#qty').numberbox({
 		amount = newValue*price;
 		$('#amount').numberbox('setValue',amount);
 	}
+});
+
+$('#tot_weight').numberbox({  
+    min:0, 
+	precision:2, 
+	groupSeparator:',',
+	decimalSeparator:'.'
+});
+
+$('#kurs').numberbox({  
+    min:0, 
+	groupSeparator:',',
+	decimalSeparator:'.'
 });
 
 $('#weight').numberbox({  

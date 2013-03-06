@@ -60,14 +60,14 @@ require_once "consumption_frm.cjs.php";
 <form id="fm" method="post" onSubmit="return false">
 	<input type="hidden" id="aksi" name="aksi">
     <div class="hdr">
-      <span class="kolom1">Part Code </span>
+      <span class="kolom1">Item Code </span>
       <span class="kolom2">
       <input type="hidden" id="KdBarang0" name="KdBarang0"><select id="KdBarang" name="KdBarang" style="width:100px"></select> 
       <!--<a href="#" id="btnCri2" class="easyui-linkbutton" iconCls="icon-search" title="Search Finished Goods" plain="true"></a>--></span>
-      <span class="kolom3">Part No. </span>
+      <span class="kolom3">Specification. </span>
       <span class="kolom4"><input type="text" id="PartNo" name="PartNo" style="width:100px" readonly>
       </span>
-      <span class="kolom5">Part Name</span>
+      <span class="kolom5">Specification</span>
       <span class="kolom6"><input type="text" id="NmBarang" name="NmBarang" style="width:150px" readonly>
       </span>      
     </div>
@@ -110,7 +110,7 @@ require_once "consumption_frm.cjs.php";
       <td width="319"><input name="KdBarang3" type="hidden" id="KdBarang3" class="easyui-validatebox" value=""><input id="KdBarang2" name="KdBarang2" type="text" style="width:100px"></td>
     </tr>
     <tr>
-      <td>Desc.</td>
+      <td>Specification</td>
       <td><input name="NmBarang2" type="text" id="NmBarang2" style="width:150px" readonly></td>
     </tr>
     <tr>
@@ -145,7 +145,7 @@ require_once "consumption_frm.cjs.php";
 <div id="toolCari">  
     Search
     <select id="pilcari" name="pilcari">
-    	<option value="KdBarang">Part No.</option>
+    	<option value="KdBarang">Specification.</option>
         <option value="cust">Customer</option>
     </select> 
     <input type="text" id="txtcari" name="txtcari" style="width:100px">

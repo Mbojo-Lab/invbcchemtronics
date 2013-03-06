@@ -4,7 +4,7 @@
 // Begin       : 2011-01-24
 // Last Update : 2011-01-24
 //
-// Description : Language module for TCPDF
+// Specification : Language module for TCPDF
 //               (contains translated texts)
 //               Japanese
 //

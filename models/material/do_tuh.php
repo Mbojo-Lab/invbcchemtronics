@@ -17,6 +17,9 @@ $KdJnsDok=$_REQUEST['KdJnsDok'];
 $NoDaf=$_REQUEST['NoDaf'];
 $TgDaf=dmys2ymd($_REQUEST['TgDaf']);
 $notes=$_REQUEST['notes'];
+$currency=$_REQUEST['currency'];
+$kurs=$_REQUEST['kurs'];
+$tot_weight=$_REQUEST['tot_weight'];
 
 //FORM LIST DATA MATERIAL
 $nolist=explode("`", $_REQUEST['nolist']);
@@ -24,11 +27,11 @@ $KdBarang2=explode("`", $_REQUEST['KdBarang2']);
 $weight=explode("`", $_REQUEST['weight']);
 $qty=explode("`", $_REQUEST['qty']);
 $price=explode("`", $_REQUEST['price']);
-$tot_qty=0;
+//$tot_weight=0;
 $tot_amount=0;
 $jmlnodet=sizeof($nolist)-1;
 for ($i=0; $i<$jmlnodet; $i++){
-	$tot_qty += $qty[$i];
+	//$tot_weight += $qty[$i];
 	$tot_amount += $qty[$i]*$price[$i];
 }
 
@@ -46,10 +49,10 @@ try {
 		//TAMBAH HEADER
 		$sql[] = "INSERT INTO mat_outhdr (
 				  matout_id,matout_no,matout_date,mat_type,cust,ref_id,ref_no,
-				  tot_qty,tot_amount,vehicle_no,driver,notes,KdJnsDok,NoDaf,TgDaf
+				  tot_weight,tot_amount,vehicle_no,driver,notes,KdJnsDok,NoDaf,TgDaf,currency,kurs
 				  ) VALUES (
 				  '$do_id','$do_no','$do_date','0','$cust','$so_id','$so_no',
-				  '$tot_qty','$tot_amount','$vehicle_no','$driver','$notes','$KdJnsDok','$NoDaf','$TgDaf'
+				  '$tot_weight','$tot_amount','$vehicle_no','$driver','$notes','$KdJnsDok','$NoDaf','$TgDaf','$currency','$kurs'
 				  )";	
 		//AKHIR TAMBAH HEADER
 		
@@ -74,10 +77,10 @@ try {
 		//UBAH HEADER
 		$sql[] = "INSERT INTO mat_outhdr (
 				  matout_id,matout_no,matout_date,mat_type,cust,ref_id,ref_no,
-				  tot_qty,tot_amount,vehicle_no,driver,notes,KdJnsDok,NoDaf,TgDaf
+				  tot_weight,tot_amount,vehicle_no,driver,notes,KdJnsDok,NoDaf,TgDaf,currency,kurs
 				  ) VALUES (
 				  '$do_id','$do_no','$do_date','0','$cust','$so_id','$so_no',
-				  '$tot_qty','$tot_amount','$vehicle_no','$driver','$notes','$KdJnsDok','$NoDaf','$TgDaf'
+				  '$tot_weight','$tot_amount','$vehicle_no','$driver','$notes','$KdJnsDok','$NoDaf','$TgDaf','$currency','$kurs'
 				  )";	
 		//AKHIR UBAH HEADER		
 		//UBAH DETAIL	

@@ -11,8 +11,9 @@ function setdg(){
 		fitColumns:"true",
 		rownumbers:"true",
 		columns:[[  
-			{field:'KdBarang2',title:'Mat. Code',width:80},
-			{field:'NmBarang2',title:'Desc.',width:150},
+			{field:'KdBarang2',title:'Item Code',width:80},
+			{field:'NmBarang2',title:'Specification',width:150},
+			{field:'Ket',title:'Item Description',width:150},
 			{field:'Sat2',title:'Unit',width:80},
 			{field:'qty',title:'Qty.',width:100,align:'right'},
 			{field:'weight',title:'Weight',width:100,align:'right'}
@@ -33,7 +34,7 @@ function setdgCari(){
 			{field:'JnsBarang',title:'Mat. Type',width:50},
 			{field:'date',title:'Date',width:50}
 		]],
-		url: '<?php echo $basedir ?>models/initial_mac_grid.php?req=menu&pilcari='+$("#pilcari").val(), 
+		url: '<?php echo $basedir ?>models/initial_mac_grid.php?req=menu&txtcari='+$("#txtcari").val(), 
 		onClickRow:function(index,row){insert_menu(row)}
 		
 	});
@@ -52,7 +53,8 @@ function setBarang(){
 	pageList:[25,50,75,100],    
 	columns:[[  
 		{field:'KdBarang2',title:'Mat. Code',width:60},
-		{field:'NmBarang2',title:'Desc.',width:50},
+		{field:'NmBarang2',title:'Specification',width:50},
+		{field:'Ket',title:'Item Description',width:50},
 		{field:'Sat2',title:'Unit',width:50}
 	]],
 	onSelect:function(index,row){insert_det(row)}  
@@ -78,6 +80,7 @@ function insert_menu(row){
 
 function insert_det(row){
 	$('#NmBarang2').val(row.NmBarang2);
+	$('#Ket').val(row.Ket);
 	$('#Sat2').val(row.Sat2);
 }
 

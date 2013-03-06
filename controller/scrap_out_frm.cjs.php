@@ -14,19 +14,18 @@ $('#w').dialog({
 	toolbar:"#toolbar1"
 }); 
 
-/*$('#tot_qty').numberbox({  
+$('#tot_weight').numberbox({  
     min:0, 
 	precision:2, 
 	groupSeparator:',',
-	decimalSeparator:'.',
+	decimalSeparator:'.'
 });
 
-$('#tot_amount').numberbox({  
+$('#kurs').numberbox({  
     min:0, 
-	precision:2, 
 	groupSeparator:',',
-	decimalSeparator:'.',
-});*/
+	decimalSeparator:'.'
+});
 
 $('#qty').numberbox({  
     min:0, 
@@ -150,6 +149,9 @@ $('#tl1Sim').click(function(){
 		NoDaf: $('#NoDaf').val(),
 		TgDaf: $('#TgDaf').datebox('getValue'),
 		notes: $('#notes').val(),
+		currency: $('#currency').val(),
+		kurs: $('#kurs').val(),
+		tot_weight: $('#tot_weight').val(),
 		
 		//FORM LIST DATA BARANG	
 		nolist:nolist_val,KdBarang2:KdBarang2_val,
@@ -251,6 +253,7 @@ $('#tl2Ubh2').click(function(){
 			row: { 
 				KdBarang2: $('#KdBarang2').combogrid('getValue'),
 				NmBarang2: $('#NmBarang2').val(),	
+				Ket: $('#Ket').val(),	
 				Sat2: $('#Sat2').val(),
 				qty: nformat2($('#qty').numberbox('getValue'),2),
 				weight: nformat2($('#weight').numberbox('getValue'),2)
@@ -264,6 +267,7 @@ $('#tl2Sim').click(function(){
 	$('#dg').datagrid('appendRow',{		
 		KdBarang2: $('#KdBarang2').combogrid('getValue'),
 		NmBarang2: $('#NmBarang2').val(),
+		Ket: $('#Ket').val(),	
 		Sat2: $('#Sat2').val(),
 		qty: nformat2($('#qty').numberbox('getValue'),2),
 		weight: nformat2($('#weight').numberbox('getValue'),2)

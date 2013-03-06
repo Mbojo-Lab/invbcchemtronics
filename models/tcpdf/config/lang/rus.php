@@ -4,7 +4,7 @@
 // Begin       : 2004-03-03
 // Last Update : 2012-07-25
 //
-// Description : Language module for TCPDF
+// Specification : Language module for TCPDF
 //               (contains translated texts)
 //               Russian
 //

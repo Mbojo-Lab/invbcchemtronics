@@ -51,8 +51,9 @@ $('#KdBarang2').combogrid({
 	pagination:true,
 	pageList:[25,50,75,100],   
 	columns:[[  
-		{field:'KdBarang2',title:'Part Code',width:60},
-		{field:'NmBarang2',title:'Part No',width:50},
+		{field:'KdBarang2',title:'Item Code',width:60},
+		{field:'NmBarang2',title:'Specification',width:50},
+		{field:'Ket',title:'Item Description',width:50},
 		{field:'Sat2',title:'Unit',width:50}
 	]],
 	onSelect:function(index,row){insert_det(row)}  
@@ -245,6 +246,7 @@ $('#tl2Ubh2').click(function(){
 			row: { 
 				KdBarang2: $('#KdBarang2').combogrid('getValue'),
 				NmBarang2: $('#NmBarang2').val(),	
+				Ket: $('#Ket').val(),	
 				Sat2: $('#Sat2').val(),
 				qty: nformat2($('#qty').numberbox('getValue'),2),
 				weight: nformat2($('#weight').numberbox('getValue'),2),
@@ -259,6 +261,7 @@ $('#tl2Sim').click(function(){
 	$('#dg').datagrid('appendRow',{		
 		KdBarang2: $('#KdBarang2').combogrid('getValue'),
 		NmBarang2: $('#NmBarang2').val(),
+		Ket: $('#Ket').val(),	
 		Sat2: $('#Sat2').val(),
 		qty: nformat2($('#qty').numberbox('getValue'),2),		
 		weight: nformat2($('#weight').numberbox('getValue'),2),

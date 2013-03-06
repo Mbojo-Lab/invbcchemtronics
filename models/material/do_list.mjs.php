@@ -38,11 +38,11 @@ function setdg(){
 				loadMsg:'',  
 				height:'auto',  
 				columns:[[  
-					{field:'KdBarang2',title:'Part Code',width:80},  
-					{field:'NmBarang2',title:'Part No.',width:100}, 
+					{field:'KdBarang2',title:'Item Code',width:80},  
+					{field:'NmBarang2',title:'Specification.',width:100}, 
 					{field:'Sat2',title:'Unit',width:80},   
 					{field:'qty',title:'Quantity',width:100,align:'right'},  
-					{field:'weight',title:'Weight',width:100,align:'right'},
+					{field:'weight',title:'Weight',width:100,align:'right',hidden:true},
 					{field:'price',title:'Price',width:100,align:'right'},
 					{field:'amount',title:'Amount',width:100,align:'right'}  
 				]],  

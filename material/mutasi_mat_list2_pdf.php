@@ -177,7 +177,7 @@ $html = '<h2>'.$NmMenu.'</h2>'.
 		<tr>
 		  <th align="center" rowspan="2" width="25"><b>No.</b></th>
 		  <th width="80" rowspan="2"><b>Mat. Code</b></th>
-		  <th width="100" rowspan="2"><b>Desc.</b></th>
+		  <th width="100" rowspan="2"><b>Specification</b></th>
 		  <th align="center" rowspan="2" width="30"><b>Unit</b></th>
 		  <th align="right" rowspan="2"><b>Beginning Balance</b></th>
 		  <th align="center" colspan="3"><b>Incoming</b></th>

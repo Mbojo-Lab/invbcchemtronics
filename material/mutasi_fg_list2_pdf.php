@@ -160,8 +160,8 @@ $html = '<h2>'.$NmMenu.'</h2>'.
 		<thead>
 		<tr>
 		  <th align="center" width="25"><b>No.</b></th>
-		  <th width="80"><b>Part Code</b></th>
-		  <th width="80"><b>Part No.</b></th>
+		  <th width="80"><b>Item Code</b></th>
+		  <th width="80"><b>Specification.</b></th>
 		  <th align="center" width="30"><b>Unit</b></th>
 		  <th align="right"><b>Previous Balance</b></th>
 		  <th align="right"><b>In to FG</b></th>

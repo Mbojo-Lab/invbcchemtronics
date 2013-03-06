@@ -11,11 +11,12 @@ function setdg(){
 		fitColumns:"true",
 		rownumbers:"true",
 		columns:[[  
-			{field:'KdBarang2',title:'Part Code',width:80},
-			{field:'NmBarang2',title:'Part No',width:150},			
+			{field:'KdBarang2',title:'Item Code',width:80},
+			{field:'NmBarang2',title:'Specification',width:150},			
+			{field:'Ket',title:'Item Description',width:150},			
 			{field:'Sat2',title:'Unit',width:80},
 			{field:'qty',title:'Qty.',width:100,align:'right'},
-			{field:'weight',title:'Weight',width:100,align:'right'},
+			{field:'weight',title:'Weight',width:100,align:'right',hidden:true},
 			{field:'remark',title:'Remark',width:100}
 		]],
 		url: '<?php echo $basedir; ?>models/material/wip_grid.php?req=list&type='+$("#type").val()+'&wh_id='+wh_id+'&date='+date, 
@@ -32,6 +33,8 @@ function setdgCari(){
 		fitColumns:"true",
 		rownumbers:"true", 
 		toolbar:"#toolCari",
+		pagination:true,
+		pageList:[25,50,75,100], 
 		columns:[[  
 			{field:'wh_id',title:'wh_id',width:60,hidden:true},
 			{field:'wh_name',title:'Warehouse',width:50},
@@ -62,6 +65,7 @@ function insert_menu(row){
 
 function insert_det(row){
 	$('#NmBarang2').val(row.NmBarang2);
+	$('#Ket').val(row.Ket);	
 	$('#Sat2').val(row.Sat2);
 }
 

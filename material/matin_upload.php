@@ -48,7 +48,7 @@ $child_no = $data->val($i, 18);
 // membaca data (kolom T)
 $po_no = $data->val($i, 21);
 // membaca data NoPolisi (kolom Z)
-$supplier = $data->val($i, 27);
+$supplier = $data->val($i, 26);
 
 // setelah data dibaca, sisipkan ke dalam tabel dokumen
 //mysql_query("DELETE FROM mat_inchdr WHERE matin_date='$matin_date' AND matin_no='$matin_no' ");
@@ -58,8 +58,8 @@ $hasil = mysql_query($q);
 // setelah data dibaca, sisipkan ke dalam tabel barang
 $q2= "INSERT INTO mat_incdet (matin_id,child_no,mat_id,qty,price) VALUES ('$matin_id','$child_no','$mat_id','$qty','$price')";
 $hasil2 = mysql_query($q2);
-echo "$baris==> $q<br>";
-echo "$baris==> $q2<br><br>";
+//echo "$baris==> $q<br>";
+//echo "$baris==> $q2<br><br>";
 // jika proses insert data sukses, maka counter $sukses bertambah
 // jika gagal, maka counter $gagal yang bertambah
 if ($hasil) $sukses++;

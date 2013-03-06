@@ -132,7 +132,7 @@ $q .= "ORDER BY matin_no, matin_date ASC";
 $runh=$pdo->query($q);	
 $rsh=$runh->fetchAll(PDO::FETCH_ASSOC);
 
-$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,HsNo AS HsNo2,Sat AS Sat2,FORMAT(qty, 2) AS qty,FORMAT(price, 2) AS price,FORMAT(qty*price, 2) AS amount,FORMAT(weight, 2) AS weight
+$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,Ket,Sat AS Sat2,FORMAT(qty, 2) AS qty,FORMAT(price, 2) AS price,FORMAT(qty*price, 2) AS amount,IFNULL(FORMAT(weight, 2),0) AS weight
 	  FROM mat_incdet a 
 	  LEFT JOIN mst_barang b ON KdBarang = mat_id 
 	  WHERE matin_id='$matin_id' 
@@ -183,7 +183,8 @@ $html = '<h2 align="center">'.$NmMenu.'</h2>'.
 		<tr>
 		  <th align="center" width="25"><b>No.</b></th>
 		  <th width="80"><b>Mat. Code</b></th>		  
-		  <th width="150"><b>Desc.</b></th>
+		  <th width="150"><b>Specification</b></th>
+		  <th width="100"><b>Item Description</b></th>
 		  <th width="30"><b>Unit</b></th>
 		  <th align="right"><b>Qty.</b></th>
 		  <th align="right"><b>Weight</b></th>
@@ -198,6 +199,7 @@ $html .= '<tr>'.
 	  	 '<td align="center" width="25">'.$no.'</td>'.
 		 '<td width="80">'.$r['KdBarang2'].'</td>'.
 		 '<td width="150">'.$r['NmBarang2'].'</td>'.
+		 '<td width="100">'.$r['Ket'].'</td>'.		 
 		 '<td width="30">'.$r['Sat2'].'</td>'.
 		 '<td align="right">'.$r['qty'].'</td>'.
 		 '<td align="right">'.$r['weight'].'</td>'.

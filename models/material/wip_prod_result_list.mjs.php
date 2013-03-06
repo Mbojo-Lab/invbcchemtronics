@@ -26,8 +26,8 @@ function setdg(){
 				height:'auto',  
 				columns:[[  
 					{field:'KdBarang2',title:'Part. Code',width:80},  
-					{field:'PartNo',title:'Part No.',width:80}, 
-					{field:'NmBarang2',title:'Part Name',width:100},   
+					{field:'PartNo',title:'Specification.',width:80}, 
+					{field:'NmBarang2',title:'Specification',width:100},   
 					{field:'Sat2',title:'Unit',width:80}, 
 					{field:'qty',title:'Quantity',width:100,align:'right'}
 					//{field:'price',title:'Price',width:100}  

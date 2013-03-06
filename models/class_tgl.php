@@ -3,7 +3,7 @@
 Program 	: Class
 File		: class_tgl.php
 Function	: Sebagai Perpustakaan Tanggal 
-Description	: Kumpulan-kumpulan class yang berhubungan dengan tanggal
+Specification	: Kumpulan-kumpulan class yang berhubungan dengan tanggal
 Author		: Kikin Kusumah (kk)
 Environment	: Macromedia Dreamweaver 8
 Notes		: _

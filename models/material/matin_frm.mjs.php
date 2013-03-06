@@ -11,10 +11,11 @@ function setdg(){
 		rownumbers:"true",
 		columns:[[  
 			{field:'KdBarang2',title:'Mat. Code',width:100},
-			{field:'NmBarang2',title:'Desc.',width:250},
+			{field:'NmBarang2',title:'Specification',width:200},
+			{field:'Ket',title:'Item Description',width:150},
 			{field:'Sat2',title:'Unit',width:40},
 			{field:'qty',title:'Qty.',width:100,align:'right'},
-			{field:'weight',title:'Weight',width:100,align:'right'},
+			{field:'weight',title:'Weight',width:100,align:'right',hidden:true},
 			{field:'price',title:'Price',width:100,align:'right'},
 			{field:'amount',title:'Amount',width:100,align:'right'}
 		]],
@@ -37,6 +38,8 @@ function setdgCari(){
 		fitColumns:"true",
 		rownumbers:"true", 
 		toolbar:"#toolCari",
+		pagination:true,
+		pageList:[25,50,75,100], 
 		columns:[[  
 			{field:'matin_no',title:'Incoming No.',width:50},
 			{field:'matin_date',title:'Incoming Date',width:50},
@@ -73,7 +76,8 @@ function setComboGrid(){
 		pageList:[25,50,75,100],    
 		columns:[[  
 			{field:'KdBarang2',title:'Mat. Code',width:60},
-			{field:'NmBarang2',title:'Desc.',width:150},
+			{field:'NmBarang2',title:'Specification',width:150},
+			{field:'Ket',title:'Item Description',width:150},
 			{field:'Sat2',title:'Unit',width:50}
 		]],
 		onClickRow:function(index,row){insert_det(row)}  
@@ -89,6 +93,8 @@ function setcomboGridUbh(){
 
 function insert_menu(row){	
 	$('#currency').val(row.currency);		
+	$('#kurs').val(row.kurs);		
+	$('#tot_weight').val(row.tot_weight);		
 	$('#po_id').val(row.po_id);	
 	$('#po_no').val(row.po_no);			
 	$('#supplier').combogrid('setValue',row.supplier);
@@ -119,6 +125,7 @@ function insert_refUbh(row){
 
 function insert_det(row){
 	$('#NmBarang2').val(row.NmBarang2);
+	$('#Ket').val(row.Ket);	
 	$('#Sat2').val(row.Sat2);
 }
 
@@ -162,6 +169,8 @@ function simpan(){
 		matin_no: $('#matin_no').val(),
 		matin_date: $('#matin_date').datebox('getValue'),
 		currency: $('#currency').val(),
+		kurs: $('#kurs').val(),
+		tot_weight: $('#tot_weight').val(),
 		
 		po_id: $('#po_id').val(),
 		po_no: $('#po_no').val(),

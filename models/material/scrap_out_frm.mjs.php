@@ -11,10 +11,11 @@ function setdg(){
 		rownumbers:"true",
 		columns:[[  
 			{field:'KdBarang2',title:'Scrap Code',width:80},
-			{field:'NmBarang2',title:'Desc.',width:150},
+			{field:'NmBarang2',title:'Specification',width:150},
+			{field:'Ket',title:'Item Description',width:150},
 			{field:'Sat2',title:'Unit',width:80},
 			{field:'qty',title:'Qty.',width:100,align:'right'},
-			{field:'weight',title:'Weight',width:100,align:'right'}
+			{field:'weight',title:'Weight',width:100,align:'right',hidden:true}
 		]],
 		url: '<?php echo $basedir; ?>models/material/scrap_out_grid.php?req=list&matout_id='+matout_id
 	});
@@ -43,6 +44,9 @@ function setdgCari(){
 }
 
 function insert_menu(row){
+	$('#currency').val(row.currency);		
+	$('#kurs').val(row.kurs);		
+	$('#tot_weight').val(row.tot_weight);	
 	$('#matout_id').val(row.matout_id);
 	$('#matout_no').val(row.matout_no);
 	$('#matout_date').datebox('setValue',row.matout_date);
@@ -75,7 +79,8 @@ function setComboGrid(){
 		pageList:[25,50,75,100],  
 		columns:[[  
 			{field:'KdBarang2',title:'Scrap Code',width:60},
-			{field:'NmBarang2',title:'Desc.',width:50},
+			{field:'NmBarang2',title:'Specification',width:50},
+			{field:'Ket',title:'Item Description',width:50},
 			{field:'Sat2',title:'Unit',width:50}
 		]],
 		onClickRow:function(index,row){insert_det(row)}  
@@ -85,6 +90,7 @@ function setComboGrid(){
 
 function insert_det(row){
 	$('#NmBarang2').val(row.NmBarang2);
+	$('#Ket').val(row.Ket);
 	$('#Sat2').val(row.Sat2);
 }
 

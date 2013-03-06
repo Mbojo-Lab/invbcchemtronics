@@ -99,10 +99,10 @@ require_once "packlist_frm.cjs.php";
     <!--
     <div class="hdr">
       <span class="kolom1">
-        Total Qty.
+        Total Weight
       </span>
       <span class="kolom2">
-      <input type="text" id="tot_qty" name="tot_qty" style="width:100px" readonly>
+      <input type="text" id="tot_weight" name="tot_weight" style="width:100px" readonly>
       </span>
       <span class="kolom3"> Total Amount</span>
       <span class="kolom4">
@@ -130,7 +130,7 @@ require_once "packlist_frm.cjs.php";
 	<form name="fm2" id="fm2" method="post" onSubmit="return false">
  	<table>
     <tr>
-      <td width="115">Part No.</td>
+      <td width="115">Specification.</td>
       <td width="319"><input name="KdBarang3" type="hidden" id="KdBarang3" class="easyui-validatebox" value=""><input id="KdBarang2" name="KdBarang2" type="text" style="width:100px"></td>
     </tr>
     <tr>

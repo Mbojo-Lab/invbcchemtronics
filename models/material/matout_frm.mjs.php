@@ -8,13 +8,14 @@ function setdg(){
 		height:200,	
 		toolbar:"#toolbar2",
 		fitColumns:"true",
-		rownumbers:"true",
+		rownumbers:"true",		
 		columns:[[  
 			{field:'KdBarang2',title:'Mat. Code',width:100},
-			{field:'NmBarang2',title:'Desc.',width:250},
+			{field:'NmBarang2',title:'Specification',width:150},
+			{field:'Ket',title:'Item Description',width:100},
 			{field:'Sat2',title:'Unit',width:40},
 			{field:'qty',title:'Qty.',width:100,align:'right'},
-			{field:'weight',title:'Weight',width:100,align:'right'},
+			{field:'weight',title:'Weight',width:100,align:'right',hidden:true},
 			{field:'price',title:'Price',width:100,align:'right'},
 			{field:'amount',title:'Amount',width:100,align:'right'}
 		]],
@@ -29,11 +30,13 @@ function setdgCari(){
 		fitColumns:"true",
 		rownumbers:"true", 
 		toolbar:"#toolCari",
+		pagination:true,
+		pageList:[25,50,75,100], 
 		columns:[[  
 			{field:'matout_no',title:'Outgoing No.',width:60},
 			{field:'matout_date',title:'Outgoing Date',width:50},
 			{field:'matout_name',title:'Outgoing Type',width:50},
-			{field:'ref_no',title:'WO No.',width:50}
+			{field:'cust',title:'Customer',width:50}
 		]],
 		url: '<?php echo $basedir ?>models/material/matout_grid.php?req=menu&pilcari='+$("#pilcari").val()+'&txtcari='+$("#txtcari").val(),
 		onClickRow:function(index,row){insert_menu(row)}
@@ -41,6 +44,9 @@ function setdgCari(){
 }
 
 function insert_menu(row){
+	$('#currency').val(row.currency);		
+	$('#kurs').val(row.kurs);		
+	$('#tot_weight').val(row.tot_weight);	
 	$('#matout_id').val(row.matout_id);
 	$('#matout_type').val(row.matout_type);
 	$('#matout_no').val(row.matout_no);
@@ -74,7 +80,8 @@ function setComboGrid(){
 		pageList:[25,50,75,100],   
 		columns:[[  
 			{field:'KdBarang2',title:'Mat. Code',width:60},
-			{field:'NmBarang2',title:'Desc.',width:150},
+			{field:'NmBarang2',title:'Specification',width:150},
+			{field:'Ket',title:'Item Description',width:150},
 			{field:'Sat2',title:'Unit',width:50},
 			{field:'qty',title:'Qty',width:50}
 		]],
@@ -89,6 +96,7 @@ function insert_ref(row){
 
 function insert_det(row){
 	$('#NmBarang2').val(row.NmBarang2);
+	$('#Ket').val(row.Ket);
 	$('#Sat2').val(row.Sat2);
 }
 
@@ -135,6 +143,9 @@ function simpan(){
 		KdJnsDok: $('#KdJnsDok').val(),
 		NoDaf: $('#NoDaf').val(),
 		TgDaf: $('#TgDaf').datebox('getValue'),
+		currency: $('#currency').val(),
+		kurs: $('#kurs').val(),
+		tot_weight: $('#tot_weight').val(),
 		
 		//FORM LIST DATA BARANG	
 		nolist:nolist_val,KdBarang2:KdBarang2_val,

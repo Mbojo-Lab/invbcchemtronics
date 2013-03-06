@@ -111,7 +111,7 @@ function clear(){
 			<th>Nomor</th>
 			<th>Tanggal</th>
             <th>Buyer</th>
-            <th>Total Qty.</th>
+            <th>Total Weight</th>
             <th>&nbsp;</th>
 		</tr>
 	<?php 

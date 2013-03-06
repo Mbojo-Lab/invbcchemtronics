@@ -144,13 +144,13 @@ $rs=$run->fetchAll(PDO::FETCH_ASSOC);
 $html = '<h2 align="center">'.$NmMenu.'</h2>'.		
 		'<table>
 		<tr>
-		  <td width="60"><b>Part Code</b></td>
+		  <td width="60"><b>Item Code</b></td>
 		  <td width="10"><b>:</b></td>
 		  <td width="80"><b>'.$rsh[0]['KdBarang'].'</b></td>
-		  <td width="60"><b>Part No.</b></td>
+		  <td width="60"><b>Specification.</b></td>
 		  <td width="10"><b>:</b></td>
 		  <td width="200"><b>'.$rsh[0]['PartNo'].'</b></td>
-		  <td width="60"><b>Part Name</b></td>
+		  <td width="60"><b>Specification</b></td>
 		  <td width="10"><b>:</b></td>
 		  <td width="100"><b>'.$rsh[0]['NmBarang'].'</b></td>
 		</tr>
@@ -172,7 +172,7 @@ $html = '<h2 align="center">'.$NmMenu.'</h2>'.
 		<tr>
 		  <th align="center" width="25"><b>No.</b></th>
 		  <th width="80"><b>Mat. Code</b></th>
-		  <th width="150"><b>Desc.</b></th>
+		  <th width="150"><b>Specification</b></th>
 		  <th width="30"><b>Unit</b></th>
 		  <th align="right"><b>Qty.</b></th>
 		</tr>

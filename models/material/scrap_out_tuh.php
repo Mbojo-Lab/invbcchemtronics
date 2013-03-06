@@ -16,16 +16,19 @@ $KdJnsDok=$_REQUEST['KdJnsDok'];
 $NoDaf=$_REQUEST['NoDaf'];
 $TgDaf=dmys2ymd($_REQUEST['TgDaf']);
 $notes=$_REQUEST['notes'];
+$currency=$_REQUEST['currency'];
+$kurs=$_REQUEST['kurs'];
+$tot_weight=$_REQUEST['tot_weight'];
 
 //FORM LIST DATA MATERIAL
 $nolist=explode("`", $_REQUEST['nolist']);
 $KdBarang2=explode("`", $_REQUEST['KdBarang2']);
 $qty=explode("`", $_REQUEST['qty']);
 $weight=explode("`", $_REQUEST['weight']);
-$tot_qty=0;
+//$tot_weight=0;
 $jmlnodet=sizeof($nolist)-1;
 for ($i=0; $i<$jmlnodet; $i++){
-	$tot_qty += $qty[$i];
+	//$tot_weight += $qty[$i];
 }
 
 $aksi=$_REQUEST['aksi'];
@@ -42,10 +45,10 @@ try {
 		//TAMBAH HEADER
 		$sql[] = "INSERT INTO mat_outhdr (
 				  matout_id,mat_type,matout_no,matout_date,
-				  ref_id,ref_no,tot_qty,notes,cust,vehicle_no,driver,KdJnsDok,NoDaf,TgDaf
+				  ref_id,ref_no,tot_weight,notes,cust,vehicle_no,driver,KdJnsDok,NoDaf,TgDaf,currency,kurs 
 				  ) VALUES (
 				  '$matout_id','12','$matout_no','$matout_date',
-				  '','','$tot_qty','$notes','$cust','$vehicle_no','$driver','$KdJnsDok','$NoDaf','$TgDaf'
+				  '','','$tot_weight','$notes','$cust','$vehicle_no','$driver','$KdJnsDok','$NoDaf','$TgDaf','$currency','$kurs'
 				  )";	
 		//AKHIR TAMBAH HEADER
 		
@@ -70,10 +73,10 @@ try {
 		//UBAH HEADER
 		$sql[] = "INSERT INTO mat_outhdr (
 				  matout_id,mat_type,matout_no,matout_date,
-				  ref_id,ref_no,tot_qty,notes,cust,vehicle_no,driver,KdJnsDok,NoDaf,TgDaf
+				  ref_id,ref_no,tot_weight,notes,cust,vehicle_no,driver,KdJnsDok,NoDaf,TgDaf,currency,kurs
 				  ) VALUES (
 				  '$matout_id','12','$matout_no','$matout_date',
-				  '','','$tot_qty','$notes','$cust','$vehicle_no','$driver','$KdJnsDok','$NoDaf','$TgDaf'
+				  '','','$tot_weight','$notes','$cust','$vehicle_no','$driver','$KdJnsDok','$NoDaf','$TgDaf','$currency','$kurs'
 				  )";
 		//AKHIR UBAH HEADER		
 		//UBAH DETAIL	

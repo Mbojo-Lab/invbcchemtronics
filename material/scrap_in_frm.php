@@ -99,7 +99,7 @@ require_once "scrap_in_frm.cjs.php";
       <select name="supplier" id="supplier" style="width:150px">
         <option value=""></option>
         <?php
-            $run = $pdo->query("SELECT NmPrshn FROM mst_perusahaan WHERE TpPrshn='s' ORDER BY NmPrshn");
+            $run = $pdo->query("SELECT NmPrshn FROM mst_perusahaan WHERE TpPrshn NOT IN ('o') ORDER BY NmPrshn");
             $rs = $run->fetchAll(PDO::FETCH_ASSOC);
             foreach($rs as $r)
                 echo "<option value=\"".$r['NmPrshn']."\">".$r['NmPrshn']."</option>";
@@ -107,6 +107,28 @@ require_once "scrap_in_frm.cjs.php";
       </select>
       </span>	  
     </div>    
+    <div class="hdr">      
+      <span class="kolom1">Currency</span>
+      <span class="kolom2">
+      <select name="currency" id="currency" style="width:80px">
+        <option value=""></option>
+        <?php
+            $run = $pdo->query("SELECT * FROM valuta WHERE KdVal IN ('Rp','USD') ORDER BY KdVal");
+            $rs = $run->fetchAll(PDO::FETCH_ASSOC);
+            foreach($rs as $r)
+                echo "<option value=\"".$r['KdVal']."\">".$r['KdVal']."</option>";
+        ?>
+      </select>
+      </span>
+      <span class="kolom3">Kurs</span>
+      <span class="kolom4">
+      <input type="text" id="kurs" name="kurs" style="width:100px">    
+      </span>
+      <span class="kolom5">Tot. Weight</span>
+      <span class="kolom6">
+      <input type="text" id="tot_weight" name="tot_weight" style="width:100px">
+      </span>
+    </div>  
 	<div class="hdr">      
 	  <span class="kolom1">Jenis BC</span>
 	  <span class="kolom2">
@@ -126,9 +148,6 @@ require_once "scrap_in_frm.cjs.php";
       <span class="kolom6">
 	  	<input type="text" id="TgDaf" name="TgDaf" class="easyui-datebox" maxlength="10" tabindex="10" style="width:100px">
       </span>
-      
-      <span class="kolom5"></span>
-      <span class="kolom6"> </span>
     </div>
     
 <div id="toolbar1">  
@@ -163,8 +182,12 @@ require_once "scrap_in_frm.cjs.php";
       <td width="319"><input name="KdBarang3" type="hidden" id="KdBarang3" class="easyui-validatebox" value=""><input id="KdBarang2" name="KdBarang2" type="text" style="width:100px"></td>
     </tr>
     <tr>
-      <td>Desc.</td>
+      <td>Specification</td>
       <td><input name="NmBarang2" type="text" id="NmBarang2" style="width:150px" readonly></td>
+    </tr>
+    <tr>
+      <td>Item Description</td>
+      <td><input name="Ket" type="text" id="Ket" style="width:150px" readonly></td>
     </tr>
     <tr>
       <td>Unit</td>
@@ -184,7 +207,7 @@ require_once "scrap_in_frm.cjs.php";
       <td>Quantity</td>
       <td><input name="qty" type="text" id="qty" value="" style="width:100px"></td>
     </tr>
-	<tr>
+	<tr style="display:none">
       <td>Weight</td>
       <td><input name="weight" type="text" id="weight" value="" style="width:100px"></td>
     </tr>

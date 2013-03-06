@@ -10,8 +10,9 @@ function setdg(){
 		fitColumns:"true",
 		rownumbers:"true",
 		columns:[[  
-			{field:'KdBarang2',title:'Part Code',width:80},
-			{field:'NmBarang2',title:'Part No',width:150},
+			{field:'KdBarang2',title:'Item Code',width:80},
+			{field:'NmBarang2',title:'Specification',width:150},
+			{field:'Ket',title:'Item Description',width:150},
 			{field:'Sat2',title:'Unit',width:80},
 			{field:'qty',title:'Qty.',width:100,align:'right'},
 			{field:'weight',title:'Weight',width:100,align:'right'}
@@ -51,7 +52,7 @@ function insert_menu(row){
 }
 
 function insert_det(row){
-	$('#PartNo').val(row.PartNo);
+	$('#Ket').val(row.Ket);
 	$('#NmBarang2').val(row.NmBarang2);
 	$('#Sat2').val(row.Sat2);
 }

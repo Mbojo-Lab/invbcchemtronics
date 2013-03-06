@@ -13,7 +13,7 @@ $('#w').dialog({
 	toolbar:"#toolbar1"
 }); 
 
-/*$('#tot_qty').numberbox({  
+/*$('#tot_weight').numberbox({  
     min:0, 
 	precision:2, 
 	groupSeparator:',',

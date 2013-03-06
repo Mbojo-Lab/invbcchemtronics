@@ -39,10 +39,10 @@ $('#KdBarang').combogrid({
 	fitColumns:true,  
 	required:true,
 	columns:[[  
-		{field:'KdBarang',title:'Part No.',width:60},
+		{field:'KdBarang',title:'Specification.',width:60},
 		{field:'cust',title:'Customer',width:50},
 		{field:'Sat',title:'Unit',width:50},
-		{field:'Ket',title:'Desc.',width:50}
+		{field:'Ket',title:'Specification',width:50}
 	]],
 	onSelect:function(index,row){insert_mst(row)}  
 });  
@@ -57,7 +57,7 @@ $('#KdBarang2').combogrid({
 	fitColumns:true,  
 	columns:[[  
 		{field:'KdBarang2',title:'Mat. Code',width:60},
-		{field:'NmBarang2',title:'Desc.',width:50},
+		{field:'NmBarang2',title:'Specification',width:50},
 		{field:'Sat2',title:'Unit',width:50}
 	]],
 	onSelect:function(index,row){insert_det(row)}  

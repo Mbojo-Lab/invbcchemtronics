@@ -4,7 +4,7 @@
 // Begin       : 2004-06-11
 // Last Update : 2011-04-15
 //
-// Description : Alternative configuration file for TCPDF.
+// Specification : Alternative configuration file for TCPDF.
 // Author      : Nicola Asuni - Tecnick.com LTD - Manor Coach House, Church Hill, Aldershot, Hants, GU12 4RQ, UK - www.tecnick.com - info@tecnick.com
 // License     : GNU-LGPL v3 (http://www.gnu.org/copyleft/lesser.html)
 // -------------------------------------------------------------------

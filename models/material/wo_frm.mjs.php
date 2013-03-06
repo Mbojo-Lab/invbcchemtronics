@@ -10,9 +10,9 @@ function setdg(){
 		fitColumns:"true",
 		rownumbers:"true",
 		columns:[[  
-			{field:'KdBarang2',title:'Part Code',width:80},
-			{field:'PartNo',title:'Part No.',width:150},
-			{field:'NmBarang2',title:'Part Name',width:150},
+			{field:'KdBarang2',title:'Item Code',width:80},
+			{field:'PartNo',title:'Specification.',width:150},
+			{field:'NmBarang2',title:'Specification',width:150},
 			{field:'Sat2',title:'Unit',width:80},
 			{field:'qty',title:'Qty. Plan',width:100,align:'right'}
 		]],
@@ -73,9 +73,9 @@ function setComboGrid(){
 		mode:'remote',  
 		fitColumns:true,  
 		columns:[[  
-			{field:'KdBarang2',title:'Part Code',width:60},
-			{field:'PartNo',title:'Part No.',width:50},
-			{field:'NmBarang2',title:'Part Name',width:50},
+			{field:'KdBarang2',title:'Item Code',width:60},
+			{field:'PartNo',title:'Specification.',width:50},
+			{field:'NmBarang2',title:'Specification',width:50},
 			{field:'Sat2',title:'Unit',width:50},
 			{field:'qty',title:'Qty',width:50}
 		]],
