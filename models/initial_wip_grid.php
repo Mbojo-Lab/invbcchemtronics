@@ -7,17 +7,19 @@ $req = $_REQUEST["req"];
 
 if ($req=='menu'){
 	$pilcari = $_REQUEST["pilcari"];
+	$txtcari = $_REQUEST["txtcari"];
 	$q = "SELECT DISTINCT a.wh_id,wh_name,DATE_FORMAT(date,'%d/%m/%Y') AS date
 		  FROM mat_stockcard a 
 		  LEFT JOIN mat_warehouse b ON b.wh_id=a.wh_id 
 		  WHERE type='B' AND mat_type='11' AND type='B' ";
-	if ($pilcari != "")		  
-		$q .= "AND a.wh_id LIKE '%$pilcari%' ";	  
+	if ($txtcari != "")		  
+		$q .= "AND a.".$pilcari." LIKE '%$txtcari%' ";	  
 	$q .= "ORDER BY wh_name, date ASC";
 	
 	$run=$pdo->query($q);	
 	$rs=$run->fetchAll(PDO::FETCH_ASSOC);
 	echo json_encode($rs);
+	//echo $q;
 } else if ($req=='dgDet') {
 	$key = $_REQUEST["q"];
 	

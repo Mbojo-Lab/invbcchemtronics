@@ -20,7 +20,7 @@ $TpBarang=$_REQUEST["TpBarang"];
 <script type="text/javascript" src="<?php echo $basedir; ?>models/js/global.format.js">disableSelection(document.body); 
 </script>
 <?php 
-require_once "initial_mac_list.mjs.php";
+require_once "initial_wip_list.mjs.php";
 require_once "mst_list.cjs.php";
 ?>
 <style type="text/css">

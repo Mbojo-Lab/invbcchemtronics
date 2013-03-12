@@ -8,23 +8,23 @@ function setdg(){
 		fitColumns:"true",
 		rownumbers:"true",
 		columns:[[  
-			{field:'wh_name',title:'Warehouse',width:80},
+			{field:'JnsBarang',title:'Material Type',width:80},
 			{field:'date',title:'Date',width:80},
 			{field:'action',title:'Action',width:80,
 				formatter:function(value,row,index){
-					var det = '<a href="#" onclick="window.open(\'initial_fg_pdf.php?wh_id='+row.wh_id+'&date='+row.date+'\', \'_blank\');"><img src="<?php echo $basedir ?>themes/icons/pdf.png"></a>';
+					var det = '<a href="#" onclick="window.open(\'initial_mac_pdf.php?mat_type='+row.mat_type+'&date='+row.date+'\', \'_blank\');"><img src="<?php echo $basedir ?>themes/icons/pdf.png"></a>';
 					return det;					
 				}
 			}
 		]],
-		url: '<?php echo $basedir; ?>models/initial_fg_grid.php?req=menu&pilcari='+$("#pilcari").val()+'&txtcari='+$("#txtcari").val(),
+		url: '<?php echo $basedir; ?>models/initial_mac_grid.php?req=menu&pilcari='+$("#pilcari").val()+'&txtcari='+$("#txtcari").val(),
 		view: detailview,  
 		detailFormatter:function(index,row){  
 			return '<div style="padding:2px"><table id="ddv-' + index + '"></table></div>';  
 		},  
 		onExpandRow: function(index,row){  
 			$('#ddv-'+index).datagrid({  
-				url:'<?php echo $basedir; ?>models/initial_fg_grid.php?req=list&wh_id='+row.wh_id+'&date='+row.date,  
+				url:'<?php echo $basedir; ?>models/initial_mac_grid.php?req=list&mat_type='+row.mat_type+'&date='+row.date,  
 				fitColumns:true,  
 				singleSelect:true,  
 				rownumbers:true,  

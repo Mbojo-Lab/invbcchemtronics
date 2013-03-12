@@ -30,7 +30,7 @@ $('#supplier').combogrid({
 });
 
 
-$('#ppn').numberbox({  
+/*$('#ppn').numberbox({  
     min:0, 
 	precision:2, 
 	groupSeparator:',',
@@ -87,7 +87,15 @@ $('#amount').numberbox({
 	groupSeparator:',',
 	decimalSeparator:'.',
 });
+*/
 
+$('#qty').change(function(){
+	setAmount();
+});
+
+$('#price').change(function(){
+	setAmount();
+});
 
 setdg();
 dsInput();

@@ -1,4 +1,11 @@
 <script type="text/javascript">   
+function setAmount(){
+	qty=$('#qty').val().replace(/,/gi,"");
+	price=$('#price').val().replace(/,/gi,"");
+	amount = qty*price;
+	$('#amount').val(amount);
+}
+
 function setdg(){
 	var matout_id = $('#matout_id').val();
 	
@@ -124,9 +131,9 @@ function simpan(){
 		for(var i=0; i<rows.length; i++){
 			nolist_val += j+i + "`";		
 			KdBarang2_val += rows[i].KdBarang2 + "`";
-			qty_val += rows[i].qty.replace(",","") + "`";
-			weight_val += rows[i].weight.replace(",","") + "`";
-			price_val += rows[i].price.replace(",","") + "`";
+			qty_val += rows[i].qty.replace(/,/gi,"") + "`";
+			weight_val += rows[i].weight.replace(/,/gi,"") + "`";
+			price_val += rows[i].price.replace(/,/gi,"") + "`";
 		}	 	
 		//AKHIR FORM LIST BARANG
 				
@@ -144,8 +151,8 @@ function simpan(){
 		NoDaf: $('#NoDaf').val(),
 		TgDaf: $('#TgDaf').datebox('getValue'),
 		currency: $('#currency').val(),
-		kurs: $('#kurs').val(),
-		tot_weight: $('#tot_weight').val(),
+		kurs: $('#kurs').val().replace(/,/gi,""),
+		tot_weight: $('#tot_weight').val().replace(/,/gi,""),
 		
 		//FORM LIST DATA BARANG	
 		nolist:nolist_val,KdBarang2:KdBarang2_val,

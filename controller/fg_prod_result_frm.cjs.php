@@ -132,9 +132,9 @@ $('#tl1Sim').click(function(){
 		for(var i=0; i<rows.length; i++){
 			nolist_val += j+i + "`";		
 			KdBarang2_val += rows[i].KdBarang2 + "`";
-			weight_val += rows[i].weight.replace(",","") + "`";
-			qty_val += rows[i].qty.replace(",","") + "`";
-			remark_val += rows[i].remark.replace(",","") + "`";
+			weight_val += rows[i].weight.replace(/,/gi,"") + "`";
+			qty_val += rows[i].qty.replace(/,/gi,"") + "`";
+			remark_val += rows[i].remark.replace(/,/gi,"") + "`";
 		}	 	
 		//AKHIR FORM LIST BARANG
 				

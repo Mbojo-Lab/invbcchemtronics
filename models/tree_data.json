@@ -129,6 +129,10 @@
 							"text":"<a href=\"masterdata/initial_mat_list.php?NmMenu=Initial Balance Material\" target=\"content\">Initial Balance Mat.</a>"
 							},{
 								"text":"<a href=\"masterdata/initial_fg_list.php?NmMenu=Initial Balance Finished Goods\" target=\"content\">Initial Balance FG</a>"
+							},{
+								"text":"<a href=\"masterdata/initial_wip_list.php?NmMenu=Initial Balance WIP\" target=\"content\">Initial Balance WIP</a>"
+							},{
+								"text":"<a href=\"masterdata/initial_mac_list.php?NmMenu=Initial Balance Scrap, Machine and Office Equipment\" target=\"content\">Initial Balance Scrap, Machine & Office Equipment</a>"			
 							}
 						]
 					},{

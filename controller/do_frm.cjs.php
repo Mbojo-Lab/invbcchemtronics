@@ -13,7 +13,7 @@ $('#w').dialog({
 	maximizable:false,
 	toolbar:"#toolbar1"
 }); 
-
+/*
 $('#tot_weight').numberbox({  
     min:0, 
 	precision:2, 
@@ -63,6 +63,15 @@ $('#amount').numberbox({
 	precision:2, 
 	groupSeparator:',',
 	decimalSeparator:'.',
+});
+*/
+
+$('#qty').change(function(){
+	setAmount();
+});
+
+$('#price').change(function(){
+	setAmount();
 });
 	
 setdg();

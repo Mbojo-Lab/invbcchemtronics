@@ -14,7 +14,7 @@ $('#w').dialog({
 	toolbar:"#toolbar1"
 }); 
 
-$('#qty').numberbox({  
+/*$('#qty').numberbox({  
     min:0, 
 	precision:2, 
 	groupSeparator:',',
@@ -70,6 +70,16 @@ $('#amount').numberbox({
 	precision:2, 
 	groupSeparator:',',
 	decimalSeparator:'.',
+});
+*/
+
+
+$('#qty').change(function(){
+	setAmount();
+});
+
+$('#price').change(function(){
+	setAmount();
 });
 	
 setdg();

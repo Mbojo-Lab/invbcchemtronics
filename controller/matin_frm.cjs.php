@@ -29,7 +29,7 @@ $('#supplier').combogrid({
 	fitColumns: true
 });
 
-$('#kurs').numberbox({  
+/*$('#kurs').numberbox({  
     min:0, 
 	groupSeparator:',',
 	decimalSeparator:'.'
@@ -87,6 +87,16 @@ $('#amount').numberbox({
 	groupSeparator:',',
 	decimalSeparator:'.',
 });
+*/
+
+$('#qty').change(function(){
+	setAmount();
+});
+
+$('#price').change(function(){
+	setAmount();
+});
+
 
 setdg();
 dsInput();
